@@ -6,20 +6,20 @@ toc:
   properties:
     subcollection: pattern-vpc-security
     industry: industry-value
-    use-case: use-case-value
-    compliance: compliance-value
-    audience: white paper
+    # use-case: use-case-value
+    # compliance: compliance-value
+    audience: solutionn
     content-type: deployment
     href: /docs/pattern-vpc-security
-    path: pattern-VPC-security
-    description: Pattern description
+    path: pattern-vpc-security
+    description: Security in VPC Environments
     label: Security in VPC Environments
 
   entries:
   - navgroup:
       id: overview
       topics:
-      - Security-in-vpc.md
+      - overview.md
 
   - navgroup:
       id: architecture
