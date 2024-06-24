@@ -50,7 +50,7 @@ toc:
           topics:
           - topic: compute-architecture.md
             navtitle: Compute
-          - topic: storage-architecture.md
+          - topic: storage-design.md
             navtitle: Storage
           - topic: networking-architecture.md
             navtitle: Networking
