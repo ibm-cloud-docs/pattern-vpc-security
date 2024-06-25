@@ -194,26 +194,18 @@ IBM Cloud provides native, integrated data-at-rest encryption for VPC volumes an
 **IBM Cloud Encryption with Customer Keys** - Customer selects an IBM cloud native key management system (KMS). IBM Cloud has two KMSs – Key Protect and Hyper Protect Crypto Service (HPCS)
 **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium. See Section 4.
 
-### Best Practices
+### Data-at-Rest Encryption Best Practices
 {: #data-at-rest-encryption-best-practices}
 
 Data encryption should always be used as can be expected. Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration. Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control.
 
-### Solutioning Guidance
+### Data-at-Rest Encryption Solutioning Guidance
 {: #data-at-rest-encryption-guidance}
 
 [Securing Your Data in VPC](https://docs/vpc?topic=vpc-mng-data&interface=ui)
 [About data encryption for VPC](https://docs/vpc?topic=vpc-vpc-encryption-about)
 [Encrypting Your Data](https://docs/cloud-object-storage?topic=cloud-object-storage-encryption)
 
-
-| Options              | IBM Cloud default encryption                                                                                                                                                                                                                                                                                         | Automatic if no key management scheme is selected. IBM keys will be used.                                                                                                                                                                                                     |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                          | IBM Cloud encryption with customer keys                                                                                                                                                                                                                                                                              | Customer selects an IBM cloud native key management system (KMS). IBM Cloud has two KMSs – Key Protect and Hyper Protect Crypto Service (HPCS)                                                                                                                                |
-|                          | External encryption solution                                                                                                                                                                                                                                                                                         | Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium. See Section 4. |
-| Best Practices       | Data encryption should always be used as can be expected. Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration. Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control. |                                                                                                                                                                                                                                                                               |
-| Solutioning Guidance | [Securing Your Data in VPC](https://docs/vpc?topic=vpc-mng-data&interface=ui) [About data encryption for VPC](https://docs/vpc?topic=vpc-vpc-encryption-about)  [Encrypting Your Data](https://docs/cloud-object-storage?topic=cloud-object-storage-encryption)            |                                                                                                                                                                                                                                                                               |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
 
 ## Key Management
 {: #key-management}
