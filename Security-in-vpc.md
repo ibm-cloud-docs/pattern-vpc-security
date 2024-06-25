@@ -214,6 +214,24 @@ Key management allows cloud customers the ability to create, store, manage and r
 
 ![A screenshot of a computer Description automatically generated](images/key-protect.svg){: caption="Figure 2. Security Framework" caption-side="bottom"}
 
+### Key Management Options
+{: #key-management-options}
+
+**Key Protect** - Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements.
+
+**Hyper Protect Crypto Service** - HPCS provides Key Management Services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. HPCS is specifically recommended for financial service
+
+**IBM Cloud Native HPCS with Unified Key Orchestrator** - This particular variant of the HPCS key management solution noted directly above add the ability to manage key across various clouds in addition to IBM Cloud.
+
+**Customer or 3rd Party Key Management Solution** - May be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
+
+### Key Management Best Practices
+{: #key-management-best-practices}
+
+Cloud native key management offers the most secure, integrated and automated key lifecycle management. User access to keys should be tightly controlled and monitored as can be expected. Processes should be established on how keys should be used and managed. Proper rotation of keys should be established. Regular inspection of activity logs surrounding key management should occur.
+
+
+
 
 | Options         | IBM Cloud Key Protect                                                                                                                                                                                                                                                                                                                                                                         | Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements.                                          |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
