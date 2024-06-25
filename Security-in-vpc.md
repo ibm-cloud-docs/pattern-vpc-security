@@ -132,7 +132,7 @@ Contents
 
 [Options, Best Practices and Solutioning Guidance](#_Toc162278621)
 
-# Introduction
+## Introduction
 {: #introduction}
 
 This paper provides an overview of IBM Cloud’s security capabilities and then proceeds to discuss options, best practices and solutioning guidance associated with that capability. But note this paper only discusses Virtual Private Cloud (VPC) Infrastructure as a Services (IaaS) security capabilities. Security in other areas such as VMWare and OpenShift will be handled in different papers.
@@ -158,16 +158,15 @@ There are many different security best practices for cloud deployments, but one 
 
 Please refer to the following National Institute of Standards and Technology paper for more information on Zero Trust: <https://csrc.nist.gov/pubs/sp/800/207/final>. And there is many other web sources on zero trust principles and applications. This paper will show how various IBM CLoud security elements can be deployed following a Zero Trust approach.
 
-# Security Solutions Framework
+## Security Solutions Framework
 {: #Security-Solutions-Framework}
 
 IBM uses a broad standard framework in all its security endeavors, e.g., design, consulting, implementation, etc. and this is shown below for reference. Now some, but not all of these are necessarily applicable for IBM Cloud in Virtual Private Cloud environments from a technical capability perspective. This paper therefore will only cover the capabilities highlighted in blue. And note that some of these capability categories can be broken down further and these are discussed in detail starting in Section 5.
 
 ![Illustrates the security framework for IaaS Security Whitepaper](images/security-framework.svg){: caption="Figure 1. Security Framework" caption-side="bottom"}
 
-# IBM Cybersecurity Security Services (CSS) Capabilities – Options for Certain Situations. (I need this upfront)
-{: #CSS-capabilities
-}
+## IBM Cybersecurity Security Services (CSS) Capabilities – Options for Certain Situations. (I need this upfront)
+{: #CSS-capabilities}
 
 
 IBM Cybersecurity Services is a specific business unit within IBM that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The table below provides an overview of their solutions, and these can be considered additional options in IBM Cloud that may be applicable in certain scenarios, e.g., hybrid or mult-cloud situations. Note: their separate consulting and managed service are not covered here. As IBM Cloud security domains are discussed in the following sections, options in the domains will be presented and some of those could be IBM CSS solutions.
@@ -179,7 +178,7 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
 | **Container Security**                 | 3rd Parties – Palo Alto Prisma Cloud & Illumio                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 {: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
 
-# Data Security
+## Data Security
 {: #data-security}
 
 ## Data-at-Rest Encryption
@@ -205,7 +204,6 @@ Key management allows cloud customers the ability to create, store, manage and r
 
 ![A screenshot of a computer Description automatically generated](images/key-protect.svg){: caption="Figure 2. Security Framework" caption-side="bottom"}
 
-###
 
 | **Options Info**         | IBM Cloud Key Protect                                                                                                                                                                                                                                                                                                                                                                         | Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements.                                          |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -258,7 +256,7 @@ Certificates can be used in several areas within IBM Cloud to provide data-in-tr
 
 IBM Cloud provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm. One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/guardium){: external}, as noted in Section 4.
 
-# Identity and Access
+## Identity and Access
 {: #identity-and-access}
 
 ## IBM Cloud Identity and Access Management (IAM)
@@ -326,7 +324,7 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
 | **Solutioning Guidance** | [Managing IAM access for Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-iam&interface=ui) [Using service endpoints to privately connect to Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui) [Securing your data in Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui) [Protecting Secrets Manager resources with context-based restrictions](https://docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui) Secrets Manager instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. Secrets Manager is a single-tenant service. CPU and memory limits are applied per Secrets Manager instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate below 20 req/s. Additionally, limit the number of unique clients that make requests to a single Secrets Manager instance.  Another best practice is the use of one of IBM Cloud’s key management systems (Key Protect or Hyper Protect Crypto Services (HPCS) to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](https://docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui) |
 {: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
                                                                                                                                                                                                                                        |
-{: caption="Table 7: Secrets Management - Options, Best Practices and Guidance"}
+
 
 ## Bastion Host and Privilege Identity and Access Management (PIM)
 {: #bastion-host}
@@ -494,7 +492,7 @@ IBM Cloud has Virtual Private Endpoints that allow secure access to a variety of
 | **Solutioning Guidance** | [Privately connecting to IBM Cloud services](https://docs/overview?topic=overview-endpoints-support) and  [About virtual private endpoint gateways](https://docs/vpc?topic=vpc-about-vpe) [Configuring ACLs and security groups for use with endpoint gateways](https://docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways&interface=ui).                                                     |                                 |
 {: caption="Table 14: VPE-options-best-practices-and-guidance"}
 
-# Threat Detection and Threat Investigation and Response
+## Threat Detection and Threat Investigation and Response
 {: #threat-detection&investigation}
 
 or sections 9.1-9.4, I’d
@@ -565,8 +563,7 @@ Logging plays a key role in security in that captures events that may be anomalo
 |                          | NexGen Firewalls                                                                                                                                                                                                                                                                                                                                                                                                                   | Customers can elect to capture and forward all kinds of logs.                                                       |
 | **Best Practices**       | Logging of IAM user and API actions should always be used, regardless of the security situation. Firewall logs should always be used for detection purposes.                                                                                                                                                                                                                                                                       |                                                                                                                     |
 | **Solutioning Guidance** | [Creating a flow log collector](https://docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui) (VPC Flow Logs) Getting started with Activity Tracker [Using the Logpush service](https://docs/cis?topic=cis-logpush&interface=ui) (Cloud Internet Services) [Provisioning an instance](https://docs/workload-protection?topic=workload-protection-provision) (Workload Protection) |
-
-     {: caption="Table 16: Logging - Options, Best Practices and Guidance"}
+{: caption="Table 16: Logging - Options, Best Practices and Guidance"}
                                                                                                                  |
 
 ## Threat Detection
@@ -646,7 +643,7 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 | **Solutioning Guidance** | [Best practices for working with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-best-practices) [Configuring IBM Cloud Vulnerability Advisor scans](https://docs/devsecops?topic=devsecops-cd-devsecops-va-scans) |                                                                                                                                                                    |
 {: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
 
-# Risk and Compliance
+## Risk and Compliance
 {: #risk-and-compliance}
 
 ## Configuration Governance and Compliance Monitoring
