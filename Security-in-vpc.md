@@ -186,17 +186,26 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
 
 IBM Cloud provides native, integrated data-at-rest encryption for VPC volumes and snapshots and file storage/VPC shares automatically. IBM Cloud also provides data-at-rest encryption for its object storage by default. All the encryption used adheres to the AES-256 standard. Customers can use IBM-managed encryption (default) or customer-managed keys.
 
-### Data-at-Rest Encryption - Options, Best Practices and Solutioning Guidance
+
+### Data-at-Rest Encryption Options
 {: #data-at-rest-encryption-options}
 
-Options
 **IBM Cloud Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used.
 **IBM Cloud Encryption with Customer Keys** - Customer selects an IBM cloud native key management system (KMS). IBM Cloud has two KMSs – Key Protect and Hyper Protect Crypto Service (HPCS)
 **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium. See Section 4.
 
-Best Practices
+### Best Practices
+{: #data-at-rest-encryption-best-practices}
 
-Solutioning Guidance
+Data encryption should always be used as can be expected. Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration. Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control.
+
+### Solutioning Guidance
+{: #data-at-rest-encryption-guidance}
+
+[Securing Your Data in VPC](https://docs/vpc?topic=vpc-mng-data&interface=ui)
+[About data encryption for VPC](https://docs/vpc?topic=vpc-vpc-encryption-about)
+[Encrypting Your Data](https://docs/cloud-object-storage?topic=cloud-object-storage-encryption)
+
 
 | Options              | IBM Cloud default encryption                                                                                                                                                                                                                                                                                         | Automatic if no key management scheme is selected. IBM keys will be used.                                                                                                                                                                                                     |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
