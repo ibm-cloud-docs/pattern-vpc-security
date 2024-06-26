@@ -2,12 +2,15 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-25"
+lastupdated: "2024-06-26"
 
 subcollection: pattern-vpc-security
 
+keywords:
+
 ---
 
+{{site.data.keyword.attribute-definition-list}}
 
 # IaaS Security in VPC Environments
 {: #IaaS-security-whitepaper}
