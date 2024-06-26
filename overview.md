@@ -196,9 +196,9 @@ IBM Cloud provides native, integrated data-at-rest encryption for VPC volumes an
 ### Data-at-Rest Encryption Options
 {: #data-at-rest-encryption-options}
 
-**IBM Cloud Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used.
-**IBM Cloud Encryption with Customer Keys** - Customer selects an IBM cloud native key management system (KMS). IBM Cloud has two KMSs – Key Protect and Hyper Protect Crypto Service (HPCS)
-**External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium. See Section 4.
+ - **IBM Cloud Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used.  \n
+ - **IBM Cloud Encryption with Customer Keys** - Customer selects an IBM cloud native key management system (KMS). IBM Cloud has two KMSs – Key Protect and Hyper Protect Crypto Service (HPCS).  \n
+ - **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium. See Section 4.
 
 ### Data-at-Rest Encryption Best Practices
 {: #data-at-rest-encryption-best-practices}
