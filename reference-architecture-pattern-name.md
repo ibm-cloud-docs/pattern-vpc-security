@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-26"
 
-subcollection: pattern-vpc-security
+subcollection: <repo-name>
 
 keywords:
 
@@ -19,7 +19,7 @@ version: 1.0
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
-docs: /docs/pattern-sap-on-powervs
+docs: /docs/pattern-vpc-security
 
 content-type: reference-architecture
 

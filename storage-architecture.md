@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-06-26"
 
-subcollection: pattern-vpc-security
+subcollection: <repo-name>
 
 keywords:
 
