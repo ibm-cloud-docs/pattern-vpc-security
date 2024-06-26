@@ -19,7 +19,7 @@ version: 1.0
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
-docs: /docs/pattern-vpc-security
+docs:
 
 content-type: reference-architecture
 
