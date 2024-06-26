@@ -18,125 +18,6 @@ keywords:
 # IaaS Security in VPC Environments
 {: #IaaS-security-whitepaper}
 
-Contents
-
-[2 Introduction](#introduction)
-
-[2.1 Purpose.](#_Toc162278564)
-
-[2.2 Scope](#_Toc162278565)
-
-[2.3 Audience](#_Toc162278566)
-
-[2.4 Sources](#_Toc162278567)
-
-[2.5 Options](#_Toc162278568)
-
-[2.6 General Security Best Practices and Solutioning Guidance](#general-security-best-practices-and-solutioning-guidance)
-
-[Employ a Zero Trust Approach and Associated Principles](#_Toc162278570)
-
-[3 IBM Cloud Native Security Overview](#_Toc162278571)
-
-[4 IBM Cybersecurity Security Services (CSS) Capabilities – Options for Certain Situations](#ibm-cybersecurity-security-services-css-capabilities--options-for-certain-situations-i-need-this-upfront)
-
-[5 Data Security](#data-security)
-
-[5.1 Data-at-Rest Encryption](#data-at-rest-encryption)
-
-[Data-at-Rest Encryption - Options, Best Practices and Solutioning Guidance](#data-at-rest-encryption---options-best-practices-and-solutioning-guidance)
-
-[5.2 Key Management](#key-management)
-
-[5.3 Data-in-Transit Encryption](#data-in-transit-encryption)
-
-[Data-in-Transit Encryption - Options, Best Practices and Solutioning Guidance](#data-in-transit-encryption---options-best-practices-and-solutioning-guidance)
-
-[5.4 Certificate Management](#certificate-management)
-
-[Certificate Management - Options, Best Practices, Solutioning Guidance](#certificate-management---options-best-practices-solutioning-guidance)
-
-[5.5 Data Lifecycle Management and Governance](#data-lifecycle-management-and-governance)
-
-[6 Identity and Access](#identity-and-access)
-
-[6.1 IBM Cloud Identity and Access Management (IAM)](#ibm-cloud-identity-and-access-management-iam)
-
-[Identity and Access - Options, Best Practices and Solutioning Guidance](#identity-and-access---options-best-practices-and-solutioning-guidance)
-
-[6.2 Activity Tracker](#_Toc162278585)
-
-[Activity Tracker - Options, Best Practices and Solutioning Guidance](#_Toc162278586)
-
-[6.3 Single Sign-On / Identity Provider Federation](#iam-with-single-sign-on--identity-provider-federation)
-
-[Single Sign-On / Identity Provider Federation - Options, Best Practices and Solutioning Guidance](#single-sign-on--identity-provider-federation---options-best-practices-and-solutioning-guidance)
-
-[6.4 Secrets Management](#secrets-management)
-
-[Secrets Management - Options, Best Practices and Solutioning Guidance](#secrets-management---options-best-practices-and-solutioning-guidance)
-
-[6.5 Bastion Host](#bastion-host-and-privilege-identity-and-access-management-pim)
-
-[Bastion Host / Privilege - Options, Best Practices and Solutioning Guidance](#bastion-host--privilege---options-best-practices-and-solutioning-guidance)
-
-[7 Application Security](#application-security)
-
-[7.1 Web Application Firewalling (WAF)](#web-application-firewalling-waf)
-
-[Web Application Firewalling - Options, Best Practices and Solutioning Guidance](#web-application-firewalling---options-best-practices-and-solutioning-guidance)
-
-[7.2 Distributed Denial of Service (DDoS)](#distributed-denial-of-service-ddos)
-
-[Distributed Denial of Service - Options, Best Practices and Solutioning Guidance](#distributed-denial-of-service---options-best-practices-and-solutioning-guidance)
-
-[8 Infrastructure and Endpoint Security](#infrastructure-and-endpoint-security)
-
-[8.1 Network Segmentation](#core-network-protection--network-segmentation)
-
-[Network Segmentation - Options, Best Practices and Solutioning Guidance](#network-segmentation---options-best-practices-and-solutioning-guidance-this-is-following-the-same-format-as-the-rest-of-the-document)
-
-[8.2 Firewalling](#core-network-protection-and-edge-protection---firewalling-see-comment-above-id-suggest)
-
-[Firewalling - Options, Best Practices and Solutioning Guidance](#firewalling---options-best-practices-and-solutioning-guidance)
-
-[8.3 Cloud Workload Protection / Endpoint Security](#endpoint-detection--endpoint-protection-edrepp)
-
-[Cloud Workload Protection / Endpoint Security - Options, Best Practices and Solutioning Guidance](#cloud-workload-protection--endpoint-security---options-best-practices-and-solutioning-guidance)
-
-[8.4 Virtual Private Endpoints](#virtual-private-endpoints)
-
-[Virtual Private Endpoints - Options, Best Practices and Solutioning Guidance](#virtual-private-endpoints---options-best-practices-and-solutioning-guidance)
-
-[9 Threat Detection and Response](#threat-detection-and-threat-investigation-and-response)
-
-[9.1 Logging](#_Toc162278608)
-
-[Logging - Options, Best Practices and Solutioning Guidance](#logging---options-best-practices-and-solutioning-guidance)
-
-[9.2 Detection](#threat-detection)
-
-[Detection - Options, Best Practices and Solutioning Guidance](#detection---options-best-practices-and-solutioning-guidance)
-
-[9.3 Response](#response)
-
-[Response - Options, Best Practices and Solutioning Guidance](#response---options-best-practices-and-solutioning-guidance)
-
-[9.4 Broader Incident Response](#broader-incident-response)
-
-[9.5 Vulnerability Testing / Checking](#vulnerability-management)
-
-[Vulnerability Testing - Options, Best Practices and Solutioning Guidance](#vulnerability-management---options-best-practices-and-solutioning-guidance)
-
-[10 Governance, Risk and Compliance](#risk-and-compliance)
-
-[10.1.1 Configuration Governance and Compliance Monitoring](#configuration-governance-and-compliance-monitoring)
-
-[Configuration Governance and Compliance Monitoring - Options, Best Practices and Solutioning Guidance](#configuration-governance-and-compliance-monitoring---options-best-practices-and-solutioning-guidance)
-
-[10.1.2 Auditing](#auditing)
-
-[Options, Best Practices and Solutioning Guidance](#_Toc162278621)
 
 ## Introduction
 {: #introduction}
@@ -196,21 +77,23 @@ IBM Cloud provides native, integrated data-at-rest encryption for VPC volumes an
 ### Data-at-Rest Encryption Options
 {: #data-at-rest-encryption-options}
 
- - **IBM Cloud Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used.  \n
- - **IBM Cloud Encryption with Customer Keys** - Customer selects an IBM cloud native key management system (KMS). IBM Cloud has two KMSs – Key Protect and Hyper Protect Crypto Service (HPCS).  \n
+ - **IBM Cloud Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used.
+ - **IBM Cloud Encryption with Customer Keys** - Customer selects an IBM cloud native key management system (KMS). IBM Cloud has two KMSs – Key Protect and Hyper Protect Crypto Service (HPCS).
  - **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium. See Section 4.
 
 ### Data-at-Rest Encryption Best Practices
 {: #data-at-rest-encryption-best-practices}
 
-Data encryption should always be used as can be expected. Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration. Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control.
+ - Data encryption should always be used as can be expected.
+ - Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration.
+ - Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control.
 
 ### Data-at-Rest Encryption Solutioning Guidance
 {: #data-at-rest-encryption-guidance}
 
-[Securing Your Data in VPC](https://docs/vpc?topic=vpc-mng-data&interface=ui)
-[About data encryption for VPC](https://docs/vpc?topic=vpc-vpc-encryption-about)
-[Encrypting Your Data](https://docs/cloud-object-storage?topic=cloud-object-storage-encryption)
+ - [Securing Your Data in VPC](https://docs/vpc?topic=vpc-mng-data&interface=ui)
+ - [About data encryption for VPC](https://docs/vpc?topic=vpc-vpc-encryption-about)
+ - [Encrypting Your Data](https://docs/cloud-object-storage?topic=cloud-object-storage-encryption)
 
 
 ## Key Management
