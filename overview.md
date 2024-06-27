@@ -112,7 +112,7 @@ Key management allows cloud customers the ability to create, store, manage and r
 
  - **IBM Cloud Native HPCS with Unified Key Orchestrator** - This particular variant of the HPCS key management solution noted directly above add the ability to manage key across various clouds in addition to IBM Cloud.
 
-**Customer or 3rd Party Key Management Solution** - May be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
+ - **Customer or 3rd Party Key Management Solution** - May be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
 
 ### Best Practices:
 {: #key-management-best-practices}
@@ -133,7 +133,7 @@ Data-in-Transit encryption can occur in multiple areas within the IBM Cloud. The
 ### Options:
 {: #data-in-transit-encryption-options}
 
- - **data-in-Transit encryption to IBM Cloud storage** - No options. This is a default function
+ - **Data-in-Transit encryption to IBM Cloud storage** - No options. This is a default function
 
  - **Application Level Data-in-Transition Encryption** - Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum.
 
@@ -142,7 +142,7 @@ Data-in-Transit encryption can occur in multiple areas within the IBM Cloud. The
 ### Best Practices:
 {: #data-in-transit-encryption-best-practices}
 
-Application-level data-in-transition encryption should always be applied in public access situations. Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer. When the traffic is decrypted at the edge, it can be inspected for threats, etc.  Application-level encryption termination should not occur on servers that are in the interior of a network
+Application-level data-in-transition encryption should always be applied in public access situations. Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer. When the traffic is decrypted at the edge, it can be inspected for threats, etc.  Application-level encryption termination should not occur on servers that are in the interior of a network.
 
 ### Solutioning Guidance
 {: #data-in-transit-encryption-best-guidance}
@@ -162,7 +162,7 @@ Certificates can be used in several areas within IBM Cloud to provide data-in-tr
 
  - **IBM Cloud Secrets Manager** - Highly recommended when IBM Cloud is primarily used
 
- - **No Certificate Management** -
+ - **No Certificate Management** - Perhaps applicable in private environments with Dev/QA workloads and or where there is a minimal number of certificates to managed.
 
 ### Best Practices
 {: #certificate-management-best-practices}
@@ -210,33 +210,55 @@ The diagram below provides insight on how IAM works in the IBM Cloud.
 
 (images/IAM.svg)
 
-### Identity and Access - Options, Best Practices and Solutioning Guidance
+### Options
 {: #IAM-Options}
 
-| Options Info     | IBM Cloud default IAM
-                                                                                                                                                                                                                                                                                                                    | · Only IAM option available                                                                                                                                       |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                          | MFA use & complex passwords                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | · Always recommended                                                                                                                                              |
-|                          | Assigning individual-based accesses and policies                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | · Never recommended – users should be placed into access groups or in trusted profiles with specific policies                                                     |
-|                          | Single Sign On (SSO) Federation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | · Applicable where customers already have a single sign on infrastructure or perhaps where customers want to use their established Active Directory or LDAP, etc. |
-| Best Practices       | · [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup) · Always apply a least privilege approach for all cloud accesses. · Never use a root account for any administration. · Always apply context restrictions for IAM access.  · Never apply IAM capabilities to a single user. Use Trusted Profiles or access groups and assign policies to the access group. · Always use multi-factor authentication and a complex password and rotation policy. · Develop thorough documentation that dictates how IAM will be used and managed in your IBM Cloud account(s) · Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states. · Conduct periodic reviews of IAM logs provided by [Activity Tracker](https://docs/activity-tracker?topic=activity-tracker-about) (following section) to look for access anomalies. |                                                                                                                                                                   |
-| Solutioning Guidance | · [Access management in IBM Cloud](https://docs/account?topic=account-cloudaccess) · [How IBM Cloud IAM works](https://docs/account?topic=account-iamoverview)  Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in IBM Cloud Docs for more insight on best IAM practices and solutioning guidance. This language came directly from IBM Cloud docs and I think it is worthwhile to keep in. Customer can also refer to the following location: [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup) Use trusted profiles to assign access to compute resources rather than embedding credentials in applications                                                                                                                                                                                                                                                                            |                                                                                                                                                                   |
-{: caption="Table 5: Classic data center security features"}
+ - Multi-Factor Authentication (MFA) and complex passwords - always recommended
+ - Assigning individual-based accesses and policies - Never recommended – users should be placed into access groups or in trusted profiles with specific policie
+ - Single Sign On (SSO) Federation - Applicable where customers already have a single sign on infrastructure or perhaps where customers want to use their established Active Directory or LDAP, etc.
+
+### Best Practices
+ {: #IAM-best-practices}
+
+ - [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup)
+ - Always apply a least privilege approach for all cloud accesses.
+ - Never use a root account for any administration. · Always apply context restrictions for IAM access.
+ - Never apply IAM capabilities to a single user.
+ - Use Trusted Profiles or access groups and assign policies to the access group. · Always use multi-factor authentication and a complex password and rotation policy. ·
+ - Develop thorough documentation that dictates how IAM will be used and managed in your IBM Cloud account(s) ·
+ - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states. ·
+ - Conduct periodic reviews of IAM logs provided by [Activity Tracker](https://docs/activity-tracker?topic=activity-tracker-about) (following section) to look for access anomalies.
+
+### Solultioning Guidance
+ {: #IAM-guidance}
+
+ - [Access management in IBM Cloud](https://docs/account?topic=account-cloudaccess) ·
+ - [How IBM Cloud IAM works](https://docs/account?topic=account-iamoverview)
+ - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in IBM Cloud Docs for more insight on best IAM practices and solutioning guidance. This language came directly from IBM Cloud docs and I think it is worthwhile to keep in.
+ - Customer can also refer to the following location: [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup) Use trusted profiles to assign access to compute resources rather than embedding credentials in applications
 
 ## IAM with Single Sign-On / Identity Provider Federation
 {: #IAM-SSO}
 
 IBM Cloud IAM allows federation so that you can integrate with your external identity provider (IdP) to securely authenticate external users to your IBM Cloud® account. By using your IdP, you can provide a way for users in your company to use single sign-on (SSO). Please see the following link for general information: [Singe Sign On](https://docs/appid?topic=appid-cd-sso#:~:text=You%20can%20configure%20the%20SSO,before%20the%20SSO%20session%20expires.)
 
-### Single Sign-On / Identity Provider Federation - Options, Best Practices and Solutioning Guidance
+### Options
 {: #SSO-options}
 
-| Options Info         | No SSO                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Applicable where only IBM Cloud IAM is needed.                                                 |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-|                          | SSO                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Applicable where federation with other identity providers or external directories is required. |
-| Best Practices       | Use IBM Cloud Trusted Profiles in conjunction with any SSO solution. Ensure multi-factor authentication with the SSO solution. Enforce granular role and permission management.                                                                                                                                                                                                                                                                               |                                                                                                |
-| Solutioning Guidance | [Which is the right federation option for you?](https://docs/account?topic=account-federation-option-for-you)  IBM Cloud SAML Federation Guide [Enabling authentication from an external identity provider.](https://docs/account?topic=account-idp-integration)  [Managing access for federated users by using trusted profiles](https://docs/account?topic=account-trustedprofile-fedusers-tutorial&interface=ui) |                                                                                                |
-{: caption="Table 6: Identity and Access - Options, Best Practices and Guidance"}
+ - SSO - Applicable where federation with other identity providers or external directories is required.
+ - No - Applicable where only IBM Cloud IAM is needed.
+
+### Best Practices
+{: #SSO-options}
+
+ - Use IBM Cloud Trusted Profiles in conjunction with any SSO solution.
+ - Ensure multi-factor authentication with the SSO solution.
+ - Enforce granular role and permission management.
+
+Solutioning Guidance
+ - [Which is the right federation option for you?](https://docs/account?topic=account-federation-option-for-you)
+ - IBM Cloud SAML Federation Guide [Enabling authentication from an external identity provider.](https://docs/account?topic=account-idp-integration)
+ - [Managing access for federated users by using trusted profiles](https://docs/account?topic=account-trustedprofile-fedusers-tutorial&interface=ui)
 
 ## Secrets Management
 {: #secrets-management}
@@ -266,14 +288,10 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
  - [Managing IAM access for Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-iam&interface=ui)
  - [Using service endpoints to privately connect to Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui)
  - [Securing your data in Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui)
- - [Protecting Secrets Manager resources with context-based restrictions](https://docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui) Secrets Manager instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. Secrets Manager is a single-tenant service. CPU and memory limits are applied per Secrets Manager instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate below 20 req/s. Additionally, limit the number of unique clients that make requests to a single Secrets Manager instance.  Another best practice is the use of one of IBM Cloud’s key management systems (Key Protect or Hyper Protect Crypto Services (HPCS) to encrypt secrets. Guidance on how you should organize your secrets can be found here:
+ - [Protecting Secrets Manager resources with context-based restrictions](https://docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
+ - Secrets Manager instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. Secrets Manager is a single-tenant service. CPU and memory limits are applied per Secrets Manager instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate below 20 req/s. Additionally, limit the number of unique clients that make requests to a single Secrets Manager instance.
+ - Another best practice is the use of one of IBM Cloud’s key management systems (Key Protect or Hyper Protect Crypto Services (HPCS)) to encrypt secrets. Guidance on how you should organize your secrets can be found here:
  - [Organizing Your Secrets.](https://docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | IBM Cloud is focused on enterprise workloads and these workloads should always include secrets management. Never recommended again, but this may be applicable where you have a totally private environment that is used for non-critical dev and test and the like. Secrets here could possibly be embedded into applications here, if security requirements are low and cost is a factor. |
-| Best Practices       | Cloud native secrets management that provides full Lifecyle capabilities and full cloud integration. Automated creation, rotation, revocation and expiration of static secrets Never transmit secrets via plaintext; all should transit using TLS encryption. Note that Secrets Manager is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management. More details can be found here: [Security Design](https://docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                             |
-| Solutioning Guidance | [Managing IAM access for Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-iam&interface=ui) [Using service endpoints to privately connect to Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui) [Securing your data in Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui) [Protecting Secrets Manager resources with context-based restrictions](https://docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui) Secrets Manager instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. Secrets Manager is a single-tenant service. CPU and memory limits are applied per Secrets Manager instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate below 20 req/s. Additionally, limit the number of unique clients that make requests to a single Secrets Manager instance.  Another best practice is the use of one of IBM Cloud’s key management systems (Key Protect or Hyper Protect Crypto Services (HPCS) to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](https://docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui) |
-{: caption="Table 2: Key Management - Options, Best Practices and Guidance"}
-        {: caption="Table 2: Key Management - Options, Best Practices and Guidance"}                                                                                                               |
 
 
 ## Bastion Host and Privilege Identity and Access Management (PIM)
@@ -281,24 +299,31 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
 
 A bastion host is a server used to manage access to an internal or private network from an external network - sometimes called a jump box or jump server. Because bastion hosts often sit in the Internet edge, they typically run a minimum number of services to reduce their attack surface. They are also commonly used to proxy and log communications, such as SSH sessions. Privilege Access Management (PAM) software can be loaded on top of the bastion host to provide more security functionality, granular access control and logging beyond terminal SSH access.
 
-### Bastion Host / Privilege - Options, Best Practices and Solutioning Guidance
+### Options
 {: #bastion-host-options}
 
-| Options Info         | Virtual Server Instance for Bastion Host                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | There are no options for an underlying platform for a Bastion Host. Bastion Hosts must be created on a virtual server instances (VSI) within the confines of a Virtual Private Cloud (VPC).                                                                                                                                                                                                                                                                  |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                          | Bastion Host, No Privilege Access Management (PAM) software                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Not recommended and it can be difficult for users where they can only use a command line interface.                                                                                                                                                                                                                                                                                                                                                          |
-|                          | Bastion with PAM software                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Various 3rd party solutions are in the marketplace, and this is always recommended. Note that IBM Cyber Security Services (CSS) does have a PAM solution here known as Verify. More information on Verify can be found here: IBM CSS [Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds) |
-|                          | No Bastion Host                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Never recommended                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Best Practices       | Bastion hosts should always be accompanied with PAM software. A least privilege approach should always be applied to permissions on the Bastion Host and the PAM software. Detailed logs should be enabled, and regular reviews of logs should be undertaken to look for anomalies. Logs from the Bastion Host and the PAM software should be correlated with other logs to get inferences of threats. Typically, this correlation comes in the form of a Security Event and Information Management (SIEM) Platform. |                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Solutioning Guidance | [Securely access remote instances with a bastion host.](file:///Users/martinbowman/Desktop/Securely%20access%20remote%20instances%20with%20a%20bastion%20host)                                                                                                                                                                                                                                                                                                                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-{: caption="Table 8: Bastion Host - Options, Best Practices and Guidance"}
+ - **Virtual Server Instance for Bastion Host** - There are no options for an underlying platform for a Bastion Host. Bastion Hosts must be created on a virtual server instances (VSI) within the confines of a Virtual Private Cloud (VPC).
+
+ - **Bastion Host, No Privilege Access Management (PAM) Software** - Not recommended in that highly granular access, approval workflows and detailed logging may be needed
+
+ - **Bastion with PAM software** - Various 3rd party solutions are in the marketplace, and this is always recommended. Note that IBM Cyber Security Services (CSS) does have a PAM solution here known as Verify. More information on Verify can be found here: IBM CSS [Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds)
+
+### Best Practices
+{: #bastion-host-best-practices}
+
+ - Bastion hosts should always be accompanied with PAM software. A least privilege approach should always be applied to permissions on the Bastion Host and the PAM software
+ - Detailed logs should be enabled, and regular reviews of logs should be undertaken to look for anomalies.
+ - Logs from the Bastion Host and the PAM software should be correlated with other logs to get inferences of threats. Typically, this correlation comes in the form of a Security Event and Information Management (SIEM) Platform.
+
+### Solutioning Guidance
+{: #bastion-host-guidance}
+
+ - [Securely access remote instances with a bastion host.](file:///Users/martinbowman/Desktop/Securely%20access%20remote%20instances%20with%20a%20bastion%20host)
 
 ## Application Security
 {: #app-security}
 
-
-
-## Web Application Firewalling (WAF)
+### Web Application Firewalling (WAF)
 {: #WAF}
 
 A WAF helps protect web applications by filtering and monitoring HTTP traffic between a web application and the Internet. A WAF is an OSI protocol Layer-7 defense in the OSI model, and it is not designed to defend against all types of attacks. IBM Cloud has two ways to provide web application firewalling at the Internet edge. One that is typically used in a Content Delivery Network (CDN) and which is named Cloud Internet Services (CIS). The other WAF option is using NexGen firewalls that can be placed on the “edge” or in front Transit VPCs. You can find information on your NexGen firewalls WAF capabilities in their respective product information.
@@ -326,26 +351,28 @@ A WAF helps protect web applications by filtering and monitoring HTTP traffic be
 ## Distributed Denial of Service (DDoS)
 {: #DDoS}
 
-A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. These attacks can occur at the application layer and the network layer. IBM Cloud has two ways of providing DDoS protection for designs that have public internet access. One is using Cloud Internet Services, and the other is using NexGen firewalls, that can be deployed on Virtual Server Instances at the Internet edge. Please see the following links for more information: [Dealing with Distributed Denial of Service attacks](https://docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts) and [About IBM Cloud Internet Services](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis). Information on NexGen firewalls DDoS capabilities can be found in their respective product information.
+A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. These attacks can occur at the application layer and the network layer. IBM Cloud has two ways of providing DDoS protection for designs that have public internet access. One is using Cloud Internet Services, and the other is using NexGen firewalls, that can be deployed on Virtual Server Instances at the Internet edge. Please see the following links for more information:
+- [Dealing with Distributed Denial of Service attacks](https://docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts) and
+- [About IBM Cloud Internet Services](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis). Information on NexGen firewalls DDoS capabilities can be found in their respective product information.
 
-### Options
+### Options:
  {: #ddos-options}
 
  - **Cloud Internet Services  (CIS)** - Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner.
  - **NexGen Firewall** - Perhaps more applicable where an edge firewall is already being used and users are not dispersed, and cost is factor.
  - **No DDoS** - Not required in private only networks.
 
-### Best Practice
+### Best Practices:
  {: #ddos-best-practice}
 
  - [Best practices for CIS setup](https://docs/cis?topic=cis-best-practices-for-cis-setup)
  - Create a DDoS attack threat model that is a structured approach to identifying and analyzing potential risks to your online service or website from a DDoS attack. Implement rate limiting by controlling the amount of traffic sent to a network or server. Ensure log monitoring and analysis of web traffic to look for anomalies such as unusual high traffic volume or server errors, etc.
 
-### Solutioning Guidance
+### Solutioning Guidance:
 {: #ddos-guidance}
 
- - [FAQs for IBM Cloud Internet Services](https://docs/cis?topic=cis-faq) [Managing your CIS deployment](https://docs/cis?topic=cis-manage-your-cis-deployment)
-
+ - [FAQs for IBM Cloud Internet Services](https://docs/cis?topic=cis-faq)
+ - [Managing your CIS deployment](https://docs/cis?topic=cis-manage-your-cis-deployment)
 
 ## Infrastructure and Endpoint Security
 {: #IES}
@@ -371,12 +398,12 @@ https://w3.ibm.com/services/lighthouse/documents/169
 
 IBM Cloud provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads. Please see the table below. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius”. Please see the following links for more information on network segmentation:
 
- - [Security in Your VPC](https://docs/vpc?topic=vpc-security-in-your-vpc) and
- - [About Networking](https://docs/vpc?topic=vpc-about-networking-for-vpc) and
- - [Security in your VPC](https://docs/vpc?topic=vpc-security-in-your-vpc).
+ - [Security in Your VPC](https://docs/vpc?topic=vpc-security-in-your-vpc)
+ - [About Networking](https://docs/vpc?topic=vpc-about-networking-for-vpc)
+ - [Security in your VPC](https://docs/vpc?topic=vpc-security-in-your-vpc)
 
 ### Segmentation Methods:
-{:#segmentation-methods}
+{: #segmentation-methods}
 
  - **Virtual Private Cloud** - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, etc. And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://docs/vpc?topic=vpc-about-vpc)                                                                                 |
  - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](https://docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.)
@@ -387,21 +414,21 @@ IBM Cloud provides several standard network isolation capabilities to help custo
  - **NexGen Firewalls** - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
 
 ### Options:
-{:#segmentation-options}
+{: #segmentation-options}
 
  - VPC - There are no options to VPC, but customer could elect, for example, to only use one VPC and place all resources in that VPC. This could be used in non-critical environments where there is only one function, e.g., test and there is no public access.
  - Security Groups - There are no alternatives in a VPC environment.
 
- ### Best Practices:
- {:#segmentation-best-practices}
+### Best Practices:
+{: #segmentation-best-practices}
 
 In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation. Separate production, dev, test, etc. from each other with a VPC segmentation. Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed. Conduct periodic reviews of all ACL and Security Group rules. Understand traffic flows between servers so as to understand what segmentation is needed.
 
 ### Solutioning Guidance:
+{: #segmentation-guidance}
 
  - [Getting started with Virtual Private Cloud (VPC)](https://docs/vpc?topic=vpc-getting-started)
  - [Adding and deleting pretext filters](https://docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui)
-
 
 ## Edge Protection / Firewalling
 {: #core-network-protection}
