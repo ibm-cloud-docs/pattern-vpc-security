@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-27"
+lastupdated: "2024-06-28"
 
 subcollection: pattern-vpc-security
 
@@ -57,11 +57,12 @@ IBM uses a broad standard framework in all its security endeavors, e.g., design,
 
 IBM Cybersecurity Services is a specific business unit within IBM that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The table below provides an overview of their solutions, and these can be considered additional options in IBM Cloud that may be applicable in certain scenarios, e.g., hybrid or mult-cloud situations. Note: their separate consulting and managed service are not covered here. As IBM Cloud security domains are discussed in the following sections, options in the domains will be presented and some of those could be IBM CSS solutions.
 
-| Infrastructure & Endpoint Security | Various 3rd Party Firewalls, e.g., Palo Alto, Cisco, etc. [QRadar Security Event & Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-response) Various 3rd party Endpoint Protection / Detection & Response (EPP/EDR) solutions [Qradar / ReaqTa](https://www.ibm.com/products/qradar-edr) endpoint detection and response [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management) unified endpoint management |
-|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Data Security                      | [Guardium](https://www.ibm.com/guardium) data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=overview) [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager)                                                                                                                                                                                                            |
-| Identity & Access Management       | Verify security access manager                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Container Security                 | 3rd Parties – Palo Alto Prisma Cloud & Illumio
+ - **Infrastructure & Endpoint Security** - Various 3rd Party Firewalls, e.g., Palo Alto, Cisco, etc.
+ - [QRadar Security Event & Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-responseVarious 3rd party Endpoint Protection / Detection & Response (EPP/EDR) solutions [Qradar / ReaqTa](https://www.ibm.com/products/qradar-edr) endpoint detection and response  unified endpoint management
+ - **Unified Endpoint Management** - [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management)
+ - **Data Security** - [Guardium](https://www.ibm.com/guardium) data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=overview) [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager)
+ - **Privilege Access Management** - Verify security access manager
+ - **Container Security** - 3rd Parties – Palo Alto Prisma Cloud & Illumio
 
 ## Data Security
 {: #data-security}
@@ -227,8 +228,9 @@ The diagram below provides insight on how IAM works in the IBM Cloud.
 
  - [Access management in IBM Cloud](https://docs/account?topic=account-cloudaccess) ·
  - [How IBM Cloud IAM works](https://docs/account?topic=account-iamoverview)
- - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in IBM Cloud Docs for more insight on best IAM practices and solutioning guidance. This language came directly from IBM Cloud docs and I think it is worthwhile to keep in.
- - Customer can also refer to the following location: [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup) Use trusted profiles to assign access to compute resources rather than embedding credentials in applications
+ - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in IBM Cloud Docs for more insight on best IAM practices and solutioning guidance.
+ - [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup)
+ - Use trusted profiles to assign access to compute resources rather than embedding credentials in applications
 
 ## IAM with Single Sign-On / Identity Provider Federation
 {: #IAM-SSO}
@@ -239,7 +241,7 @@ IBM Cloud IAM allows federation so that you can integrate with your external ide
 {: #SSO-options}
 
  - SSO - Applicable where federation with other identity providers or external directories is required.
- - No - Applicable where only IBM Cloud IAM is needed.
+ - No SSO - Customers may forgo SSO if they have no federation with Identity Providers.
 
 ### Best Practices
 {: #SSO-options}
@@ -273,8 +275,6 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
  - Automated creation, rotation, revocation and expiration of static secrets
  - Never transmit secrets via plaintext; all should transit using TLS encryption.
 
- Note that Secrets Manager is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management. More details can be found here: [Security Design](https://docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.
-
 ### Solutioning Guidance:
 {: #secrets-management-best-guidance}
 
@@ -286,6 +286,7 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
  - Another best practice is the use of one of IBM Cloud’s key management systems (Key Protect or Hyper Protect Crypto Services (HPCS)) to encrypt secrets. Guidance on how you should organize your secrets can be found here:
  - [Organizing Your Secrets.](https://docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
 
+Note that Secrets Manager is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management. More details can be found here: [Security Design](https://docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.
 
 ## Bastion Host and Privilege Identity and Access Management (PIM)
 {: #bastion-host}
@@ -337,7 +338,6 @@ A WAF helps protect web applications by filtering and monitoring HTTP traffic be
  - Cloud Internet Services (CIS) [Best practices for CIS setup](https://docs/cis?topic=cis-best-practices-for-cis-setup)
  - [Bring Your Own (BYO) firewalls in IBM Cloud.](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c2VjdXJpdHk%3D)
  - [Deploying Fortigate firewall on IBM VPC Cloud.](https://docs.fortinet.com/document/fortigate-public-cloud/7.4.0/ibm-cloud-administration-guide/944419/deploying-fortigate-vm-a-p-ha-on-ibm-vpc-cloud-byol)
-
 
 ## Distributed Denial of Service (DDoS)
 {: #DDoS}
@@ -405,7 +405,7 @@ IBM Cloud provides several standard network isolation capabilities to help custo
 ### Options:
 {: #segmentation-options}
 
- - VPC - There are no options to VPC, but customer could elect, for example, to only use one VPC and place all resources in that VPC. This could be used in non-critical environments where there is only one function, e.g., test and there is no public access.
+ - VPC - There are no options to VPC, but customer could elect, for example, to only use one VPC and place all resources in that VPC. This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor.
  - Security Groups - There are no alternatives in a VPC environment.
 
 ### Best Practices:
@@ -443,7 +443,7 @@ Segregation techniques were discussed in the previous section and in some way, t
 
  - Knowing and documenting all traffic flows. · Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary.
  - Periodic firewall rules reviews
- -  [CIS best practices](https://docs/cis?topic=cis-best-practices-for-cis-setup)
+ - [CIS best practices](https://docs/cis?topic=cis-best-practices-for-cis-setup)
 
 ### Solutoning Guidance
 {: #core-network-protection-guidance}
@@ -495,12 +495,12 @@ IBM Cloud has Virtual Private Endpoints that allow secure access to a variety of
 ### Virtual Private Endpoints - Options, Best Practices and Solutioning Guidance
 {: #VPE-options}
 
- - **Use of VPEs** - always recommended due to its inherent security and private traffic
- - **Cloud Service Access Through the Internet** - Never recommended, but possible
+ - **Use of VPEs** - always recommended due to its inherent security and private traffic transit
+ - **Cloud Service Access Through the Internet** - Never recommended, but possible...
                                                                                                                                                                                     ### Best Practices
 {: #VPE-options}
 
- - Virtual Private Endpoints should always be used when there is a need to access cloud services as opposed to any access over the Internet. VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE. Another is that Security Groups can additionally be applied to control inbound application traffic.
+ Virtual Private Endpoints should always be used when there is a need to access cloud services as opposed to any access over the Internet. VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE. Another is that Security Groups can additionally be applied to control inbound application traffic.
 
 ### Solutioning Guidance
 {: #VPE-guidance}
