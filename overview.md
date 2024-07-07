@@ -58,8 +58,8 @@ IBM uses a broad standard framework in all its security endeavors, e.g., design,
 IBM Cybersecurity Services is a specific business unit within IBM that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The table below provides an overview of their solutions, and these can be considered additional options in IBM Cloud that may be applicable in certain scenarios, e.g., hybrid or mult-cloud situations. Note: their separate consulting and managed service are not covered here. As IBM Cloud security domains are discussed in the following sections, options in the domains will be presented and some of those could be IBM CSS solutions.
 
  - **Infrastructure & Endpoint Security** - Various 3rd Party Firewalls, e.g., Palo Alto, Cisco, etc.
- - [QRadar Security Event & Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-responseVarious 3rd party
- - Endpoint Protection / Detection & Response (EPP/EDR) solutions [Qradar / ReaqTa](https://www.ibm.com/products/qradar-edr) endpoint detection and response  unified endpoint management
+ - **QRadar Security Event & Information Management (SIEM), Network Detection and Response (NDR)**(https://www.ibm.com/docs/en/qsip/7.5?)topic=qradar-network-detection-responseVarious 3rd party
+ - **Endpoint Protection / Detection & Response (EPP/EDR) solution**s** [Qradar / ReaqTa](https://www.ibm.com/products/qradar-edr) endpoint detection and response  unified endpoint management
  - **Unified Endpoint Management** - [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management)
  - **Data Security** - [Guardium](https://www.ibm.com/guardium) data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=overview) [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager)
  - **Privilege Access Management** - Verify security access manager
@@ -144,7 +144,7 @@ Data-in-Transit encryption can occur in multiple areas within the IBM Cloud. The
 ### Best Practices:
 {: #data-in-transit-encryption-best-practices}
 
-Application-level data-in-transition encryption should always be applied in public access situations. Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer. When the traffic is decrypted at the edge, it can be inspected for threats, etc.  Application-level encryption termination should not occur on servers that are in the interior of a network.
+Application-level data-in-transition encryption should always be applied in public access situations.  Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer.  When the traffic is decrypted at the edge, it can be inspected for threats, etc.  Application-level encryption termination should not occur on servers that are in the interior of a network.
 
 ### Solutioning Guidance
 {: #data-in-transit-encryption-best-guidance}
@@ -152,7 +152,8 @@ Application-level data-in-transition encryption should always be applied in publ
  - [Encryption in transit - Securing mount connections between file share and virtual server instance](https://docs/vpc?topic=vpc-file-storage-vpc-eit)
  - [SSL offload with IBM Cloud Load Balancer](https://docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer)
  - [Managing origin certificates](https://docs/cis?topic=cis-cis-origin-certificates)
- - [Setting Transport Layer Security (TLS) options](https://docs/cis?topic=cis-cis-tls-options) [Getting started with Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui) (Secrets Manager will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.)Also see the following immediate section relating to certificates.
+ - [Setting Transport Layer Security (TLS) options](https://docs/cis?topic=cis-cis-tls-options)
+ - [Getting started with Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui) (Secrets Manager will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.)Also see the following immediate section relating to certificates.
 
 ## Certificate Management
 {: #certificate-management}
@@ -162,7 +163,7 @@ Certificates can be used in several areas within IBM Cloud to provide data-in-tr
 ### Options:
 {: #certificate-management-options}
 
- - **IBM Cloud Secrets Manager** - Highly recommended when IBM Cloud is primarily used
+ - **IBM Cloud Secrets Manager** - Highly recommended when IBM Cloud is primarily used.
  - **No Certificate Management** - Perhaps applicable in private environments with Dev/QA workloads and or where there is a minimal number of certificates to managed.
  - **Customer-Owned or 3rd Party Certificate Management Solu6tion**
 
@@ -170,9 +171,9 @@ Certificates can be used in several areas within IBM Cloud to provide data-in-tr
 {: #certificate-management-best-practices}
 
  - Regular rotations of certificates.
- - Notification of expiring certificates. ·
- - Certificate storage in a hardware security module. ·
- - Maintain certificate inventory. ·
+ - Notification of expiring certificates.
+ - Certificate storage in a hardware security module.
+ - Maintain certificate inventory.
  - Document certificate management procedures.
 
 ### Certificate Management Solutioning Guidance
@@ -185,7 +186,7 @@ Certificates can be used in several areas within IBM Cloud to provide data-in-tr
 ### Data Lifecycle Management and Governance
 {: #data-lifecycle-management}
 
-IBM Cloud provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm. One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/guardium){: external}, as noted in Section 4.
+IBM Cloud provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm.  One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/guardium){: external}, as noted in Section 4.
 
 ## Identity and Access
 {: #identity-and-access}
@@ -193,7 +194,7 @@ IBM Cloud provides a range of data security measures as discussed, but customers
 ## IBM Cloud Identity and Access Management (IAM)
 {: #IAM}
 
-IBM Cloud has a full featured native IAM that can control all aspects of admin user actions and services within an account. It enables you to securely authenticate users for platform services and control access to resources consistently across IBM Cloud. Please see the following link for more information: [Access management in IBM Cloud](https://docs/account?topic=account-cloudaccess) and [How IBM Cloud IAM works.](/docs/account?topic=account-iamoverview&interface=ui) The table below highlights some of the major IAM functions available.
+IBM Cloud has a full featured native IAM that can control all aspects of admin user actions and services within an account.  It enables you to securely authenticate users for platform services and control access to resources consistently across IBM Cloud.  Please see the following link for more information: [Access management in IBM Cloud](https://docs/account?topic=account-cloudaccess) and [How IBM Cloud IAM works.](/docs/account?topic=account-iamoverview&interface=ui) The table below highlights some of the major IAM functions available.
 
 | IAM Capability                                                                                                 | Function / Feature                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -223,21 +224,22 @@ The diagram below provides insight on how IAM works in the IBM Cloud.
 
  - [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup)
  - Always apply a least privilege approach for all cloud accesses.
- - Never use a root account for any administration. · Always apply context restrictions for IAM access.
+ - Never use a root account for any administration.  Always apply context restrictions for IAM access.
  - Never apply IAM capabilities to a single user.
- - Use Trusted Profiles or access groups and assign policies to the access group. · Always use multi-factor authentication and a complex password and rotation policy. ·
- - Develop thorough documentation that dictates how IAM will be used and managed in your IBM Cloud account(s) ·
- - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states. ·
+ - Use Trusted Profiles or access groups and assign policies to the access group.
+ - Always use multi-factor authentication and a complex password and rotation policy.
+ - Develop thorough documentation that dictates how IAM will be used and managed in your IBM Cloud account(s).
+ - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states.
  - Conduct periodic reviews of IAM logs provided by [Activity Tracker](https://docs/activity-tracker?topic=activity-tracker-about) (following section) to look for access anomalies.
 
 ### Solultioning Guidance
  {: #IAM-guidance}
 
- - [Access management in IBM Cloud](https://docs/account?topic=account-cloudaccess) ·
- - [How IBM Cloud IAM works](https://docs/account?topic=account-iamoverview)
- - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in IBM Cloud Docs for more insight on best IAM practices and solutioning guidance.
- - [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup)
- - Use trusted profiles to assign access to compute resources rather than embedding credentials in applications
+ - [Access management in IBM Cloud](https://docs/account?topic=account-cloudaccess),
+ - [How IBM Cloud IAM works](https://docs/account?topic=account-iamoverview),
+ - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in IBM Cloud Docs for more insight on best IAM practices and solutioning guidance,
+ - [Best Practices for Organizing Resources and Assigning Access](https://docs/account?topic=account-account_setup), and
+ - Use trusted profiles to assign access to compute resources rather than embedding credentials in applications.
 
 ## IAM with Single Sign-On / Identity Provider Federation
 {: #IAM-SSO}
@@ -267,37 +269,36 @@ IBM Cloud IAM allows federation so that you can integrate with your external ide
 ## Secrets Management
 {: #secrets-management}
 
-Cloud secrets management is a way to securely store and manage API keys, certificates, user ID and password credentials and other sensitive information with automation and integration. IBM Cloud’s service here is known as Secrets Manager and it has several key security features such as secrets lifecycle management, logging, default encryption, IAM integration, versioning, etc. Please see the following link for more information: [Getting started with Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-getting-started)
+Cloud secrets management is a way to securely store and manage API keys, certificates, user ID and password credentials and other sensitive information with automation and integration.  IBM Cloud’s service here is known as Secrets Manager and it has several key security features such as secrets lifecycle management, logging, default encryption, IAM integration, versioning, etc. Please see the following link for more information: [Getting started with Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-getting-started)
 
 ### Options:
 {: #secrets-management-options}
 
-- **IBM Cloud Secrets Manager** - Automated and native secrets management solution that is fully integrated with IBM.
-- **No Secrets Management** - Never recommended again, but this may be applicable where you have a totally private environment that is used for non-critical dev and test and the like. Secrets here could possibly be embedded into applications here, if security requirements are low and cost is a factor.
+- **IBM Cloud Secrets Manager** - Automated and native secrets management solution that is fully integrated with IBM,
+- **No Secrets Management** - Never recommended again, but this may be applicable where you have a totally private environment that is used for non-critical dev and test and the like. Secrets here could possibly be embedded into applications here, if security requirements are low and cost is a factor, and
 - **3rd Party Secrets Managment Solution** - This option may be applicable in multi-cloud situation but secrets management automation with IBM Cloud would be lost.
 
 ### Best Practices:
 {: #secrets-management-best-practices}
 
- - IBM Cloud is focused on enterprise workloads and these workloads should always include secrets management
- - Cloud native secrets management that provides full Lifecyle capabilities and full cloud integration.
- - Automated creation, rotation, revocation and expiration of static secrets
+ - IBM Cloud is focused on enterprise workloads and these workloads should always include secrets management,
+ - Cloud native secrets management that provides full Lifecyle capabilities and full cloud integration,
+ - Automated creation, rotation, revocation and expiration of static secrets, and
  - Never transmit secrets via plaintext; all should transit using TLS encryption.
 
 ### Solutioning Guidance:
 {: #secrets-management-best-guidance}
 
- - [Managing IAM access for Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-iam&interface=ui)
- - [Using service endpoints to privately connect to Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui)
- - [Securing your data in Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui)
+ - [Managing IAM access for Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-iam&interface=ui),
+ - [Using service endpoints to privately connect to Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui),
+ - [Securing your data in Secrets Manager](https://docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui),
  - [Protecting Secrets Manager resources with context-based restrictions](https://docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
- - Secrets Manager instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. Secrets Manager is a single-tenant service. CPU and memory limits are applied per Secrets Manager instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate below 20 req/s. Additionally, limit the number of unique clients that make requests to a single Secrets Manager instance.
- - Another best practice is the use of one of IBM Cloud’s key management systems (Key Protect or Hyper Protect Crypto Services (HPCS)) to encrypt secrets. Guidance on how you should organize your secrets can be found here:
- - [Organizing Your Secrets.](https://docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
+ - Secrets Manager instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. Secrets Manager is a single-tenant service. CPU and memory limits are applied per Secrets Manager instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate below 20 req/s. Additionally, limit the number of unique clients that make requests to a single Secrets Manager instance,
+ - Another best practice is the use of one of IBM Cloud’s key management systems (Key Protect or Hyper Protect Crypto Services (HPCS)) to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](https://docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
 
 Note that Secrets Manager is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management. More details can be found here: [Security Design](https://docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.
 
-## Bastion Host and Privilege Identity and Access Management (PIM)
+## Bastion Host and Privilege Identity and Access Management (PAM)
 {: #bastion-host}
 
 A bastion host is a server used to manage access to an internal or private network from an external network - sometimes called a jump box or jump server. Because bastion hosts often sit in the Internet edge, they typically run a minimum number of services to reduce their attack surface. They are also commonly used to proxy and log communications, such as SSH sessions. Privilege Access Management (PAM) software can be loaded on top of the bastion host to provide more security functionality, granular access control and logging beyond terminal SSH access.
@@ -305,21 +306,21 @@ A bastion host is a server used to manage access to an internal or private netwo
 ### Options
 {: #bastion-host-options}
 
- - **Virtual Server Instance for Bastion Host** - There are no options for an underlying platform for a Bastion Host. Bastion Hosts must be created on a virtual server instances (VSI) within the confines of a Virtual Private Cloud (VPC).
- - **Bastion Host, No Privilege Access Management (PAM) Software** - Not recommended in that highly granular access, approval workflows and detailed logging may be needed
- - **Bastion with PAM software** - Various 3rd party solutions are in the marketplace, and this is always recommended. Note that IBM Cyber Security Services (CSS) does have a PAM solution here known as Verify. More information on Verify can be found here: IBM CSS [Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds)
+ - **Virtual Server Instance for Bastion Host** - There are no options for an underlying platform for a Bastion Host. Bastion Hosts must be created on a virtual server instances (VSI) within the confines of a Virtual Private Cloud (VPC),
+ - **Bastion Host, No Privilege Access Management (PAM) Software** - Not recommended in that highly granular access, approval workflows and detailed logging may be needed,
+ - **Bastion with PAM software** - Various 3rd party solutions are in the marketplace, and this is always recommended. Note that IBM Cyber Security Services (CSS) does have a PAM solution here known as **Verify**. More information on **Verify** can be found here: IBM CSS [Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds)
 
 ### Best Practices
 {: #bastion-host-best-practices}
 
- - Bastion hosts should always be accompanied with PAM software. A least privilege approach should always be applied to permissions on the Bastion Host and the PAM software
- - Detailed logs should be enabled, and regular reviews of logs should be undertaken to look for anomalies.
+ - Bastion hosts should always be accompanied with PAM software.  A least privilege approach should always be applied to permissions on the Bastion Host and the PAM software,
+ - Detailed logs should be enabled, and regular reviews of logs should be undertaken to look for anomalies, and
  - Logs from the Bastion Host and the PAM software should be correlated with other logs to get inferences of threats. Typically, this correlation comes in the form of a Security Event and Information Management (SIEM) Platform.
 
 ### Solutioning Guidance
 {: #bastion-host-guidance}
 
- - [Securely access remote instances with a bastion host.](file:///Users/martinbowman/Desktop/Securely%20access%20remote%20instances%20with%20a%20bastion%20host)
+ - [Securely access remote instances with a bastion host.] (https://docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server)
 
 ## Application Security
 {: #app-security}
@@ -339,21 +340,25 @@ A WAF helps protect web applications by filtering and monitoring HTTP traffic be
 ### Best Practices:
 {: #WAF-best-practices}
 
- - WAF should always be used in public access environments. There are many options and configurations with WAF that relate to HTTP/HTTPS, domains, detection policies, etc. Customers thoroughly review these items and adapt to their own specific security needs and associated security policies. As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies. WAF logs should generally be correlated with other logs, perhaps through a Security Event and Information Management (SIEM) platform, if available
+ - WAF should always be used in public access environments. There are many options and configurations with WAF that relate to HTTP/HTTPS, domains, detection policies, etc.,
+ - Customers thoroughly review these items and adapt to their own specific security needs and associated security policies,
+ - As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies, and
+ - WAF logs should generally be correlated with other logs, perhaps through a Security Event and Information Management (SIEM) platform, if available.
 
 ### Solutioning Guidance:
  {: #WAF-best-guidance}
 
- - Cloud Internet Services (CIS) [Best practices for CIS setup](https://docs/cis?topic=cis-best-practices-for-cis-setup)
- - [Bring Your Own (BYO) firewalls in IBM Cloud.](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c2VjdXJpdHk%3D)
+ - Cloud Internet Services (CIS) [Best practices for CIS setup](https://docs/cis?topic=cis-best-practices-for-cis-setup),
+ - [Bring Your Own (BYO) firewalls in IBM Cloud.](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c2VjdXJpdHk%3D), and
  - [Deploying Fortigate firewall on IBM VPC Cloud.](https://docs.fortinet.com/document/fortigate-public-cloud/7.4.0/ibm-cloud-administration-guide/944419/deploying-fortigate-vm-a-p-ha-on-ibm-vpc-cloud-byol)
 
 ## Distributed Denial of Service (DDoS)
 {: #DDoS}
 
-A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. These attacks can occur at the application layer and the network layer. IBM Cloud has two ways of providing DDoS protection for designs that have public internet access. One is using Cloud Internet Services, and the other is using NexGen firewalls, that can be deployed on Virtual Server Instances at the Internet edge. Please see the following links for more information:
+A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic.  These attacks can occur at the application layer and the network layer. IBM Cloud has two ways of providing DDoS protection for designs that have public internet access.  One is using Cloud Internet Services, and the other is using NexGen firewalls, that can be deployed on Virtual Server Instances at the Internet edge.  Please see the following links for more information:
 - [Dealing with Distributed Denial of Service attacks](https://docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts)
-- [About IBM Cloud Internet Services](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis). Information on NexGen firewalls DDoS capabilities can be found in their respective product information.
+- [About IBM Cloud Internet Services](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis).
+- Information on NexGen firewalls DDoS capabilities can be found in their respective product information.
 
 ### Options:
  {: #ddos-options}
@@ -365,9 +370,9 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Best Practices:
  {: #ddos-best-practice}
 
- - [Best practices for CIS setup](https://docs/cis?topic=cis-best-practices-for-cis-setup)
- - Create a DDoS attack threat model that is a structured approach to identifying and analyzing potential risks to your online service or website from a DDoS attack.
- - Implement rate limiting by controlling the amount of traffic sent to a network or server
+ - [Best practices for CIS setup](https://docs/cis?topic=cis-best-practices-for-cis-setup),
+ - Create a DDoS attack threat model that is a structured approach to identifying and analyzing potential risks to your online service or website from a DDoS attack,
+ - Implement rate limiting by controlling the amount of traffic sent to a network or server, and
  - Ensure log monitoring and analysis of web traffic to look for anomalies such as unusual high traffic volume or server errors, etc.
 
 ### Solutioning Guidance:
@@ -379,13 +384,10 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ## Infrastructure and Endpoint Security
 {: #IES}
 
-https://w3.ibm.com/services/lighthouse/documents/169
-
-
 ## Core Network Protection / Network Segmentation
 {: #core-network-protection}
 
-IBM Cloud provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads. Please see the table below. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius”. Please see the following links for more information on network segmentation:
+IBM Cloud provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads.  Please see the methocs. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius”.  Please see the following links for more information on network segmentation:
 
  - [Security in Your VPC](https://docs/vpc?topic=vpc-security-in-your-vpc)
  - [About Networking](https://docs/vpc?topic=vpc-about-networking-for-vpc)
@@ -394,17 +396,17 @@ IBM Cloud provides several standard network isolation capabilities to help custo
 ### Segmentation Methods:
 {: #segmentation-methods}
 
- - **Virtual Private Cloud** - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, etc. And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://docs/vpc?topic=vpc-about-vpc)                                                                                 |
- - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](https://docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.)
- - **Security Groups** - Segregates traffic in and out of virtual server network interfaces. This could be considered host firewalling. [Security Groups](https://docs/security-groups?topic=security-groups-about-ibm-security-groups)
- - **Transit Gateway** - IBM Cloud’s Transit Gateway can interconnect IBM Cloud classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the IBM Cloud network. Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your IBM Cloud classic infrastructure VPCs to PowerVS environments. Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering. More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](https://docs/dl?topic=dl-prefix-filtering).
+ - **Virtual Private Cloud** - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, etc.  And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://docs/vpc?topic=vpc-about-vpc),
+ - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](https://docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.),
+ - **Security Groups** - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](https://docs/security-groups?topic=security-groups-about-ibm-security-groups)
+ - **Transit Gateway** - IBM Cloud’s Transit Gateway can interconnect IBM Cloud classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the IBM Cloud network. Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your IBM Cloud classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](https://docs/dl?topic=dl-prefix-filtering).
  - **NexGen Firewalls** - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
 
 ### Options:
 {: #segmentation-options}
 
- - VPC - There are no options to VPC, but customer could elect, for example, to only use one VPC and place all resources in that VPC. This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor.
- - Security Groups - There are no alternatives in a VPC environment.
+ - **VPC** - There are no options to VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor, and
+ - **Security Groups** - There are no alternatives in a VPC environment.
 
 ### Best Practices:
 {: #segmentation-best-practices}
@@ -422,7 +424,7 @@ IBM Cloud provides several standard network isolation capabilities to help custo
 ## Edge Protection / Firewalling
 {: #core-network-protection}
 
-Segregation techniques were discussed in the previous section and in some way, these can be considered firewalling methods as well. IBM Cloud has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic. Most notable are ACLs that are firewalls that are applied to created cloud subnets. Security Group are firewalls that are applied virtual server instance (VSI) network interfaces. Security Groups work at the L3/L4 level controlling allowed IP addresses, ports, and protocols.
+Segregation techniques were discussed in the previous section and in some way, these can be considered firewalling methods as well.  IBM Cloud has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic.  Most notable are ACLs that are firewalls that are applied to created cloud subnets.  Security Group are firewalls that are applied virtual server instance (VSI) network interfaces.  Security Groups work at the L3/L4 level controlling allowed IP addresses, ports, and protocols.
 
  - [Access Control Lists](https://docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.) Controls ingress and egress IP addresses, ports and protocol in subnets.
  - [Security Groups](https://docs/security-groups?topic=security-groups-about-ibm-security-groups) - Controls ingress and egress IP addresses, ports and protocols on virtual server instances network interfaces. This can be considered host firewalling.
@@ -433,7 +435,7 @@ Segregation techniques were discussed in the previous section and in some way, t
 ### Options:
 {: #firewalling-options}
 
- - **VPCs, Access Control Lists (ACLs), Security Groups** - No options – mandatory for all VPC environments. [(exploring firewalls)](https://docs/security-groups?topic=security-groups-exploring-firewalls)
+ - **VPCs, Access Control Lists (ACLs), Security Groups** - No options – mandatory for all VPC environments. Please see: [(exploring firewalls)](https://docs/security-groups?topic=security-groups-exploring-firewalls)
 
  - **NexGen Firewalls** - Required when there are public connections to the Internet and Cloud Internet Services (CIS) will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, etc. Optional in private connections to on-prem, but still recommended. Optional when Cloud Internet Services (CIS) will be used.
  - **Cloud Internet Services (CIS)** - [Cloud Internet Services (CIS)](https://docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
@@ -441,9 +443,9 @@ Segregation techniques were discussed in the previous section and in some way, t
 ### Best Practices
 {: #core-network-protection-best-practices}
 
- - Knowing and documenting all traffic flows.
- - Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary.
- - Periodic firewall rules reviews
+ - Knowing and documenting all traffic flows,
+ - Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary,
+ - Periodic firewall rules reviews, and
  - [CIS best practices](https://docs/cis?topic=cis-best-practices-for-cis-setup)
 
 ### Solutoning Guidance
@@ -458,7 +460,7 @@ Segregation techniques were discussed in the previous section and in some way, t
 ## Endpoint Detection / Endpoint Protection (EDR/EPP)
 {: #EDR-EPP}
 
-EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, etc. Now within IBM Cloud’s Security and Compliance solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection / Detection (EPP/EDR) security. This provides a broad range of security capabilities to include:
+EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, etc.  Now within IBM Cloud’s Security and Compliance solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection / Detection (EPP/EDR) security.  This provides a broad range of security capabilities to include:
 
 -   A unified and centralized framework to manage the security and compliance of applications, workloads, and infrastructure,
 -   Host and image scanning, auditing, and runtime vulnerability management capabilities,
@@ -474,9 +476,9 @@ Also see this link which has broad information on endpoint security: [what is en
 ### Options
 {: #endpoint-security-options}
 
- - **IBM Cloud Workload Protection** - Fully integrated into IBM Cloud with automation aspects and ties in with IBM Cloud Security and Compliance Center
- - **3rd Party Endpoint Protection and Detection (EPP/EDR)** - Stand-alone solutions without IBM Cloud integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services (CSS), has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax). IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
- - **No Workload Protection Endpoint Security** - This option depends upon the customer risk profile and what type of workloads are being used. This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments.
+ - **IBM Cloud Workload Protection** - Fully integrated into IBM Cloud with automation aspects and ties in with IBM Cloud Security and Compliance Center,
+ - **3rd Party Endpoint Protection and Detection (EPP/EDR)** - Stand-alone solutions without IBM Cloud integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services (CSS), has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax).  IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
+ - **No Workload Protection Endpoint Security** - This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments.
 
 ### Best Practices
 {: #endpoint-security-best-practices}
@@ -618,8 +620,7 @@ Threat detection in IBM Cloud can occur in various places. NexGen firewalls depl
 | NexGen Firewalls (see respective firewall documentation)                                                                                                                                                                                      | Anomalous traffic, blocked traffic, firewall rule hits, anomalous files, URLs, DNS queries, etc. |
 | [Cloud Internet Services (CIS)](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis)                                                                                                                               | Layer 7/ WAF detections                                                                          |
 | Cloud Workload Protection   [About Posture Managemen](https://docs/workload-protection?topic=workload-protection-about)t  [Key Features](https://docs/workload-protection?topic=workload-protection-key-features) | Runtime threat detections and vulnerability discovery around virtual server instances.           |
-| [Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-posture-management)                                                                                                                 | Non-compliant or incorrect cloud configurations                                                  |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
+{: caption="Table 1: Threat Detection - Available Methods"}
 
 ### Options
 {: #detection-options}
@@ -637,10 +638,10 @@ Threat detection capabilities should always be deployed in public situations as 
 ### Solutioning Guidance
 {: #detection-guidance}
 
-- [Using the CIS Security Events capability](https://docs/cis?topic=cis-using-the-cis-security-events-capability)
-- [Getting started with IBM Cloud Security and Compliance Center Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started)
-- [Getting started with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-getting-started)
-- Please refer to the selected firewall product documentation on threat detection and how to configure it
+- [Using the CIS Security Events capability](https://docs/cis?topic=cis-using-the-cis-security-events-capability).
+- [Getting started with IBM Cloud Security and Compliance Center Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started).
+- [Getting started with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-getting-started).
+- Please refer to the selected firewall product documentation on threat detection and how to configure it.
 
 ## Response
 {: #response}
@@ -654,7 +655,7 @@ Security responses functions typically fall into two categories: those that are 
 ### Options
 {: #response-options}
 
- - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria
+ - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria.
  - **Cloud Internet Services** - Customers have the options of getting and selecting different notifications based upon security events.
  - **Security and Compliance Center** - Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below.
 
@@ -663,7 +664,7 @@ Security responses functions typically fall into two categories: those that are 
 
 - Procedures and processes to handle all the security notifications and alerts in a unified manner.
 - Personnel established and trained to respond to security events.
-- Having an established incident response plan
+- Having an established incident response plan.
 
 ### Solutioning Guidance
 {: #response-best-guidance}
@@ -685,22 +686,32 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 
 | Area / Solution                                                                                                                                                            | Vulnerability Checking / Testing                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Security and Compliance Center                                                                                                                                                 | Ability to scan resources for misconfigured settings per compliance requirements                                                                                                                                                                                                                                                                                                                                                                                         |
+| Security and Compliance Center                                                                                                                                                 | Ability to scan resources for misconfigured settings per compliance requirements.                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Vulnerability Advisor](Vulnerability%20Advisor%20for%20IBM%20Cloud%20Container%20Registry%20%20IBM%20https:/cloud.ibm.com%20›%20container-registry%20›%20va-v4)               | Ability to scan container images. This vulnerability checking is really applicable where containers may be deployed on top of a Virtual Private Cloud (VPC) Virtual Service Instancea (VSIs).                                                                                                                                                                                                                                                                            |
-| Software and Network Vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](https://docs/account?topic=account-scans) | Various 3rd party market solutions are available, \`which can be deployed in IBM Cloud on Virtual Server Instances (VSIs) IBM Cybersecurity Services (CSS) can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management) IBM CSS also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management). |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
+| Software and Network Vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](https://docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in IBM Cloud on Virtual Server Instances (VSIs) IBM Cybersecurity Services (CSS) can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management) IBM CSS also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management). |
+{: caption="Table 1: Vulnerability Management - Methods"}
 
 ### Vulnerability Management - Options, Best Practices and Solutioning Guidance
 {: #vulnerability-management-options}
 
-| Options Info         | Security and Compliance Center                                                                                                                                                                                                                                                            | Customers have the option of choosing the resources and configurations they want to scan plus customer have the option picking a variety of compliance frameworks. |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                          | Vulnerability Advisor                                                                                                                                                                                                                                                                     | Customers can choose what images to scan and what exemptions there can be when a threat detection occurs.                                                          |
-|                          | 3rd Party Solutions                                                                                                                                                                                                                                                                       | Customers have the option of selecting and using a variety of vulnerability testing solutions and each of these have a myriad of configuration options.            |
-|                          |                                                                                                                                                                                                                                                                                           |                                                                                                                                                                    |
-| Best Practices       | Customers should establish a vulnerability testing plan and conduct regular vulnerability testing per the plan. Processes, procedures and approval workflows for vulnerability remediations and similar should be well established.                                                       |                                                                                                                                                                    |
-| Solutioning Guidance | [Best practices for working with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-best-practices) [Configuring IBM Cloud Vulnerability Advisor scans](https://docs/devsecops?topic=devsecops-cd-devsecops-va-scans) |                                                                                                                                                                    |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
+### Options
+{: #vulnerability-management-options}
+
+ - **Security and Compliance Center** -  Customers have the option of choosing the resources and configurations they want to scan plus customer have the option picking a variety of compliance
+ - **Vulnerability Advisor** - Customers can choose what images to scan and what exemptions there can be when a threat detection occurs.
+ - **3rd Party** - Customers have the option of selecting and using a variety of vulnerability testing solutions and each of these have a myriad of configuration options.
+
+### Best Practices
+{: #vulnerability-management-best-practices}
+
+ - Customers should establish a vulnerability testing plan and conduct regular vulnerability testing per the plan.
+ - Processes, procedures and approval workflows for vulnerability remediations and similar should be well established.
+
+### Solutioning Guidance
+ {: #vulnerability-management-guidance}
+
+- [Best practices for working with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-best-practices)
+- [Configuring IBM Cloud Vulnerability Advisor scans](https://docs/devsecops?topic=devsecops-cd-devsecops-va-scans)
 
 ## Risk and Compliance
 {: #risk-and-compliance}
@@ -710,18 +721,33 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 
 IBM Cloud’s configuration governance and compliance monitoring is handled through its Security and Compliance Center platform, which has been discussed in previous sections.
 
-### Configuration Governance and Compliance Monitoring - Options, Best Practices and Solutioning Guidance
+### Options
 {: #config-governance}
 
-| Options Info         | Security and Compliance Center                                                                                                                                                                                                                                                                                                                                                                                                                    | Customers have the option of choosing the resources and configurations they want to scan plus customer have the option picking a variety of compliance frameworks.                                                                                                                                                                                                                                                                  |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                          | Palo Alto Prisma Cloud                                                                                                                                                                                                                                                                                                                                                                                                                            | This solution from IBM Security provides configuration governance and compliance monitoring in multi-cloud situations.                                                                                                                                                                                                                                                                                                              |
-|                          | No configuration governance or compliance monitoring                                                                                                                                                                                                                                                                                                                                                                                              | Customers could elect to forgo security configuration governance in private environments with non-critical workloads. But vulnerabilities could appear where there is security configuration “drift” from personnel making inadvertent changes. Customer could also forgo compliance monitoring where there are non-critical, non-regulated workloads I believe this should be presented so the tech seller knows the possibilities |
-| Best Practices       | Understand the compliance framework applicable to your environment. Understand how needed compliance frameworks are translated into security configurations. Use automation such as Security and Compliance Center to automate security configurations. Develop workflows and approval processes to control security configuration changes. Ensure change rights are strictly controlled through Identity and Access Management (IAM) permissions |                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Solutioning Guidance | [Best practices for working with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-best-practices)                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
+- **Security and Compliance Center** - Customers have the option of choosing the resources and configurations they want to scan plus customer have the option picking a variety of compliance frameworks,
+- **Palo Alto Prisma Cloud** - This solution from IBM Security provides configuration governance and compliance monitoring in multi-cloud situations,
+- **No Configuration Governance or Compliance** -   Customers could elect to forgo security configuration governance in private environments with non-critical workloads. But vulnerabilities could appear where there is security configuration “drift” from personnel making inadvertent changes.  Customer could also forgo compliance monitoring where there are non-critical, non-regulated workloads I believe this should be presented so the tech seller knows the possibilities.
+
+### Best Practices
+{: #config-best-practices}
+
+- Understand the compliance framework applicable to your environment.
+- Understand how needed compliance frameworks are translated into security configurations.
+- Use automation such as Security and Compliance Center to automate security configurations.
+- Develop workflows and approval processes to control security configuration changes. Ensure change rights are strictly controlled through Identity and Access Management (IAM) permissions
+
+### Solutioning Guidance
+{: #config-best-practices}
+
+[Best practices for working with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-best-practices)
 
 ### Auditing
 {: #auditing}
 
-IBM Cloud has two main capabilities to aid in auditing: Security and Compliance Center and Activity Tracker, which has been previously discussed. Security and Compliance Center provides a wide range of compliance audits as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. Activity Tracker provides an auditing function in that it tracks all IAM and API activities. It can provide all reports that an auditor may use. See the earlier discussion of these solutions and their best practices.
+IBM Cloud has two main capabilities to aid in auditing: Security and Compliance Center and Activity Tracker, which have both discussed earlier. Security and Compliance Center provides a wide range of compliance audits as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. Activity Tracker provides an auditing function in that it tracks all IAM and API activities.  It can provide all reports that an auditor may use. See the earlier discussion of these solutions and their best practices.
+
+### Options
+{: #auditing-options}
+
+### Best Practices
+{: #auditing-best-practices}
