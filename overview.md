@@ -498,8 +498,9 @@ IBM Cloud has Virtual Private Endpoints that allow secure access to a variety of
 {: #VPE-options}
 
  - **VPE use** - always recommended due to its inherent security and private traffic transit
- - **Cloud Service Access Through the Internet** - Never recommended, but possible...
-                                                                                                ### Best Practices
+ - **Cloud Service Access Through the Internet** - Never recommended, but a possible transit if cloud services access is needed in some way across the Internet
+
+### Best Practices
 {: #VPE-best-practices}
 
  - Virtual Private Endpoints should always be used when there is a need to access cloud services as opposed to any access over the Internet.
@@ -555,12 +556,13 @@ IBM Cloud’s Activity Tracker logs and records all administrator and API action
 ### Options
 {: #activity-tracker-options}
 
-There are no other IA< logging options here – this is a default logging capability
+There are no other IBM Cloud IAM logging options here – this is the default and built-in logging capability.
 
 ### Best Practices
 {: #activity-best-practices}
 
- - Use of Activity Tracker auditing in regulated environment or compliance auditing is a must. - Forwarding of Activity Tracker logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM
+ - Use of Activity Tracker auditing in regulated environment or compliance auditing is a must
+ - Forwarding of Activity Tracker logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM.
 
 ### Solutioning Guidance
 {: #activity-guidance}
@@ -577,28 +579,39 @@ Logging plays a key role in security in that captures events that may be anomalo
 | Logs                                                                                                                                | Function                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | [VPC Flow Logs](https://docs/vpc?topic=vpc-flow-logs)                                                                     | Provides logs of all ingress and egress traffic within a VPC                                                     |
-| [Activity Tracker](https://docs/activity-tracker?topic=activity-tracker-getting-started)                                  | Provides logs of all administrator actions and API activities within an IBM account                              |
+| [Activity Tracker](https://docs/activity-tracker?topic=activity-tracker-getting-started)                                  | As noted above; Provides logs of all administrator actions and API activities within an IBM account                              |
 | NexGen Firewalls                                                                                                                    | Provides logs on a variety of functions / actions that occur within the firewalls, e.g., rule hits, alarms, etc. |
 | [Cloud Internet Services LogPush Service](https://docs/cis?topic=cis-logpush&interface=ui)                                | Captures Cloud Internet Services firewall events                                                                 |
 | [Cloud Workload Protection Event Forwarding](https://docs/workload-protection?topic=workload-protection-event_forwarding) | Forwards various events from the Cloud Workload Protection solution.                                             |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
+{: caption="Table 1: Available Logging"}
 
-### Logging - Options, Best Practices and Solutioning Guidance
+### Other Logging Options
 {: #logging-options}
 
-| Options Info         | VPC Flow Logs                                                                                                                                                                                                                                                                                                                                                                                                                      | There are no options if traffic capture in and out of a VPC is needed for security and troubleshooting purposes.    |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-|                          | Activity Tracker                                                                                                                                                                                                                                                                                                                                                                                                                   | There are no options if logs are needed from IAM user and API actions for auditing, compliance or security reasons. |
-|                          | NexGen Firewalls                                                                                                                                                                                                                                                                                                                                                                                                                   | Customers can elect to capture and forward all kinds of logs.                                                       |
-| Best Practices       | Logging of IAM user and API actions should always be used, regardless of the security situation. Firewall logs should always be used for detection purposes.                                                                                                                                                                                                                                                                       |                                                                                                                     |
-| Solutioning Guidance | [Creating a flow log collector](https://docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui) (VPC Flow Logs) Getting started with Activity Tracker [Using the Logpush service](https://docs/cis?topic=cis-logpush&interface=ui) (Cloud Internet Services) [Provisioning an instance](https://docs/workload-protection?topic=workload-protection-provision) (Workload Protection) |
-{: caption="Table 16: Logging - Options, Best Practices and Guidance"}
+ - **VPC Flow Logs** - There are no options if traffic capture in and out of a VPC is needed for security and troubleshooting purposes.
+ - **Activity Tracker** - There are no options if logs are needed from IAM user and API actions for auditing, compliance or security reasons.
+ - **NexGen Firewalls** - Customers can elect to capture and forward all kinds of logs.
+
+### Best Practices
+{: #otherlogging-best-practices}
+
+ - Logging of IAM user and API actions should always be used, regardless of the security situation.  These can be used for troubleshooting purposes and mandatory in compliance situations.
+ - Firewall logs should always be used for detection purposes.
+
+### Solutioning Guidance
+{: #other-logging-guidance}
+
+ - [Creating a flow log collector](https://docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui)
+ - [Provisioning an instance](https://docs/workload-protection?topic=workload-protection-provision) (Workload Protection)
+ - (Cloud Internet Services) [Provisioning an instance](https://docs/workload-protection?)
+ - [Creating a flow log collector](https://docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui)
+ - Activity Tracker [Using the Logpush service](https://docs/cis?topic=cis-logpush&interface=ui)
 
 
 ## Threat Detection
 {: #threat-detection}
 
-Threat detection in IBM Cloud can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc. IBM Cloud Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. IBM Cloud also has a workload protection, previous discussed which can detect runtime threats on workloads. Security and Compliance Center discussed, immediately below, can detect cloud configurations that are out of compliance and so on. These are summarized below:
+Threat detection in IBM Cloud can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc.  IBM Cloud Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. IBM Cloud also has a workload protection, previous discussed which can detect runtime threats on workloads. Security and Compliance Center discussed, immediately below, can detect cloud configurations that are out of compliance and so on. These are summarized below:
 
 | Area / Solution                                                                                                                                                                                                                           | Detections                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -608,51 +621,67 @@ Threat detection in IBM Cloud can occur in various places. NexGen firewalls depl
 | [Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-posture-management)                                                                                                                 | Non-compliant or incorrect cloud configurations                                                  |
 {: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
 
-### Detection - Options, Best Practices and Solutioning Guidance
+### Options
 {: #detection-options}
 
-| Options Info         | NexGen Firewalls                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | This detection option can be deployed in public access situations at the edge.  This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with Cloud Internet Services in certain situations. |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                          | Cloud Internet Services (CIS)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed      |
-|                          | Cloud Workload Protection                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | This detection option can be deployed where customers are using or will use IBM Cloud Security and Compliance Center This option may be needed where a customer just needs endpoint security, and particularly in public access environments.                                                                                                          |
-|                          | Security and Compliance Center                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | This configuration status detection capability (different than threat detection) should be deployed in situations where compliance and auditing are critical. This can also be used in where customers want to keep track of security configurations.                                                                                                  |
-| Best Practices       | Threat detection capabilities should always be deployed in public situations as can be imagined. Deployment in private situations dependent upon a customer risk profile. Threat detections capability should be accompanied with trained personnel and appropriate processes.  Threat detections need to be correlated in some way, perhaps through a Security Event and Information Management (SIEM) platform, to triangulate attacks and get a holistic view of threats.                                                                                        |                                                                                                                                                                                                                                                                                                                                                        |
-| Solutioning Guidance | [Using the CIS Security Events capability](https://docs/cis?topic=cis-using-the-cis-security-events-capability) [Getting started with IBM Cloud Security and Compliance Center Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started) [Getting started with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-getting-started) Please refer to the selected firewall product documentation on threat detection and how to configure it |                                                                                                                                                                                                                                                                                                                                                        |
-{: caption="Table 17: Threat Detection - Options, Best Practices and Guidance"}
+ - **NexGen Firewalls** - This detection option can be deployed in public access situations at the edge.  This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with Cloud Internet Services in certain situations.
+ - **Cloud Internet Services (CIS)** -      This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
+ - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use IBM Cloud Security and Compliance Center This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
+ - **Security and Compliance Center** - This configuration status detection capability (different than threat detection) should be deployed in situations where compliance and auditing are critical. This can also be used in where customers want to keep track of security configurations.
+
+### Best Practices**
+{: #detection-best-practices}
+
+Threat detection capabilities should always be deployed in public situations as can be imagined. Deployment in private situations dependent upon a customer risk profile. Threat detections capability should be accompanied with trained personnel and appropriate processes.  Threat detections need to be correlated in some way, perhaps through a Security Event and Information Management (SIEM) platform, to triangulate attacks and get a holistic view of threats.
+
+### Solutioning Guidance
+{: #detection-guidance}
+
+- [Using the CIS Security Events capability](https://docs/cis?topic=cis-using-the-cis-security-events-capability)
+- [Getting started with IBM Cloud Security and Compliance Center Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started)
+- [Getting started with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-getting-started)
+- Please refer to the selected firewall product documentation on threat detection and how to configure it
 
 ## Response
 {: #response}
 
 Security responses functions typically fall into two categories: those that are automated by a security capability and those that are broader in nature that involve people, processes and technologies, e.g., incident response. For the first category, IBM Cloud has various security capabilities can take actions to stop or respond to a threat and these are outlined below. The broader incident response is discussed further down.
 
-| Area / Solution                                                                                              | Responses                                                                                             |
-|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| NexGen Firewalls                                                                                                 | Response - blocking traffic, files, URLs, DNS queries, etc. plus all kinds of response alerts and alarms. |
-| [Cloud Internet Services (CIS)](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis)  | Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events        |
-| Security and Compliance Center                                                                                   | Response alerts on security misconfigurations and user initiated remediations                             |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
+- **NexGen Firewalls** - Response - blocking traffic, files, URLs, DNS queries, etc. plus all kinds of response alerts and alarms.
+- **[Cloud Internet Services (CIS)](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis)** - Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events.
+- **Security and Compliance Center** - Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events.
 
-### Response - Options, Best Practices and Solutioning Guidance
+### Options
 {: #response-options}
 
-| Options Info         | NexGen Firewalls                                                                                                                                                                                                                                                                                               | Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria    |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-|                          | Cloud Internet Services (CIS)                                                                                                                                                                                                                                                                                  | Customers have the options of getting and selecting different notifications based upon security events.                                      |
-|                          | Security and Compliance Center (SCC)                                                                                                                                                                                                                                                                           | Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below. |
-| Best Practices       | Procedures and processes to handle all the security notifications and alerts in a unified manner. Personnel established and trained to respond to security events. Having an established incident response plan                                                                                                |                                                                                                                                              |
-| Solutioning Guidance | [Configuring alert policies](https://docs/cis?topic=cis-configuring-policies&interface=ui) (Cloud Internet Service) [Enabling event notifications for Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-event-notifications&interface=ui) |                                                                                                                                              |
-{: caption="Table 1: Data-at-Rest Encryption - options, best practices and guidance"}
+ - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria
+ - **Cloud Internet Services** - Customers have the options of getting and selecting different notifications based upon security events.
+ - **Security and Compliance Center** - Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below.
 
+### Best Practices
+{: #response-best-practices}
+
+- Procedures and processes to handle all the security notifications and alerts in a unified manner.
+- Personnel established and trained to respond to security events.
+- Having an established incident response plan
+
+### Solutioning Guidance
+{: #response-best-guidance}
+
+ -[Configuring alert policies](https://docs/cis?topic=cis-configuring-policies&interface=ui)
+ (Cloud Internet Service)
+ -[Enabling event notifications for Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-event-notifications&interface=ui)
 
 ## Broader Incident Response
 {: #broader-incident-response}
 
-The above table discussed security response capabilities in IBM Cloud. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services.](https://www.ibm.com/services/incident-response)
+The above information discussed security response capabilities in IBM Cloud. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services.](https://www.ibm.com/services/incident-response)
 
 ## Vulnerability Management
 {: #vulnerability-management}
 
 Vulnerability testing can be quite broad but generally it involves tools that seek to uncover areas that can be exploited by attackers. For example, network vulnerability testing seeks to scan ports, protocols and IP addresses that are open for penetration, perhaps because of user misconfiguration. Often security configurations can “drift” over time because of some inadvertent user actions or changing needs. And there are other ways where vulnerabilities can develop, and which can be exposed. Below are some vulnerability testing/checking capabilities within IBM Cloud and some other solutions:
+
 
 | Area / Solution                                                                                                                                                            | Vulnerability Checking / Testing                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
