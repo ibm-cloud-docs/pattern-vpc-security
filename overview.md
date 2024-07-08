@@ -50,7 +50,7 @@ Please refer to the following National Institute of Standards and Technology pap
 
 IBM uses a broad standard framework in all its security endeavors, e.g., design, consulting, implementation, etc. and this is shown below for reference. Now some, but not all of these are necessarily applicable for IBM Cloud in Virtual Private Cloud environments from a technical capability perspective. This paper therefore will only cover the capabilities highlighted in blue. And note that some of these capability categories can be broken down further and these are discussed in detail starting in Section 5.
 
-![illustrates the security framework for IaaS Security Whitepaper](images/Security-Framework.svg){: caption="Figure 1. Security Framework" caption-side-"bottom"}
+![illustrates the security framework for IaaS Security Whitepaper](images/framework.svg){: caption="Figure 1. Security Framework" caption-side-"bottom"}
 
 ## IBM Cybersecurity Security Services (CSS) Capabilities – Options for Certain Situations.
 {: #CSS-capabilities}
@@ -102,7 +102,7 @@ Key management allows cloud customers the ability to create, store, manage and r
  - <https://docs/hs-crypto?topic=hs-crypto-get-started>, and
  - <https://docs/hs-crypto?topic=hs-crypto-introduce-uko>
 
-![A screenshot of a computer Description automatically generated](images/key-protect.svg){: caption="Figure 2. Security Framework" caption-side="bottom"}
+![A screenshot of a computer description automatically generated](images/key-protect.svg){: caption="Figure 2. Security Framework" caption-side="bottom"}
 
 ### Options:
 {: #key-management-options}
