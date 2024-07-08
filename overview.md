@@ -102,7 +102,7 @@ Key management allows cloud customers the ability to create, store, manage and r
  - <https://docs/hs-crypto?topic=hs-crypto-get-started>, and
  - <https://docs/hs-crypto?topic=hs-crypto-introduce-uko>
 
-![A screenshot of a computer description automatically generated](images/key-protect.svg){: caption="Figure 2. Security Framework" caption-side="bottom"}
+![A screenshot of a computer description automatically generated](images/keyprotect.svg){: caption="Figure 2. Security Framework" caption-side="bottom"}
 
 ### Options:
 {: #key-management-options}
@@ -219,7 +219,8 @@ IBM Cloud has a full featured native IAM that can control all aspects of admin u
 
 The diagram below provides insight on how IAM works in the IBM Cloud.
 
-(images/IAM.svg)
+![illustrates the security framework for IaaS Security Whitepaper](images/iam.svg){: caption="Figure 3. Identity and Access Management" caption-side-"bottom"}
+
 
 ### Options
 {: #IAM-Options}
