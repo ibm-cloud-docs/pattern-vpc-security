@@ -71,13 +71,13 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
 ## Data-at-Rest Encryption
 {: #data-at-rest-encryption}
 
-{{site.data.keyword.Bluemix_notm:}} provides native, integrated data-at-rest encryption for VPC volumes and snapshots and file storage/VPC shares automatically.  {{site.data.keyword.Bluemix_notm:}} also provides data-at-rest encryption for its object storage by default. All the encryption used adheres to the AES-256 standard. Customers can use IBM-managed encryption (default) or customer-managed keys.
+{{site.data.keyword.Bluemix_notm}} provides native, integrated data-at-rest encryption for VPC volumes and snapshots and file storage/VPC shares automatically.  {{site.data.keyword.Bluemix_notm:}} also provides data-at-rest encryption for its object storage by default. All the encryption used adheres to the AES-256 standard. Customers can use IBM-managed encryption (default) or customer-managed keys.
 
 ### Options:
 {: #data-at-rest-encryption-options}
 
  - **{{site.data.keyword.Bluemix_notm}} Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used,
- - **{{site.data.keyword.Bluemix_notm}} Encryption with Customer Keys** - Customer selects an {{site.data.keyword.Bluemix_notm:}} native key management system (KMS). {{site.data.keyword.Bluemix_notm:}} has two KMSs – {{site.data.keyword.keymanagementservicelong_notm:}} and Hyper Protect Crypto Service (HPCS), and
+ - **{{site.data.keyword.Bluemix_notm}} Encryption with Customer Keys** - Customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs – {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Service (HPCS), and
  - **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium. See Section 4.
 
 ### Best Practices:
@@ -97,7 +97,7 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
 ## Key Management / Lifecycle Management
 {: #key-management}
 
-Key management allows cloud customers the ability to create, store, manage and rotate keys with automation to support storage encryption. {{site.data.keyword.Bluemix_notm:}} has two native, integrated key management services, {{site.data.keyword.keymanagementservicelong_notm:}} and Hyper Protect Crypto Services. Please see these links for more information:
+Key management allows cloud customers the ability to create, store, manage and rotate keys with automation to support storage encryption. {{site.data.keyword.Bluemix_notm}} has two native, integrated key management services, {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Services. Please see these links for more information:
  - </docs/key-protect?topic=key-protect-about>,
  - </docs/hs-crypto?topic=hs-crypto-get-started>, and
  - </docs/hs-crypto?topic=hs-crypto-introduce-uko>
@@ -126,13 +126,13 @@ Key management allows cloud customers the ability to create, store, manage and r
 ### Solutioning Guidance
 {: #key-management-guidance}
 
- - [Provisioning {{site.data.keyword.keymanagementservicelong_notm:}}](/docs/key-protect?topic=key-protect-provision)
- - [Getting Started with {{site.data.keyword.Bluemix_notm:}} Hyper Protect Crypto Service](/docs/hs-crypto?topic=hs-crypto-get-started)
+ - [Provisioning {{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)
+ - [Getting Started with {{site.data.keyword.Bluemix_notm}} Hyper Protect Crypto Service](/docs/hs-crypto?topic=hs-crypto-get-started)
 
 ## Data-in-Transit Encryption
 {: #Data-in-Transit Encryption}
 
-Data-in-Transit encryption can occur in multiple areas within the {{site.data.keyword.Bluemix_notm:}}. There can be external applications using HTTPS/SSL that would terminate to servers within a VPC or load balancers and NexGen firewalls in front of the servers in VPCs.  There is also default data-in-transit encryption when there are accesses/traffic transits to Object, Block and File Storage and cloud services.
+Data-in-Transit encryption can occur in multiple areas within the {{site.data.keyword.Bluemix_notm}}. There can be external applications using HTTPS/SSL that would terminate to servers within a VPC or load balancers and NexGen firewalls in front of the servers in VPCs.  There is also default data-in-transit encryption when there are accesses/traffic transits to Object, Block and File Storage and cloud services.
 
 ### Options:
 {: #data-in-transit-encryption-options}
@@ -150,15 +150,15 @@ Application-level data-in-transition encryption should always be applied in publ
 {: #data-in-transit-encryption-best-guidance}
 
  - [Encryption in transit - Securing mount connections between file share and virtual server instance](/docs/vpc?topic=vpc-file-storage-vpc-eit),
- - [SSL offload with {{site.data.keyword.Bluemix_notm:}} Load Balancer](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer),
+ - [SSL offload with {{site.data.keyword.Bluemix_notm}} Load Balancer](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer),
  - [Managing origin certificates](/docs/cis?topic=cis-cis-origin-certificates),
  - [Setting Transport Layer Security (TLS) options](/docs/cis?topic=cis-cis-tls-options), and
- - [Getting started with {{site.data.keyword.secrets-manager_full_notm:}}](/docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui) ({{site.data.keyword.secrets-manager_full_notm}} will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.)Also see the following immediate section relating to certificates.
+ - [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui) ({{site.data.keyword.secrets-manager_full_notm}} will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.)Also see the following immediate section relating to certificates.
 
 ## Certificate Lifecycle Management
 {: #certificate-management}
 
-Certificates can be used in several areas within {{site.data.keyword.Bluemix_notm:}} to provide data-in-transit TLS encryption in such areas as load balancers, API gateways, etc.  {{site.data.keyword.Bluemix_notm:}} has certificate management capabilities which allow customers to provision, manage, and deploy public and private SSL/TLS certificates for use with {{site.data.keyword.Bluemix_notm:}} services and applications.  This For more information please follow this link: [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started)
+Certificates can be used in several areas within {{site.data.keyword.Bluemix_notm}} to provide data-in-transit TLS encryption in such areas as load balancers, API gateways, etc.  {{site.data.keyword.Bluemix_notm}} has certificate management capabilities which allow customers to provision, manage, and deploy public and private SSL/TLS certificates for use with {{site.data.keyword.Bluemix_notm}} services and applications.  This For more information please follow this link: [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started)
 
 ### Options:
 {: #certificate-management-options}
@@ -186,12 +186,12 @@ Certificates can be used in several areas within {{site.data.keyword.Bluemix_not
 ### Data Lifecycle Management and Governance
 {: #data-lifecycle-management}
 
-{{site.data.keyword.Bluemix_notm:}} provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm.  One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/guardium){: external}, as noted in Section 4.
+{{site.data.keyword.Bluemix_notm}} provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm.  One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/guardium){: external}, as noted in Section 4.
 
 ## Data Loss Prevention (DLP) and Data Access, Integrity and Monitoring
 {: #DLP}
 
-{{site.data.keyword.Bluemix_notm:}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on.  And there is {{site.data.keyword.cloudaccessfulltrail_notm:}} which logs all user and API access to data.  But there are no specific ways to specifically monitor and control data loss and data integrity.   This is typically the realm of 3rd party data control solutions.  Please see the following for more information on this security function:
+{{site.data.keyword.Bluemix_notm:}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on.  And there is {{site.data.keyword.cloudaccessfulltrail_notm}} which logs all user and API access to data.  But there are no specific ways to specifically monitor and control data loss and data integrity.   This is typically the realm of 3rd party data control solutions.  Please see the following for more information on this security function:
 
 - **What Is Data Loss Prevention (DLP)** - (https://www.ibm.com/topics/data-loss-prevention){: external}
 
@@ -203,7 +203,7 @@ Also note that IBM Cybersecurity Services has a DLP solution known as Guardium: 
 ## Access and Role Access Management (IAM)
 {: #IAM}
 
-{{site.data.keyword.Bluemix_notm}} has a full featured native IAM that can control all aspects of admin user actions and services within an account.  It enables you to securely authenticate users for platform services and control access to resources consistently across {{site.data.keyword.Bluemix_notm}}.  Please see the following link for more information: [Access management in {{site.data.keyword.Bluemix_notm:}}](/docs/account?topic=account-cloudaccess) and [How {{site.data.keyword.Bluemix_notm:}} IAM works.](/docs/account?topic=account-iamoverview&interface=ui) The table below highlights some of the major IAM functions available.
+{{site.data.keyword.Bluemix_notm}} has a full featured native IAM that can control all aspects of admin user actions and services within an account.  It enables you to securely authenticate users for platform services and control access to resources consistently across {{site.data.keyword.Bluemix_notm}}.  Please see the following link for more information: [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess) and [How {{site.data.keyword.Bluemix_notm}} IAM works.](/docs/account?topic=account-iamoverview&interface=ui) The table below highlights some of the major IAM functions available.
 
 | IAM Capability                                                                                                 | Function / Feature                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -239,14 +239,14 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
  - Always use multi-factor authentication and a complex password and rotation policy.
  - Develop thorough documentation that dictates how IAM will be used and managed in your {{site.data.keyword.Bluemix_notm:}} account(s).
  - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states.
- - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccessfulltrail_notm}}](https://docs/activity-tracker?topic=activity-tracker-about) (following section) to look for access anomalies.
+ - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccessfulltrail_notm}}](/docs/activity-tracker?topic=activity-tracker-about) (following section) to look for access anomalies.
 
 ### Solultioning Guidance
  {: #IAM-guidance}
 
- - [Access management in {{site.data.keyword.Bluemix_notm}}](https://docs/account?topic=account-cloudaccess),
+ - [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess),
  - [How {{site.data.keyword.Bluemix_notm}} IAM works](/docs/account?topic=account-iamoverview),
- - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in {{site.data.keyword.Bluemix_notm:}} Docs for more insight on best IAM practices and solutioning guidance,
+ - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in {{site.data.keyword.Bluemix_notm}} Docs for more insight on best IAM practices and solutioning guidance,
  - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup), and
  - Use trusted profiles to assign access to compute resources rather than embedding credentials in applications.
 
@@ -278,7 +278,7 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
 ## Secrets Management
 {: #secrets-management}
 
-Cloud secrets management is a way to securely store and manage API keys, certificates, user ID and password credentials and other sensitive information with automation and integration.  {{site.data.keyword.Bluemix_notm:}}’s service here is known as {{site.data.keyword.secrets-manager_full_notm:}} and it has several key security features such as secrets lifecycle management, logging, default encryption, IAM integration, versioning, etc.  Please see the following link for more information: [Getting started with {{site.data.keyword.secrets-manager_full_notm:}}](/docs/secrets-manager?topic=secrets-manager-getting-started)
+Cloud secrets management is a way to securely store and manage API keys, certificates, user ID and password credentials and other sensitive information with automation and integration.  {{site.data.keyword.Bluemix_notm:}}’s service here is known as {{site.data.keyword.secrets-manager_full_notm}} and it has several key security features such as secrets lifecycle management, logging, default encryption, IAM integration, versioning, etc.  Please see the following link for more information: [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started)
 
 ### Options:
 {: #secrets-management-options}
@@ -298,12 +298,12 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
 ### Solutioning Guidance:
 {: #secrets-management-best-guidance}
 
- - [Managing IAM access for {{site.data.keyword.secrets-manager_full_notm:}}](/docs/secrets-manager?topic=secrets-manager-iam&interface=ui),
- - [Using service endpoints to privately connect to {{site.data.keyword.secrets-manager_full_notm:}}](/docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui),
- - [Securing your data in {{site.data.keyword.secrets-manager_full_notm:}}](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui),
- - [Protecting {{site.data.keyword.secrets-manager_full_notm:}} resources with context-based restrictions](/docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
- - {{site.data.keyword.secrets-manager_full_notm}} instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. {{site.data.keyword.secrets-manager_full_notm:}} is a single-tenant service. CPU and memory limits are applied per {{site.data.keyword.secrets-manager_full_notm:}} instance.  Those limits restrict the API request rates based on the usage pattern.  As a rule of thumb, it is recommended to keep the rate below 20 req/s.  Additionally, limit the number of unique clients that make requests to a single {{site.data.keyword.secrets-manager_full_notm}} instance, and
- - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm:}}’s key management systems ({{site.data.keyword.keymanagementservicelong_notm:}} or Hyper Protect Crypto Services (HPCS)) to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
+ - [Managing IAM access for {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-iam&interface=ui),
+ - [Using service endpoints to privately connect to {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui),
+ - [Securing your data in {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui),
+ - [Protecting {{site.data.keyword.secrets-manager_full_notm}} resources with context-based restrictions](/docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
+ - {{site.data.keyword.secrets-manager_full_notm}} instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. {{site.data.keyword.secrets-manager_full_notm}} is a single-tenant service. CPU and memory limits are applied per {{site.data.keyword.secrets-manager_full_notm}} instance.  Those limits restrict the API request rates based on the usage pattern.  As a rule of thumb, it is recommended to keep the rate below 20 req/s.  Additionally, limit the number of unique clients that make requests to a single {{site.data.keyword.secrets-manager_full_notm}} instance, and
+ - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems ({{site.data.keyword.keymanagementservicelong_notm:}} or Hyper Protect Crypto Services (HPCS)) to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
 
 Note that {{site.data.keyword.secrets-manager_full_notm:}} is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management.  More details can be found here: [Security Design](/docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.
 
@@ -365,8 +365,8 @@ A WAF helps protect web applications by filtering and monitoring HTTP traffic be
 ### Solutioning Guidance:
  {: #WAF-best-guidance}
 
- - {{site.data.keyword.cis_short_notm:}} (CIS) [Best practices for CIS setup](/docs/cis?topic=cis-best-practices-for-cis-setup),
- - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm:}}.](/cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c2VjdXJpdHk%3D), and
+ - {{site.data.keyword.cis_short_notm}} (CIS) [Best practices for CIS setup](/docs/cis?topic=cis-best-practices-for-cis-setup),
+ - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm}}.](/cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c2VjdXJpdHk%3D), and
  - [Deploying Fortigate firewall on IBM VPC Cloud.](/docs.fortinet.com/document/fortigate-public-cloud/7.4.0/ibm-cloud-administration-guide/944419/deploying-fortigate-vm-a-p-ha-on-ibm-vpc-cloud-byol)
 
 ## Distributed Denial of Service (DDoS)
@@ -380,7 +380,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Options:
  {: #ddos-options}
 
- - **{{site.data.keyword.cis_short_notm:}}  (CIS)** - Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner,
+ - **{{site.data.keyword.cis_short_notm}}  (CIS)** - Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner,
  - **NexGen Firewall** - Perhaps more applicable where an edge firewall is already being used and users are not dispersed, and cost is factor, and
  - **No DDoS** - Not required in private only networks.
 
@@ -395,7 +395,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Solutioning Guidance:
 {: #ddos-guidance}
 
- - [FAQs for {{site.data.keyword.Bluemix_notm:}} Internet Services](/docs/cis?topic=cis-faq)
+ - [FAQs for {{site.data.keyword.Bluemix_notm}} Internet Services](/docs/cis?topic=cis-faq)
  - [Managing your CIS deployment](/docs/cis?topic=cis-manage-your-cis-deployment)
 
 ## Infrastructure and Endpoint Security Domain
@@ -416,7 +416,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
  - **Virtual Private Cloud** - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, etc.  And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://docs/vpc?topic=vpc-about-vpc),
  - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.),
  - **Security Groups** - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups)
- - **Transit Gateway** - {{site.data.keyword.Bluemix_notm:}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm:}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm:}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keyword.Bluemix_notm:}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
+ - **Transit Gateway** - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keyword.Bluemix_notm}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
  - **NexGen Firewalls** - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
 
 ### Options:
@@ -448,14 +448,14 @@ Segregation techniques were discussed in the previous section and in some way, t
 
  - [Access Control Lists](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.) Controls ingress and egress IP addresses, ports and protocol in subnets,
  - [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups) - Controls ingress and egress IP addresses, ports and protocols on virtual server instances network interfaces. This can be considered host firewalling,
- - **NexGen Firewalls** - {{site.data.keyword.Bluemix_notm:}} has two firewalls within its catalog, Juniper and Fortinet, that can be deployed on VSIs at the edge, and these can fully control Level 3 & 4 traffic, but these are capable of much more filtering like controlling URLs, files, DNS queries and layer 7 web application firewalling. In addition to the firewalls in the {{site.data.keyword.Bluemix_notm:}} catalog, customers can bring their own firewall and host it on a VSI,
+ - **NexGen Firewalls** - {{site.data.keyword.Bluemix_notm}} has two firewalls within its catalog, Juniper and Fortinet, that can be deployed on VSIs at the edge, and these can fully control Level 3 & 4 traffic, but these are capable of much more filtering like controlling URLs, files, DNS queries and layer 7 web application firewalling. In addition to the firewalls in the {{site.data.keyword.Bluemix_notm}} catalog, customers can bring their own firewall and host it on a VSI,
  - **{{site.data.keyword.cis_short_notm}}** - CIS has a traditional layer 3/4 firewall, in addition to its WAF capability and other security features. This would be applicable in situation where the customer has dispersed users and where a content delivery network (CDN) solution may be used, and
  - [Context Restrictions](/docs/account?topic=account-context-restrictions-whatis)                                            Firewalls in essence that front end services to control ingresses from certain allowed IP addresses. E.g., blocking accesses from Russia on a Saturday night.
 
 ### Options:
 {: #firewalling-options}
 
- - **VPCs, Access Control Lists (ACLs), Security Groups** - No options – mandatory for all VPC environments. Please see: [(exploring firewalls)](/docs/security-groups?topic=security-groups-exploring-firewalls)
+ - **VPCs, Access Control Lists (ACLs), Security Groups** - No options – mandatory for all VPC environments. Please see: [exploring firewalls](/docs/security-groups?topic=security-groups-exploring-firewalls)
 
  - **NexGen Firewalls** - Required when there are public connections to the Internet and {{site.data.keyword.cis_short_notm:}} (CIS) will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, etc. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm:}} (CIS) will be used.
  - **{{site.data.keyword.cis_short_notm}} (CIS)** - [{{site.data.keyword.cis_short_notm}} (CIS)](https://docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
@@ -475,7 +475,7 @@ Segregation techniques were discussed in the previous section and in some way, t
  - [Security Groups guidelines](/docs/security-groups?topic=security-groups-security-groups-guidelines),
  - [Creating a Network Access Control List (ACL)](/docs/vpc?topic=vpc-acl-create-ui&interface=ui),
  - [Getting started with FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started), and
- - [Getting started with {{site.data.keyword.Bluemix_notm:}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started)
+ - [Getting started with {{site.data.keyword.Bluemix_notm}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started)
 
 ## Endpoint Detection / Endpoint Protection (EDR/EPP) Capability
 {: #EDR-EPP}
@@ -489,14 +489,14 @@ EDR/EPP security is a detection and protect mechanism that works at the operatin
 
 Now within the context of this particular section, only runtime vulnerability and detection will be discussed. Cloud Workload Protection also has compliance components, and these are discussed in the Governance, Risk and Compliance section.
 
-Please see the following link for information: [Key features of {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long:}} Workload Protection](/docs/workload-protection?topic=workload-protection-key-features). This capability can also fall into a security mechanism known as Vulnerability Management. Information on this follows in the Vulnerability Management section.
+Please see the following link for information: [Key features of {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-key-features). This capability can also fall into a security mechanism known as Vulnerability Management. Information on this follows in the Vulnerability Management section.
 
 Also see this link which has broad information on endpoint security: [what is endpoint security](https://www.ibm.com/topics/endpoint-security) and [What is Endpoint detection and response.](https://www.ibm.com/topics/edr)
 
 ### Options
 {: #endpoint-security-options}
 
- - **{{site.data.keyword.Bluemix_notm}} Workload Protection** - Fully integrated into {{site.data.keyword.Bluemix_notm:}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long:}},
+ - **{{site.data.keyword.Bluemix_notm}} Workload Protection** - Fully integrated into {{site.data.keyword.Bluemix_notm:}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long}},
  - **3rd Party Endpoint Protection and Detection (EPP/EDR)** - Stand-alone solutions without {{site.data.keyword.Bluemix_notm:}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services (CSS), has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax).  IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
  - **No Workload Protection Endpoint Security** - This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments.
 
@@ -514,7 +514,7 @@ Also see this link which has broad information on endpoint security: [what is en
 ## Virtual Private Endpoints
 {: #VPE}
 
-{{site.data.keyword.Bluemix_notm}} has Virtual Private Endpoints that allow secure access to a variety of cloud services without traversing the Internet. Note that VPEs have firewalls in the form of access control lists and security groups previously discussed.  {{site.data.keyword.Bluemix_notm:}}® Virtual Private Endpoints (VPE) for VPC enables you to connect to supported {{site.data.keyword.Bluemix_notm:}} services from your VPC network by using the IP addresses of your choosing, allocated from a subnet within your VPC.  VPE is an evolution of the private connectivity to {{site.data.keyword.Bluemix_notm:}} services. VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model).  The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.Bluemix_notm:}}® service on the private backbone.  VPE for VPC gives you the experience of controlling all the private addressing within your cloud. Please see the following links for more information:
+{{site.data.keyword.Bluemix_notm}} has Virtual Private Endpoints that allow secure access to a variety of cloud services without traversing the Internet. Note that VPEs have firewalls in the form of access control lists and security groups previously discussed.  {{site.data.keyword.Bluemix_notm}}® Virtual Private Endpoints (VPE) for VPC enables you to connect to supported {{site.data.keyword.Bluemix_notm}} services from your VPC network by using the IP addresses of your choosing, allocated from a subnet within your VPC.  VPE is an evolution of the private connectivity to {{site.data.keyword.Bluemix_notm}} services. VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model).  The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.Bluemix_notm}}® service on the private backbone.  VPE for VPC gives you the experience of controlling all the private addressing within your cloud. Please see the following links for more information:
 
 ### Options
 {: #VPE-options}
@@ -532,11 +532,11 @@ Also see this link which has broad information on endpoint security: [what is en
 ### Solutioning Guidance
 {: #VPE-guidance}
 
- - [Privately connecting to {{site.data.keyword.Bluemix_notm:}} services](/docs/overview?topic=overview-endpoints-support),
+ - [Privately connecting to {{site.data.keyword.Bluemix_notm}} services](/docs/overview?topic=overview-endpoints-support),
  - [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe), and
  - [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways&interface=ui).
 
-## Threat Detection and Threat Investigation and Response Domain
+## Threat Investigation and Response Domain
 {: #threat-detection&investigation}
 
 ### Threat Investigation
@@ -545,7 +545,7 @@ Also see this link which has broad information on endpoint security: [what is en
 ### {{site.data.keyword.cloudaccessfulltrail_notm}} – Identity and Access Management Logging
 {: #activity-tracker-IAM-logging}
 
-{{site.data.keyword.Bluemix_notm:}}’s {{site.data.keyword.cloudaccessfulltrail_notm:}} logs and records all administrator and API actions within an {{site.data.keyword.Bluemix_notm:}} account.  This service can be used to investigate abnormal activities, for troubleshooting or forensics purposes and used for compliance audits.  This service provides such features as alerting, log storage encryption, compliance with the Cloud Auditing Data Federation (CADF) standard among others.  Logs from this service can also be forwarded externally to a Security Information Even Management (SIEM) for event correlation for threat detection.  More information on {{site.data.keyword.cloudaccessfulltrail_notm:}} can be found at the following link: [Learning about {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccessfulltrail_notm}} architecture and workload isolation](/docs/activity-tracker?topic=activity-tracker-compute-isolation)
+{{site.data.keyword.Bluemix_notm}}’s {{site.data.keyword.cloudaccessfulltrail_notm}} logs and records all administrator and API actions within an {{site.data.keyword.Bluemix_notm}} account.  This service can be used to investigate abnormal activities, for troubleshooting or forensics purposes and used for compliance audits.  This service provides such features as alerting, log storage encryption, compliance with the Cloud Auditing Data Federation (CADF) standard among others.  Logs from this service can also be forwarded externally to a Security Information Even Management (SIEM) for event correlation for threat detection.  More information on {{site.data.keyword.cloudaccessfulltrail_notm}} can be found at the following link: [Learning about {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccessfulltrail_notm}} architecture and workload isolation](/docs/activity-tracker?topic=activity-tracker-compute-isolation)
 
 ### Options
 {: #activity-tracker-options}
@@ -555,14 +555,14 @@ There are no other {{site.data.keyword.Bluemix_notm:}} IAM logging options here 
 ### Best Practices
 {: #activity-best-practices}
 
- - Use of {{site.data.keyword.cloudaccessfulltrail_notm:}} auditing in regulated environment or compliance auditing is a must, and
- - Forwarding of {{site.data.keyword.cloudaccessfulltrail_notm:}} logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM.
+ - Use of {{site.data.keyword.cloudaccessfulltrail_notm}} auditing in regulated environment or compliance auditing is a must, and
+ - Forwarding of {{site.data.keyword.cloudaccessfulltrail_notm}} logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM.
 
 ### Solutioning Guidance
 {: #activity-guidance}
 
- - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccessfulltrail_notm:}}](/docs/activity-tracker?topic=activity-tracker-getting-started),
- - [About {{site.data.keyword.cloudaccessfulltrail_notm:}} in {{site.data.keyword.Bluemix_notm:}}](/docs/activity-tracker?topic=activity-tracker-about), and
+ - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccessfulltrail_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started),
+ - [About {{site.data.keyword.cloudaccessfulltrail_notm}} in {{site.data.keyword.Bluemix_notm}}](/docs/activity-tracker?topic=activity-tracker-about), and
  - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
 
 ## Other Logging – That Can Be Forwarded to a SIEM
@@ -573,9 +573,9 @@ Logging plays a key role in security in that captures events that may be anomalo
 | Logs                                                                                                                                | Function                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | [VPC Flow Logs](/docs/vpc?topic=vpc-flow-logs)                                                                     | Provides logs of all ingress and egress traffic within a VPC.                                                     |
-| [{{site.data.keyword.cloudaccessfulltrail_notm:}}](/docs/activity-tracker?topic=activity-tracker-getting-started)                                  | As noted above; Provides logs of all administrator actions and API activities within an IBM account.                              |
+| [{{site.data.keyword.cloudaccessfulltrail_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started)                                  | As noted above; Provides logs of all administrator actions and API activities within an IBM account.                              |
 | NexGen Firewalls                                                                                                                    | Provides logs on a variety of functions / actions that occur within the firewalls, e.g., rule hits, alarms, etc. |
-| [{{site.data.keyword.cis_short_notm:}} LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                                | Captures {{site.data.keyword.cis_short_notm:}} firewall events.                                                                 |
+| [{{site.data.keyword.cis_short_notm}} LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                                | Captures {{site.data.keyword.cis_short_notm:}} firewall events.                                                                 |
 | [Cloud Workload Protection Event Forwarding](/docs/workload-protection?topic=workload-protection-event_forwarding) | Forwards various events from the Cloud Workload Protection solution.                                             |
 {: caption="Table 1: Available Logging"}
 
@@ -604,7 +604,7 @@ Logging plays a key role in security in that captures events that may be anomalo
 ## Threat Detection
 {: #threat-detection}
 
-Threat detection in {{site.data.keyword.Bluemix_notm:}} can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc.  {{site.data.keyword.Bluemix_notm:}} Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. {{site.data.keyword.Bluemix_notm:}} also has a workload protection, previous discussed which can detect runtime threats on workloads. {{site.data.keyword.compliance_long:}} discussed, immediately below, can detect cloud configurations that are out of compliance and so on. These are summarized below:
+Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc.  {{site.data.keyword.Bluemix_notm}} Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. {{site.data.keyword.Bluemix_notm}} also has a workload protection, previous discussed which can detect runtime threats on workloads. {{site.data.keyword.compliance_long}} discussed, immediately below, can detect cloud configurations that are out of compliance and so on. These are summarized below:
 
 | Area / Solution                                                                                                                                                                                                                           | Detections                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -617,9 +617,9 @@ Threat detection in {{site.data.keyword.Bluemix_notm:}} can occur in various pla
 {: #detection-options}
 
  - **NexGen Firewalls** - This detection option can be deployed in public access situations at the edge.  This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm:}} in certain situations.
- - **{{site.data.keyword.cis_short_notm:}} (CIS)** -      This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
- - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long:}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
- - **{{site.data.keyword.compliance_long:}}** - This configuration status detection capability (different than threat detection) should be deployed in situations where compliance and auditing are critical. This can also be used in where customers want to keep track of security configurations.
+ - **{{site.data.keyword.cis_short_notm}} (CIS)** -      This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
+ - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long:}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
+ - **{{site.data.keyword.compliance_long}}** - This configuration status detection capability (different than threat detection) should be deployed in situations where compliance and auditing are critical. This can also be used in where customers want to keep track of security configurations.
 
 ### Best Practices**
 {: #detection-best-practices}
@@ -647,8 +647,8 @@ Security responses functions typically fall into two categories: those that are 
 {: #response-options}
 
  - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria.
- - **{{site.data.keyword.cis_short_notm:}}** - Customers have the options of getting and selecting different notifications based upon security events.
- - **{{site.data.keyword.compliance_long:}}** - Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below.
+ - **{{site.data.keyword.cis_short_notm}}** - Customers have the options of getting and selecting different notifications based upon security events.
+ - **{{site.data.keyword.compliance_long}}** - Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below.
 
 ### Best Practices
 {: #response-best-practices}
@@ -667,7 +667,7 @@ Security responses functions typically fall into two categories: those that are 
 ## Broader Incident Response
 {: #broader-incident-response}
 
-The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm:}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services.](https://www.ibm.com/services/incident-response)
+The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services.](https://www.ibm.com/services/incident-response)
 
 ## Vulnerability Management
 {: #vulnerability-management}
@@ -721,7 +721,7 @@ Vulnerability testing and management can be quite broad but generally it involve
 
 - Understand the compliance framework applicable to your environment.
 - Understand how needed compliance frameworks are translated into security configurations.
-- Use automation such as {{site.data.keyword.compliance_long:}} to automate security configurations and tracking thereof.
+- Use automation such as {{site.data.keyword.compliance_long}} to automate security configurations and tracking thereof.
 - Develop workflows and approval processes to control security configuration changes. Ensure change rights are strictly controlled through Identity and Access Management (IAM) permissions
 
 ### Solutioning Guidance
@@ -732,18 +732,18 @@ Vulnerability testing and management can be quite broad but generally it involve
 ### Audit and Regulatory
 {: #auditing}
 
-{{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccessfulltrail_notm:}}, both of which were discussed earlier. {{site.data.keyword.compliance_long:}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. {{site.data.keyword.cloudaccessfulltrail_notm:}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed.  Auditors can use both of these audit functions.  See the following if there is a need to understand {{site.data.keyword.Bluemix_notm:}}'s infrastructure compliance monitoring:  (/docs/overview?topic=overview-compliance)
+{{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccessfulltrail_notm}}, both of which were discussed earlier. {{site.data.keyword.compliance_long}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. {{site.data.keyword.cloudaccessfulltrail_notm:}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed.  Auditors can use both of these audit functions.  See the following if there is a need to understand {{site.data.keyword.Bluemix_notm:}}'s infrastructure compliance monitoring:  (/docs/overview?topic=overview-compliance)
 
 ### Options
 {: #auditing-options}
 
- - **{{site.data.keyword.compliance_long:}}** - Customers can use this tool for compliance audit reports and also configuration governance, as noted earlier.  If these functions are needed, Security and Compliance is highly reccommended due to its tight integration with {{site.data.keyword.Bluemix_notm:}}.
+ - **{{site.data.keyword.compliance_long}}** - Customers can use this tool for compliance audit reports and also configuration governance, as noted earlier.  If these functions are needed, Security and Compliance is highly reccommended due to its tight integration with {{site.data.keyword.Bluemix_notm:}}.
  - **Palo Alto Prisma Cloud** - This option may be applicable if there is need for multi-cloud compliance monitoring and configuration governance.  Or the customer may already be using this platform.  Using this solution just for {{site.data.keyword.Bluemix_notm:}} is not recommended due to possible costs and configuration complexities.
  - **No Compliance Monitoring** - Customers could possibly forgo compliance monitoring if the workloads are non-regulated and there are no audit reporting.
 
 ### Best Practices*
 {: #auditing-best-practices}
 
-- **Best practices for working with {{site.data.keyword.compliance_long}}** - [Best practices for working with {{site.data.keyword.compliance_long:}}] (/docs/security-compliance?topic=security-compliance-best-practices)
+- **Best practices for working with {{site.data.keyword.compliance_long}}** - [Best practices for working with {{site.data.keyword.compliance_long}}] (/docs/security-compliance?topic=security-compliance-best-practices)
 
-- **Understanding your responsibilities when using {{site.data.keyword.compliance_long}}** [Understanding your responsibilities when using {{site.data.keyword.compliance_long:}}] /docs/security-compliance?topic=security-compliance-responsibilities
+- **Understanding your responsibilities when using {{site.data.keyword.compliance_long}}** [Understanding your responsibilities when using {{site.data.keyword.compliance_long}}] /docs/security-compliance?topic=security-compliance-responsibilities
