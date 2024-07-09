@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-08"
+lastupdated: "2024-07-09"
 
 subcollection: pattern-vpc-security
 
@@ -220,7 +220,6 @@ Also note that IBM Cybersecurity Services has a DLP solution known as Guardium: 
 The diagram below provides insight on how IAM works in the {{site.data.keyword.Bluemix_notm:}}.
 
 ![illustrates the security framework for IaaS Security Whitepaper](images/iam.svg){: caption="Figure 3. Identity and Access Management" caption-side-"bottom"}
-
 
 ### Options
 {: #IAM-Options}
@@ -486,14 +485,14 @@ EDR/EPP security is a detection and protect mechanism that works at the operatin
 
 Now within the context of this particular section, only runtime vulnerability and detection will be discussed. Cloud Workload Protection also has compliance components, and these are discussed in the Governance, Risk and Compliance section.
 
-Please see the following link for information: [Key features of {{site.data.keyword.Bluemix_notm:}} Security and Compliance Center Workload Protection](https://docs/workload-protection?topic=workload-protection-key-features). This capability can also fall into a security mechanism known as Vulnerability Management. Information on this follows in the Vulnerability Management section.
+Please see the following link for information: [Key features of {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long:}} Workload Protection](https://docs/workload-protection?topic=workload-protection-key-features). This capability can also fall into a security mechanism known as Vulnerability Management. Information on this follows in the Vulnerability Management section.
 
 Also see this link which has broad information on endpoint security: [what is endpoint security](https://www.ibm.com/topics/endpoint-security) and [What is Endpoint detection and response.](https://www.ibm.com/topics/edr)
 
 ### Options
 {: #endpoint-security-options}
 
- - **{{site.data.keyword.Bluemix_notm:}} Workload Protection** - Fully integrated into {{site.data.keyword.Bluemix_notm:}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm:}} Security and Compliance Center,
+ - **{{site.data.keyword.Bluemix_notm:}} Workload Protection** - Fully integrated into {{site.data.keyword.Bluemix_notm:}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long:}},
  - **3rd Party Endpoint Protection and Detection (EPP/EDR)** - Stand-alone solutions without {{site.data.keyword.Bluemix_notm:}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services (CSS), has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax).  IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
  - **No Workload Protection Endpoint Security** - This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments.
 
@@ -506,7 +505,7 @@ Also see this link which has broad information on endpoint security: [what is en
 ### Solutioning Guidance
 {: #endpoint-security-best-practices}
 
-[Getting started with {{site.data.keyword.Bluemix_notm:}} Security and Compliance Center Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started)
+[Getting started with {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long:}} Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started)
 
 ## Virtual Private Endpoints
 {: #VPE}
@@ -599,7 +598,7 @@ Logging plays a key role in security in that captures events that may be anomalo
 ## Threat Detection
 {: #threat-detection}
 
-Threat detection in {{site.data.keyword.Bluemix_notm:}} can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc.  {{site.data.keyword.Bluemix_notm:}} Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. {{site.data.keyword.Bluemix_notm:}} also has a workload protection, previous discussed which can detect runtime threats on workloads. Security and Compliance Center discussed, immediately below, can detect cloud configurations that are out of compliance and so on. These are summarized below:
+Threat detection in {{site.data.keyword.Bluemix_notm:}} can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc.  {{site.data.keyword.Bluemix_notm:}} Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. {{site.data.keyword.Bluemix_notm:}} also has a workload protection, previous discussed which can detect runtime threats on workloads. {{site.data.keyword.compliance_long:}} discussed, immediately below, can detect cloud configurations that are out of compliance and so on. These are summarized below:
 
 | Area / Solution                                                                                                                                                                                                                           | Detections                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -613,8 +612,8 @@ Threat detection in {{site.data.keyword.Bluemix_notm:}} can occur in various pla
 
  - **NexGen Firewalls** - This detection option can be deployed in public access situations at the edge.  This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm:}} in certain situations.
  - **{{site.data.keyword.cis_short_notm:}} (CIS)** -      This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
- - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm:}} Security and Compliance Center This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
- - **Security and Compliance Center** - This configuration status detection capability (different than threat detection) should be deployed in situations where compliance and auditing are critical. This can also be used in where customers want to keep track of security configurations.
+ - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long:}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
+ - **{{site.data.keyword.compliance_long:}}** - This configuration status detection capability (different than threat detection) should be deployed in situations where compliance and auditing are critical. This can also be used in where customers want to keep track of security configurations.
 
 ### Best Practices**
 {: #detection-best-practices}
@@ -625,8 +624,8 @@ Threat detection capabilities should always be deployed in public situations as 
 {: #detection-guidance}
 
 - [Using the CIS Security Events capability](https://docs/cis?topic=cis-using-the-cis-security-events-capability).
-- [Getting started with {{site.data.keyword.Bluemix_notm:}} Security and Compliance Center Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started).
-- [Getting started with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-getting-started).
+- [Getting started with {{site.data.keyword.Bluemix_notm:}} {{site.data.keyword.compliance_long:}} Workload Protection](https://docs/workload-protection?topic=workload-protection-getting-started).
+- [Getting started with {{site.data.keyword.compliance_long:}}](https://docs/security-compliance?topic=security-compliance-getting-started).
 - Please refer to the selected firewall product documentation on threat detection and how to configure it.
 
 ## Response
@@ -636,14 +635,14 @@ Security responses functions typically fall into two categories: those that are 
 
 - **NexGen Firewalls** - Response - blocking traffic, files, URLs, DNS queries, etc. plus all kinds of response alerts and alarms.
 - **[{{site.data.keyword.cis_short_notm:}} (CIS)](https://docs/cis?topic=cis-about-ibm-cloud-internet-services-cis)** - Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events.
-- **Security and Compliance Center** - Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events.
+- **{{site.data.keyword.compliance_long:}}** - Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events.
 
 ### Options
 {: #response-options}
 
  - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria.
  - **{{site.data.keyword.cis_short_notm:}}** - Customers have the options of getting and selecting different notifications based upon security events.
- - **Security and Compliance Center** - Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below.
+ - **{{site.data.keyword.compliance_long:}}** - Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below.
 
 ### Best Practices
 {: #response-best-practices}
@@ -657,7 +656,7 @@ Security responses functions typically fall into two categories: those that are 
 
  -[Configuring alert policies](https://docs/cis?topic=cis-configuring-policies&interface=ui)
  (Cloud Internet Service)
- -[Enabling event notifications for Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-event-notifications&interface=ui)
+ -[Enabling event notifications for {{site.data.keyword.compliance_long:}}](https://docs/security-compliance?topic=security-compliance-event-notifications&interface=ui)
 
 ## Broader Incident Response
 {: #broader-incident-response}
@@ -672,7 +671,7 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 
 | Area / Solution                                                                                                                                                            | Vulnerability Checking / Testing                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Security and Compliance Center                                                                                                                                                 | Ability to scan resources for misconfigured settings per compliance requirements.                                                                                                                                                                                                                                                                                                                                                                                         |
+| {{site.data.keyword.compliance_long:}}                                                                                                                                                 | Ability to scan resources for misconfigured settings per compliance requirements.                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Vulnerability Advisor](Vulnerability%20Advisor%20for%20IBM%20Cloud%20Container%20Registry%20%20IBM%20https:/cloud.ibm.com%20›%20container-registry%20›%20va-v4)               | Ability to scan container images. This vulnerability checking is really applicable where containers may be deployed on top of a Virtual Private Cloud (VPC) Virtual Service Instancea (VSIs).                                                                                                                                                                                                                                                                            |
 | Software and Network Vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](https://docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in {{site.data.keyword.Bluemix_notm:}} on Virtual Server Instances (VSIs) IBM Cybersecurity Services (CSS) can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management) IBM CSS also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management). |
 {: caption="Table 1: Vulnerability Management - Methods"}
@@ -683,7 +682,7 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 ### Options
 {: #vulnerability-management-options}
 
- - **Security and Compliance Center** -  Customers have the option of choosing the resources and configurations they want to scan plus customer have the option picking a variety of compliance
+ - **{{site.data.keyword.compliance_long:}}** -  Customers have the option of choosing the resources and configurations they want to scan plus customer have the option picking a variety of compliance
  - **Vulnerability Advisor** - Customers can choose what images to scan and what exemptions there can be when a threat detection occurs.
  - **3rd Party** - Customers have the option of selecting and using a variety of vulnerability testing solutions and each of these have a myriad of configuration options.
 
@@ -696,7 +695,7 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 ### Solutioning Guidance
  {: #vulnerability-management-guidance}
 
-- [Best practices for working with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-best-practices)
+- [Best practices for working with {{site.data.keyword.compliance_long:}}](https://docs/security-compliance?topic=security-compliance-best-practices)
 - [Configuring {{site.data.keyword.Bluemix_notm:}} Vulnerability Advisor scans](https://docs/devsecops?topic=devsecops-cd-devsecops-va-scans)
 
 ## Governance, Risk and Compliance
@@ -705,12 +704,12 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 ## Configuration Governance and Compliance Monitoring
 {: #configuration-governance-compliance-monitoring}
 
-{{site.data.keyword.Bluemix_notm:}}’s configuration governance and compliance monitoring is handled through its Security and Compliance Center platform, which has been discussed in previous sections.
+{{site.data.keyword.Bluemix_notm:}}’s configuration governance and compliance monitoring is handled through its {{site.data.keyword.compliance_long:}} platform, which has been discussed in previous sections.
 
 ### Options
 {: #config-governance}
 
-- **Security and Compliance Center** - Customers have the option of choosing the resources and configurations they want to scan plus customers have the option picking a variety of compliance frameworks,
+- **{{site.data.keyword.compliance_long:}}** - Customers have the option of choosing the resources and configurations they want to scan plus customers have the option picking a variety of compliance frameworks,
 - **Palo Alto Prisma Cloud** - This solution from IBM Security provides configuration governance and compliance monitoring in multi-cloud situations,
 - **No Configuration Governance or Compliance** -   Customers could elect to forgo security configuration governance in private environments with non-critical workloads. But vulnerabilities could appear where there is security configuration “drift” from personnel making inadvertent changes.  Customers could also forgo compliance monitoring where there are non-critical, non-regulated workloads.
 
@@ -719,29 +718,29 @@ Vulnerability testing can be quite broad but generally it involves tools that se
 
 - Understand the compliance framework applicable to your environment.
 - Understand how needed compliance frameworks are translated into security configurations.
-- Use automation such as Security and Compliance Center to automate security configurations and tracking thereof.
+- Use automation such as {{site.data.keyword.compliance_long:}} to automate security configurations and tracking thereof.
 - Develop workflows and approval processes to control security configuration changes. Ensure change rights are strictly controlled through Identity and Access Management (IAM) permissions
 
 ### Solutioning Guidance
 {: #config-best-practices}
 
-[Best practices for working with Security and Compliance Center](https://docs/security-compliance?topic=security-compliance-best-practices)
+[Best practices for working with {{site.data.keyword.compliance_long:}}](https://docs/security-compliance?topic=security-compliance-best-practices)
 
 ### Audit and Regulatory
 {: #auditing}
 
-{{site.data.keyword.Bluemix_notm:}} has two main capabilities to aid in auditing: Security and Compliance Center and {{site.data.keyword.cloudaccessfulltrail_notm:}}, both of which were discussed earlier. Security and Compliance Center provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. {{site.data.keyword.cloudaccessfulltrail_notm:}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed.  Auditors can use both of these audit functions.  See the following if there is a need to understand {{site.data.keyword.Bluemix_notm:}}'s infrastructure compliance monitoring:  https://docs/overview?topic=overview-compliance
+{{site.data.keyword.Bluemix_notm:}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long:}} and {{site.data.keyword.cloudaccessfulltrail_notm:}}, both of which were discussed earlier. {{site.data.keyword.compliance_long:}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. {{site.data.keyword.cloudaccessfulltrail_notm:}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed.  Auditors can use both of these audit functions.  See the following if there is a need to understand {{site.data.keyword.Bluemix_notm:}}'s infrastructure compliance monitoring:  https://docs/overview?topic=overview-compliance
 
 ## Options
 {: #auditing-options}
 
- - **Security and Compliance Center** - Customers can use this tool for compliance audit reports and also configuration governance, as noted earlier.  If these functions are needed, Security and Compliance is highly reccommended due to its tight integration with {{site.data.keyword.Bluemix_notm:}}.
+ - **{{site.data.keyword.compliance_long:}}** - Customers can use this tool for compliance audit reports and also configuration governance, as noted earlier.  If these functions are needed, Security and Compliance is highly reccommended due to its tight integration with {{site.data.keyword.Bluemix_notm:}}.
  - **Palo Alto Prisma Cloud** - This option may be applicable if there is need for multi-cloud compliance monitoring and configuration governance.  Or the customer may already be using this platform.  Using this solution just for {{site.data.keyword.Bluemix_notm:}} is not recommended due to possible costs and configuration complexities.
  - **No Compliance Monitoring** - Customers could possibly forgo compliance monitoring if the workloads are non-regulated and there are no audit reporting.
 
 ### Best Practices*
 {: #auditing-best-practices}
 
-- **Best practices for working with Security and Compliance Center** - [Best practices for working with Security and Compliance Center] (https://docs/security-compliance?topic=security-compliance-best-practices)
+- **Best practices for working with {{site.data.keyword.compliance_long:}}** - [Best practices for working with {{site.data.keyword.compliance_long:}}] (https://docs/security-compliance?topic=security-compliance-best-practices)
 
-- **Understanding your responsibilities when using Security and Compliance Center** [Understanding your responsibilities when using Security and Compliance Center] https://docs/security-compliance?topic=security-compliance-responsibilities
+- **Understanding your responsibilities when using {{site.data.keyword.compliance_long:}}** [Understanding your responsibilities when using {{site.data.keyword.compliance_long:}}] https://docs/security-compliance?topic=security-compliance-responsibilities
