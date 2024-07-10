@@ -40,7 +40,7 @@ There are many different security best practices for cloud deployments, but one 
 -   Enable strong authentication, and periodic / recurring authentication as possible,
 -   Assume breaches everywhere and protect and detect accordingly,
 -   Segment functions and related network areas to create security perimeters to limit blast radiuses of attacks,
--   Discover all possible resources, functions, components and data used in an environment and ensure total visibility – **you cannot secure what you cannot see**,
+-   Discover all possible resources, functions, components and data used in an environment and ensure total visibility – **you cannot secure what you cannot see**, and
 -   Use continuous security monitoring.
 
 Please refer to the following National Institute of Standards and Technology paper for more information on Zero Trust: <https://csrc.nist.gov/pubs/sp/800/207/final>{: external}.  And there is many other web sources on zero trust principles and applications. This paper will show how various {{site.data.keyword.Bluemix_notm:}} security elements can be deployed following a Zero Trust approach.
@@ -50,7 +50,7 @@ Please refer to the following National Institute of Standards and Technology pap
 
 IBM uses a broad standard framework in all its security endeavors, e.g., design, consulting, implementation, etc. and this is shown below for reference. Now some, but not all of these are necessarily applicable for {{site.data.keyword.Bluemix_notm}} in Virtual Private Cloud environments from a technical capability perspective. This paper therefore will only cover the capabilities highlighted in blue. And note that some of these capability categories can be broken down further and these are discussed in detail starting in following sections.
 
-![illustrates the security framework for IaaS Security Whitepaper](images/framework.svg){: caption="Figure 1. IBM Security Framework" caption-side-"bottom"}
+![illustrates the security framework for IaaS Security Whitepaper](images/securityframework.svg){: caption="Figure 1. IBM Security Framework" caption-side-"bottom"}
 
 ## IBM Cybersecurity Security Services (CSS) Capabilities – Options in Certain Situations
 {: #CSS-capabilities}
@@ -345,7 +345,7 @@ A bastion host is a server used to manage access to an internal or private netwo
 ### Web Application Firewalling (WAF)
 {: #WAF}
 
-A WAF helps protect web applications by filtering and monitoring HTTP traffic between a web application and the Internet. A WAF is an OSI protocol Layer-7 defense in the OSI model, and it is not designed to defend against all types of attacks. {{site.data.keyword.Bluemix_notm}} has two ways to provide web application firewalling at the Internet edge. One that is typically used in a Content Delivery Network (CDN) and which is named {{site.data.keyword.cis_short_notm}} (CIS). The other WAF option is using NexGen firewalls that can be placed on the “edge” or in front Transit VPCs. You can find information on your NexGen firewalls WAF capabilities in their respective product information.
+A WAF helps protect web applications by performing edge filtering and monitoring HTTP traffic between a web application and the Internet. A WAF is an OSI protocol Layer-7 defense in the OSI model, and it is not designed to defend against all types of attacks. {{site.data.keyword.Bluemix_notm}} has two ways to provide web application firewalling at the Internet edge. One that is typically used in a Content Delivery Network (CDN) and which is named {{site.data.keyword.cis_short_notm}} (CIS). The other WAF option is using NexGen firewalls that can be placed on the “edge” or in front Transit VPCs. You can find information on your NexGen firewalls WAF capabilities in their respective product information.
 
 ### Options
 {: #WAF-options}
@@ -357,8 +357,7 @@ A WAF helps protect web applications by filtering and monitoring HTTP traffic be
 ### Best Practices
 {: #WAF-best-practices}
 
- - WAF should always be used in public access environments. There are many options and configurations with WAF that relate to HTTP/HTTPS, domains, detection policies, etc.,
- - Customers thoroughly review these items and adapt to their own specific security needs and associated security policies,
+ - WAF should always be used in public access environments. There are many options and configurations with WAF that relate to HTTP/HTTPS, domains, detection policies, etc. Customers should thoroughly review these items and adapt to their own specific security needs and associated security policies,
  - As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies, and
  - WAF logs should generally be correlated with other logs, perhaps through a Security Event and Information Management (SIEM) platform, if available.
 
@@ -404,7 +403,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ## Core Network Protection / Network Segmentation Capability
 {: #core-network-protection}
 
-{{site.data.keyword.Bluemix_notm}} provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads.  Please see the methocs. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius”.  Please see the following links for more information on network segmentation:
+{{site.data.keyword.Bluemix_notm}} provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads.  Please see the methods below. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius”.  Please see the following links for more information on network segmentation:
 
  - [Security in Your VPC](/docs/vpc?topic=vpc-security-in-your-vpc),
  - [About Networking](/docs/vpc?topic=vpc-about-networking-for-vpc), and
@@ -416,7 +415,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
  - **Virtual Private Cloud** - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, etc.  And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://docs/vpc?topic=vpc-about-vpc),
  - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.),
  - **Security Groups** - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups)
- - **Transit Gateway** - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keyword.Bluemix_notm}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
+ - **Transit Gateway** - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keyword.Bluemix_notm}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering, similar to basic standard firewalls.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
  - **NexGen Firewalls** - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
 
 ### Options:
@@ -425,14 +424,15 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
  - **VPC** - There are no options to VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor,
  - **Access Control Lists** - There are no options for using ACLs in VPC environments,
  - **Security Groups** - There are no alternatives in a VPC environment,
- - **NexGen Firewall** - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) VPC.
+ - **NexGen Firewall** - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) edge VPC.
  - **Transit Gateway** - There are no options for using Transit Gateway when you want to interconnect VPCs or connect to other environment, e.g., PowerVS.  But the use of pretext filtering is options in many situations.
 
 ### Best Practices:
 {: #segmentation-best-practices}
 
  - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation.
- - Separate production, dev, test, etc. from each other using VPC segmentation. Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed.
+ - Separate production, dev, test, etc. from each other using VPC segmentation.
+ - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed,
  - Conduct periodic reviews of all ACL and Security Group rules. Understand traffic flows between servers so as to understand what segmentation is needed.
 
 ### Solutioning Guidance:
@@ -444,7 +444,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ## Edge Protection / Firewalling Capability
 {: #core-network-protection}
 
-Segregation techniques were discussed in the previous section and in some way, these can be considered firewalling methods as well.  {{site.data.keyword.Bluemix_notm}} has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic.  Most notable are ACLs that are firewalls that are applied to created cloud subnets.  Security Group are firewalls that are applied virtual server instance (VSI) network interfaces.  Security Groups work at the L3/L4 level controlling allowed IP addresses, ports, and protocols.
+Segregation techniques were discussed in the previous section and in some way, these can be considered firewalling methods as well.  {{site.data.keyword.Bluemix_notm}} has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic.  Most notable are ACLs that are firewalls that are applied to created cloud subnets.  Security Group are firewalls that are applied virtual server instance (VSI) network interfaces.  Security Groups work at the Level 3/ Level 4 level controlling allowed IP addresses, ports, and protocols.
 
  - [Access Control Lists](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.) Controls ingress and egress IP addresses, ports and protocol in subnets,
  - [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups) - Controls ingress and egress IP addresses, ports and protocols on virtual server instances network interfaces. This can be considered host firewalling,
@@ -458,7 +458,7 @@ Segregation techniques were discussed in the previous section and in some way, t
  - **VPCs, Access Control Lists (ACLs), Security Groups** - No options – mandatory for all VPC environments. Please see: [exploring firewalls](/docs/security-groups?topic=security-groups-exploring-firewalls)
 
  - **NexGen Firewalls** - Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, etc. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm:}} (CIS) will be used.
- - **{{site.data.keyword.cis_full_notm}}** - [{{site.data.keyword.cis_short_notm}} (CIS)](https://docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
+ - **{{site.data.keyword.cis_full_notm}}** - [CIS link](https://docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
 
 ### Best Practices
 {: #core-network-protection-best-practices}
@@ -480,7 +480,7 @@ Segregation techniques were discussed in the previous section and in some way, t
 ## Endpoint Detection / Endpoint Protection (EDR/EPP) Capability
 {: #EDR-EPP}
 
-EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, etc.  Now within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection / Detection (EPP/EDR) security.  This provides a broad range of security capabilities to include:
+EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, etc.  Now within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance Center solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection / Detection (EPP/EDR) security.  This provides a broad range of security capabilities to include:
 
 -   A unified and centralized framework to manage the security and compliance of applications, workloads, and infrastructure,
 -   Host and image scanning, auditing, and runtime vulnerability management capabilities,
@@ -498,7 +498,7 @@ Also see this link which has broad information on endpoint security: [What is en
 
  - **{{site.data.keyword.Bluemix_notm}} Workload Protection** - Fully integrated into {{site.data.keyword.Bluemix_notm}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}},
  - **3rd Party Endpoint Protection and Detection (EPP/EDR)** - Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services (CSS), has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax).  IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
- - **No Workload Protection Endpoint Security** - This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments.
+ - **No Workload Protection Endpoint Security** - This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments, and perhaps where cost is a factor.
 
 ### Best Practices
 {: #endpoint-security-best-practices}
@@ -509,7 +509,8 @@ Also see this link which has broad information on endpoint security: [What is en
 ### Solutioning Guidance
 {: #endpoint-security-best-practices}
 
-[Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started)
+ - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started)
+ - See respective 3rd party EPP/EDR solution documenation.
 
 ## Virtual Private Endpoints
 {: #VPE}
@@ -520,14 +521,14 @@ Also see this link which has broad information on endpoint security: [What is en
 {: #VPE-options}
 
  - **VPE use** - always recommended due to its inherent security and private traffic transit, and
- - **Cloud Service Access Through the Internet** - Never recommended, but a possible transit if cloud services access is needed in some way across the Internet.
+ - **Cloud Service Access Through the Internet** - Never recommended, but a possible transit if cloud service access is needed in some way across the Internet.
 
 ### Best Practices
 {: #VPE-best-practices}
 
  - Virtual Private Endpoints should always be used when there is a need to access cloud services as opposed to any access over the Internet,
  - VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE, and
- - Another is that Security Groups can additionally be applied to control inbound application traffic.
+ - Another is that VPE Security Groups can additionally be applied to control inbound application traffic.
 
 ### Solutioning Guidance
 {: #VPE-guidance}
@@ -542,10 +543,12 @@ Also see this link which has broad information on endpoint security: [What is en
 ### Threat Investigation
 {: #other-logging-investigation}
 
+Many security solutions have their own specific threat detection capabilities, e.g., NexGen firewalls and so on.  But typically customers use a variety of logs and aggregate them and correlate them to provide a wholistic threat investigation picture.  The following discusses the possible logs that can be used for this purposes.
+
 ### {{site.data.keyword.cloudaccesstraillong}} – Identity and Access Management Logging
 {: #activity-tracker-IAM-logging}
 
-{{site.data.keyword.Bluemix_notm}}’s {{site.data.keyword.cloudaccesstraillong}} logs and records all administrator and API actions within an {{site.data.keyword.Bluemix_notm}} account.  This service can be used to investigate abnormal activities, for troubleshooting or forensics purposes and used for compliance audits.  This service provides such features as alerting, log storage encryption, compliance with the Cloud Auditing Data Federation (CADF) standard among others.  Logs from this service can also be forwarded externally to a Security Information Even Management (SIEM) for event correlation for threat detection.  More information on {{site.data.keyword.cloudaccessfulltrail_notm}} can be found at the following link: [Learning about {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccesstraillong}} architecture and workload isolation](/docs/activity-tracker?topic=activity-tracker-compute-isolation)
+{{site.data.keyword.Bluemix_notm}}’s {{site.data.keyword.cloudaccesstraillong}} logs and records all administrator and API actions within an {{site.data.keyword.Bluemix_notm}} account.  This service can be used to investigate abnormal activities, for troubleshooting or forensics purposes and used for compliance audits.  This service provides such features as alerting, log storage encryption, compliance with the Cloud Auditing Data Federation (CADF) standard among others.  Logs from this service can also be forwarded externally to a Security Information Even Management (SIEM) for event correlation for threat detection.  More information on {{site.data.keyword.cloudaccesstraillong_notm}} can be found at the following link: [Learning about {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccesstraillong}} architecture and workload isolation](/docs/activity-tracker?topic=activity-tracker-compute-isolation)
 
 ### Options
 {: #activity-tracker-options}
@@ -555,8 +558,9 @@ There are no other {{site.data.keyword.Bluemix_notm}} IAM logging options here �
 ### Best Practices
 {: #activity-best-practices}
 
- - Use of {{site.data.keyword.cloudaccesstraillong}} auditing in regulated environment or compliance auditing is a must, and
- - Forwarding of {{site.data.keyword.cloudaccessfulltrail_notm}} logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM.
+ - Use of {{site.data.keyword.cloudaccesstraillong}} auditing in regulated environment or compliance auditing is a must,
+ - Forwarding of {{site.data.keyword.cloudaccesstraillong_notm}} logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM, and
+ - Regular reviews of user and API activity logs to determine any possible anomalies.
 
 ### Solutioning Guidance
 {: #activity-guidance}
@@ -565,33 +569,34 @@ There are no other {{site.data.keyword.Bluemix_notm}} IAM logging options here �
  - [About {{site.data.keyword.cloudaccesstraillong}} in {{site.data.keyword.Bluemix_notm}}](/docs/activity-tracker?topic=activity-tracker-about), and
  - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
 
-## Other Logging – Forwarding to a Security Information and Event Management (SIEM) platform
+## Other Logging For Event Correlation
 {: #other-logging}
 
-Logging plays a key role in security in that captures events that may be anomalous and when are correlated and analyzed, can detect a threat and other problems.  Logging can also play a role in compliance auditing. Several {{site.data.keyword.Bluemix_notm:}} services create logs as noted in the below table:
+Logging plays a key role in security in that captures events that may be anomalous and when are correlated and analyzed, can detect a threat and other problems.  Logging can also play a role in compliance auditing. Several {{site.data.keyword.Bluemix_notm}} services create logs as noted in the below table:
 
 | Logs                                                                                                                                | Function                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | [VPC Flow Logs](/docs/vpc?topic=vpc-flow-logs)                                                                     | Provides logs of all ingress and egress traffic within a VPC.                                                     |
-| [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-getting-started)                                  | As noted above; Provides logs of all administrator actions and API activities within an IBM account.                              |
-| NexGen Firewalls                                                                                                                    | Provides logs on a variety of functions / actions that occur within the firewalls, e.g., rule hits, alarms, etc. |
+| [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-getting-started)                                  | As noted above this rovides logs of all administrator actions and API activities within an IBM account.                              |
+| NexGen Firewalls                                                                                                                    | Provides logs on a variety of functions / actions that occur within the firewalls, e.g., rule hits, alarms, etc. Also note that most NexGen firewalls have their own portals where threats can be investigated|
 | [{{site.data.keyword.cis_full_notm}}
 LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                                | Captures {{site.data.keyword.cis_short_notm}} firewall events.                                                                 |
 | [Cloud Workload Protection Event Forwarding](/docs/workload-protection?topic=workload-protection-event_forwarding) | Forwards various events from the Cloud Workload Protection solution.                                             |
-{: caption="Table 1: Available Logging"}
+{: caption="Table 2: Available Logging"}
 
-## Other Logging Options
+### Options
 {: #logging-options}
 
  - **VPC Flow Logs** - There are no options if traffic capture in and out of a VPC is needed for security and troubleshooting purposes.
- - **{{site.data.keyword.cloudaccessfulltraillong}}** - There are no options if logs are needed from IAM user and API actions for auditing, compliance or security reasons.
+ - **{{site.data.keyword.cloudaccesstraillong}}** - There are no options if logs are needed from IAM user and API actions for auditing, compliance or security reasons.
  - **NexGen Firewalls** - Customers can elect to capture and forward all kinds of logs.
 
 ### Best Practices
 {: #otherlogging-best-practices}
 
- - Logging of IAM user and API actions should always be used, regardless of the security situation.  These can be used for troubleshooting purposes and mandatory in compliance situations.
- - Firewall logs should always be used for detection purposes, if deployed.
+ - Logging of IAM user and API actions should always be used, regardless of the security situation.  These can be used for troubleshooting purposes and mandatory in compliance situations,
+ - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment,
+ - Use of VPC flow logs, Cloud Internet Services logs and Cloud Workload Protection logs is dependent upon the customer's use of a Security Information and Event Management (SIEM) platform and how many log feeds are sufficient and how much security inspection granularity.
 
 ### Solutioning Guidance
 {: #other-logging-guidance}
@@ -605,7 +610,7 @@ LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                      
 ## Threat Detection
 {: #threat-detection}
 
-Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc.  {{site.data.keyword.Bluemix_notm}} Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. {{site.data.keyword.Bluemix_notm}} also has a workload protection, previous discussed which can detect runtime threats on workloads. {{site.data.keyword.compliance_long}} discussed, immediately below, can detect cloud configurations that are out of compliance and so on. These are summarized below:
+Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various places. NexGen firewalls deployed at the edge can detect anomalous traffic through their Intrusion Detection / Intrusion Protection (IDS/IPS) and other capabilities. NexGen firewalls have other detection mechanisms as well to include file and URL blocking, etc.  {{site.data.keyword.Bluemix_notm}} Internet Services, which also operates at the Internet Edge, can detects threats at the application layer through its WAF capability. {{site.data.keyword.Bluemix_notm}} also has a workload protection, previous discussed which can detect runtime threats on workloads.  These are summarized below:
 
 | Area / Solution                                                                                                                                                                                                                           | Detections                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -620,12 +625,14 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
  - **NexGen Firewalls** - This detection option can be deployed in public access situations at the edge.  This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm}} in certain situations.
  - **{{site.data.keyword.cis_full_notm}}** -  This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
  - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long:}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
- - **{{site.data.keyword.compliance_long}}** - This configuration status detection capability (different than threat detection) should be deployed in situations where compliance and auditing are critical. This can also be used in where customers want to keep track of security configurations.
 
 ### Best Practices
 {: #detection-best-practices}
 
-Threat detection capabilities should always be deployed in public situations as can be imagined. Deployment in private situations dependent upon a customer risk profile. Threat detections capability should be accompanied with trained personnel and appropriate processes.  Threat detections need to be correlated in some way, perhaps through a Security Event and Information Management (SIEM) platform, to triangulate attacks and get a holistic view of threats.
+- Threat detection capabilities should always be deployed in public situations as can be imagined
+- Deployment in private situations dependent upon a customer risk profile.
+- Threat detections capability should be accompanied with trained personnel and appropriate processes.
+- Threat detections need to be correlated in some way, perhaps through a Security Event and Information Management (SIEM) platform, to triangulate attacks and get a holistic view of threats.
 
 ### Solutioning Guidance
 {: #detection-guidance}
@@ -642,14 +649,12 @@ Security responses functions typically fall into two categories: those that are 
 
 - **NexGen Firewalls** - Response - blocking traffic, files, URLs, DNS queries, etc. plus all kinds of response alerts and alarms.
 - **[{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis)** - Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events.
-- **{{site.data.keyword.compliance_long}}** - Response - blocking various HTTP/HTTS traffic and domains and then notifications based upon events.
 
 ### Options
 {: #response-options}
 
  - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria.
  - **{{site.data.keyword.cis_short_notm}}** - Customers have the options of getting and selecting different notifications based upon security events.
- - **{{site.data.keyword.compliance_long}}** - Customers can choose a variety of alert notifications based upon several criteria. See the type of alerts in the solutioning guidance below.
 
 ### Best Practices
 {: #response-best-practices}
@@ -663,12 +668,12 @@ Security responses functions typically fall into two categories: those that are 
 
 - [Configuring alert policies](/docs/cis?topic=cis-configuring-policies&interface=ui)
  (Cloud Internet Service)
-- [Enabling event notifications for {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-event-notifications&interface=ui)
+- NexGen firewall response capability - please see the respective firewall documentation and how to set up possible responses.
 
 ## Broader Incident Response
 {: #broader-incident-response}
 
-The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services.](https://www.ibm.com/services/incident-response)
+The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services.](https://www.ibm.com/services/incident-response).  And there are other broader incident response solutions in the marketplace.
 
 ## Vulnerability Management
 {: #vulnerability-management}
@@ -679,21 +684,21 @@ Vulnerability testing and management can be quite broad but generally it involve
 | Area / Solution                                                                                                                                                            | Vulnerability Checking / Testing                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | {{site.data.keyword.compliance_long}}                                                                                                                                                 | Ability to scan resources for misconfigured settings per compliance requirements.                                                                                                                                                                                                                                                                                                                                                                                         |
-| [Vulnerability Advisor](Vulnerability%20Advisor%20for%20IBM%20Cloud%20Container%20Registry%20%20IBM%20https:/cloud.ibm.com%20›%20container-registry%20›%20va-v4)               | Ability to scan container images. This vulnerability checking is really applicable where containers may be deployed on top of a Virtual Private Cloud (VPC) Virtual Service Instancea (VSIs).                                                                                                                                                                                                                                                                            |
-| Software and Network Vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](/docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in {{site.data.keyword.Bluemix_notm}} on Virtual Server Instances (VSIs) IBM Cybersecurity Services (CSS) can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management) IBM CSS also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management). |
-{: caption="Table 1: Vulnerability Management - Methods"}
+| [Vulnerability Advisor](Vulnerability%20Advisor%20for%20IBM%20Cloud%20Container%20Registry%20%20IBM%20https:/cloud.ibm.com%20›%20container-registry%20›%20va-v4)               | Ability to scan container images. This vulnerability checking is really applicable where containers may be deployed on top of a Virtual Private Cloud (VPC) Virtual Service Instances (VSIs).                                                                                                                                                                                                                                                                            |
+| Software and Network Vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](/docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in {{site.data.keyword.Bluemix_notm}} on Virtual Server Instances (VSIs). IBM Cybersecurity Services (CSS) can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management). IBM CSS also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management). |
+{: caption="Table 3: Vulnerability Management - Methods"}
 
 ### Options
 {: #vulnerability-management-options}
 
- - **{{site.data.keyword.compliance_long}}** -  Customers have the option of choosing the resources and configurations they want to scan plus customer have the option picking a variety of compliance
+ - **{{site.data.keyword.compliance_long}}** -  Customers have the option of choosing the resources and configurations they want to scan for vulnerabilities.
  - **Vulnerability Advisor** - Customers can choose what images to scan and what exemptions there can be when a threat detection occurs.
  - **3rd Party** - Customers have the option of selecting and using a variety of vulnerability testing solutions and each of these have a myriad of configuration options.
 
 ### Best Practices
 {: #vulnerability-management-best-practices}
 
- - Customers should establish a vulnerability testing plan and conduct regular vulnerability testing per the plan.
+ - Customers should establish a vulnerability testing policy and plan and conduct regular vulnerability testing per the plan/policy.
  - Processes, procedures and approval workflows for vulnerability remediations and similar should be well established.
 
 ### Solutioning Guidance
@@ -705,7 +710,7 @@ Vulnerability testing and management can be quite broad but generally it involve
 ## Governance, Risk and Compliance Domain
 {: #risk-and-compliance}
 
-## Configuration Governance
+## Configuration Governance / Management
 {: #configuration-governance-compliance-monitoring}
 
 {{site.data.keyword.Bluemix_notm}}’s configuration governance is handled through its {{site.data.keyword.compliance_long}} platform, which has been discussed in previous sections.
@@ -713,10 +718,10 @@ Vulnerability testing and management can be quite broad but generally it involve
 ### Options
 {: #config-governance}
 
-- **{{site.data.keyword.compliance_long}}** - Customers have the option of choosing the resources and configurations they want to scan for configuration status and parameters.
-- **Palo Alto Prisma Cloud** - This solution from IBM Security provides configuration governance in multi-cloud situations,
-- **Manual Configuration Management** - Customers could possible track configurations manually, say through spreadsheets and the like, but this method is tedious and prone to errors.  This could be a possibility with non-critical workloads in a private access situation.
-- **No Configuration Governance** -   Never recommended even in private situations and or non-critical.  Vulnerabilities could appear where there is security configuration “drift” from personnel making inadvertent changes.
+- **{{site.data.keyword.compliance_long}}** - Customers have the option of choosing the resources and configurations they want to scan for status and parameters,
+- **Palo Alto Prisma Cloud** - This solution from IBM Cybersecurity Services provides configuration governance in multi-cloud situations,
+- **Manual Configuration Management** - Customers could possible track configurations manually, say through spreadsheets and the like, but this method is tedious and prone to errors.  This could be a possibility with non-critical workloads in a private access situation and,
+- **No Configuration Governance** -   Never recommended even in private situations and or non-critical.  Vulnerabilities could be opened up where there is security configuration “drift” from personnel making inadvertent changes.  And customers would be unable to locate possible problems without significant inspection.
 
 ### Best Practices
 {: #config-best-practices}
@@ -737,7 +742,7 @@ Vulnerability testing and management can be quite broad but generally it involve
 ## Audit and Regulatory and Compliance Monitoring
 {: #auditing}
 
-{{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccessfulltrail_notm}}, both of which were discussed earlier. {{site.data.keyword.compliance_long}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. {{site.data.keyword.cloudaccessfulltrail_notm}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed.  Auditors can use both of these audit functions.  See the following if there is a need to understand {{site.data.keyword.Bluemix_notm}}'s infrastructure compliance monitoring:  [compliance monitoring](/docs/overview?topic=overview-compliance)
+In some respects auditing and regulatory aspects and conmpliance monitoring are all related.{{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccesstraillong_notm}}, both of which were discussed earlier. {{site.data.keyword.compliance_long}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, e.g., NIST 800-53, HIPPA, etc. {{site.data.keyword.cloudaccessfulltrail_notm}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed.  Auditors can use both of these audit functions.  See the following if there is a need to understand {{site.data.keyword.Bluemix_notm}}'s underlying infrastructure compliance monitoring (typically referred to "below the line monitoring):  [compliance monitoring](/docs/overview?topic=overview-compliance)
 
 Note that regulated workloads have specific compliance framework adherence requirements and "regulatory" aspects are subsumed to a certain degree in compliance monitoring and auditing.
 
@@ -748,9 +753,14 @@ Note that regulated workloads have specific compliance framework adherence requi
  - **Palo Alto Prisma Cloud** - This option may be applicable if there is need for multi-cloud compliance monitoring.  Or the customer may already be using this platform.  Using this solution just for {{site.data.keyword.Bluemix_notm}} is not recommended due to possible costs and solution configuration complexities.
  - **No Compliance Monitoring** - Customers could possibly forgo compliance monitoring and auditing if the workloads are non-regulated and there are no audit reporting requirements.
 
-### Best Practices*
+### Best Practices
 {: #auditing-best-practices}
 
 - **Best practices for working with {{site.data.keyword.compliance_long}}** - [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices)
 
-- **Understanding your responsibilities when using {{site.data.keyword.compliance_long}}** -[Understanding your responsibilities when using {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-responsibilities)
+- **Understanding your responsibilities when using {{site.data.keyword.compliance_long}}** - [Understanding your responsibilities when using {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-responsibilities)
+
+### Solutioning Guidance
+{: #auditing-best-guidance}
+
+- [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision ) and related items on this page.
