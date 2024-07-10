@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-10"
 
 subcollection: <repo-name>
 
@@ -171,10 +171,8 @@ IBM uses a broad standard framework in all its security endeavors, e.g., design,
 
 ![Illustrates the security framework for IaaS Security Whitepaper](images/security-framework.svg){: caption="Figure 1. Security Framework" caption-side="bottom"}
 
-# IBM Cybersecurity Security Services (CSS) Capabilities – Options for Certain Situations. (I need this upfront)
-{: #CSS-capabilities
-}
-
+# IBM Cybersecurity Security Services (CSS) Capabilities – Options for Certain Situations.
+{: #CSS-capabilities}
 
 IBM Cybersecurity Services is a specific business unit within IBM that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The table below provides an overview of their solutions, and these can be considered additional options in IBM Cloud that may be applicable in certain scenarios, e.g., hybrid or mult-cloud situations. Note: their separate consulting and managed service are not covered here. As IBM Cloud security domains are discussed in the following sections, options in the domains will be presented and some of those could be IBM CSS solutions.
 
@@ -285,7 +283,7 @@ IBM Cloud has a full featured native IAM that can control all aspects of admin u
 
 The diagram below provides insight on how IAM works in the IBM Cloud.
 
-![](images/iam.svg)
+![IAM diagram](images/IAM-diagram.svg){: caption="Figure 2. How IBM Cloud IAM Works" caption-side="bottom"}
 
 ### Identity and Access - Options, Best Practices and Solutioning Guidance
 {: #IAM-Options}
