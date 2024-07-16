@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-10"
+lastupdated: "2024-07-16"
 
 subcollection: pattern-vpc-security
 
@@ -15,7 +15,7 @@ keywords:
 # overview
 {: #overview}
 
-# IaaS Security in VPC Environments
+# Infrastructure as a Service (IaaS) Security in VPC Environments
 {: #IaaS-security-whitepaper}
 
 
@@ -77,8 +77,8 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
 {: #data-at-rest-encryption-options}
 
  - **{{site.data.keyword.Bluemix_notm}} Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used,
- - **{{site.data.keyword.Bluemix_notm}} Encryption with Customer Keys** - Customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs – {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Service (HPCS), and
- - **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as **Guardium**
+ - **{{site.data.keyword.Bluemix_notm}} Encryption with Customer Keys** - Customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs – {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}} and
+ - **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as **Guardium**.
 
 ### Best Practices
 {: #data-at-rest-encryption-best-practices}
@@ -98,7 +98,7 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
 {: #key-management}
 
 Key management allows cloud customers the ability to create, store, manage and rotate keys with automation to support storage encryption.  {{site.data.keyword.Bluemix_notm}} has two native, integrated key management services, {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Services. Please see these links for more information:
- - [Key Protect](</docs/key-protect?topic=key-protect-about>),
+ - [keymanagementservicelong_notm](</docs/key-protect?topic=key-protect-about>),
  - [Getting Started Hyper Protect Crypto Services](</docs/hs-crypto?topic=hs-crypto-get-started>), and
  - [Hyper Protect Crypto Services Introducation](</docs/hs-crypto?topic=hs-crypto-introduce-uko>)
 
@@ -109,9 +109,9 @@ Key management allows cloud customers the ability to create, store, manage and r
 
  - **{{site.data.keyword.keymanagementservicelong_notm}}** - Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements,
 
- - **Hyper Protect Crypto Service** - HPCS provides Key Management Services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. HPCS is specifically recommended for financial service,
+ - **Hyper Protect Crypto Service** - {{site.data.keyword.hsplatform}} provides Key Management Services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service,
 
- - **{{site.data.keyword.Bluemix_notm}} Native HPCS with Unified Key Orchestrator** - This particular variant of the HPCS key management solution noted directly above add the ability to manage key across various clouds in addition to {{site.data.keyword.Bluemix_notm}}, and
+ - **{{site.data.keyword.Bluemix_notm}} Native {{site.data.keyword.hsplatform}} with Unified Key Orchestrator** - This particular variant of the {{site.data.keyword.hsplatform}} key management solution noted directly above add the ability to manage key across various clouds in addition to {{site.data.keyword.Bluemix_notm}}, and
 
  - **Customer or 3rd Party Key Management Solution** - May be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
 
@@ -193,7 +193,7 @@ Certificates can be used in several areas within {{site.data.keyword.Bluemix_not
 
 {{site.data.keyword.Bluemix_notm}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on.  And there is {{site.data.keyword.cloudaccesstraillong_notm}} which logs all user and API access to data.  But there are no specific ways to specifically monitor and control data loss and data integrity.   This is typically the realm of 3rd party data control solutions.  Please see the following for more information on this security function:
 
-- **What Is Data Loss Prevention (DLP)** - (https://www.ibm.com/topics/data-loss-prevention){: external}
+**What Is Data Loss Prevention (DLP)** - (https://www.ibm.com/topics/data-loss-prevention){: external}
 
 Also note that IBM Cybersecurity Services has a DLP solution known as Guardium:  (https://www.ibm.com/guardium){: external}
 
@@ -217,9 +217,9 @@ Also note that IBM Cybersecurity Services has a DLP solution known as Guardium: 
 | [Trusted Profiles](/docs/account?topic=account-trustedprofile-fedusers-tutorial&interface=ui) | By using trusted profiles, you can establish a flexible, secure way for federated users to access the {{site.data.keyword.Bluemix_notm}}® resources they need to do their job. All federated users that share certain attribute that are defined in your corporate user directory are mapped to a common profile and can share access to {{site.data.keyword.Bluemix_notm}} resources. This common identity makes it possible to give the members of your organization that share access requirements automatic access to resources one time, rather than having to add each user to an account and then grant them access directly or by using access groups. Trusted profiles can also be used to grant access to service IDs, compute resources, or services. Allowing a compute resource to assume a trusted profile allows you to assign access to applications running on that resource without the need for a long-term credential that then has to be managed and rotated. This greatly enhances the security of applications running in {{site.data.keyword.Bluemix_notm}}. [Using a trusted profile to call IAM-enabled services](/docs/vpc?topic=vpc-imd-trusted-profile-metadata) |
 {: caption="Table 1: {{site.data.keyword.Bluemix_notm}} Identity and Access Management Capabilities"}
 
-The diagram below provides insight on how IAM works in the {{site.data.keyword.Bluemix_notm:}}.
+The diagram below provides insight on how IAM works in the {{site.data.keyword.Bluemix_notm}}.
 
-![illustrates the security framework for IaaS Security Whitepaper](images/iam.svg){: caption="Figure 3. Identity and Access Management" caption-side-"bottom"}
+![How IBM Cloud IAM Works](images/IAM.svg){: caption="Figure 3. Identity and Access Management" caption-side-"bottom"}
 
 ### Options
 {: #IAM-Options}
@@ -237,9 +237,9 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
  - Never apply IAM capabilities to a single user.
  - Use Trusted Profiles or access groups and assign policies to the access group.
  - Always use multi-factor authentication and a complex password and rotation policy.
- - Develop thorough documentation that dictates how IAM will be used and managed in your {{site.data.keyword.Bluemix_notm:}} account(s).
+ - Develop thorough documentation that dictates how IAM will be used and managed in your {{site.data.keyword.Bluemix_notm}} account(s).
  - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states.
- - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccessfulltraillong}}](/docs/activity-tracker?topic=activity-tracker-about) to look for access anomalies.  Discussed in a following section.
+ - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-about) to look for access anomalies.  Discussed in a following section.
 
 ### Solutioning Guidance
  {: #IAM-guidance}
@@ -303,7 +303,7 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
  - [Securing your data in {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui),
  - [Protecting {{site.data.keyword.secrets-manager_full_notm}} resources with context-based restrictions](/docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
  - {{site.data.keyword.secrets-manager_full_notm}} instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. {{site.data.keyword.secrets-manager_full_notm}} is a single-tenant service. CPU and memory limits are applied per {{site.data.keyword.secrets-manager_full_notm}} instance.  Those limits restrict the API request rates based on the usage pattern.  As a rule of thumb, it is recommended to keep the rate below 20 req/s.  Additionally, limit the number of unique clients that make requests to a single {{site.data.keyword.secrets-manager_full_notm}} instance, and
- - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems ({{site.data.keyword.keymanagementservicelong_notm}} or Hyper Protect Crypto Services (HPCS)) to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
+ - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems {{site.data.keyword.keymanagementservicelong_notm}} or Hyper Protect Crypto Services {{site.data.keyword.hsplatform}} to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
 
 Note that {{site.data.keyword.secrets-manager_full_notm}} is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management.  More details can be found here: [Security Design](/docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.
 
@@ -334,7 +334,7 @@ A bastion host is a server used to manage access to an internal or private netwo
 
  - Securely access remote instances with a bastion host. [Access to bastion host](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server)
 
- ## Identity Governance
+## Identity Governance
  {: #IAM governance}
 
  Identity governance is a policy or programmatic approach to identity management.  IBM Cloud IAM was previously discussed and all of the capabilities here support identity governance.  But surrounding or on top of these should governance processes and procedures and many of these could be manual processes through documentation or automation that would be out of scope for cloud, e.g., existing approval workflow systems, etc.
@@ -345,7 +345,7 @@ A bastion host is a server used to manage access to an internal or private netwo
 ### Web Application Firewalling (WAF)
 {: #WAF}
 
-A WAF helps protect web applications by performing edge filtering and monitoring HTTP traffic between a web application and the Internet. A WAF is an OSI protocol Layer-7 defense in the OSI model, and it is not designed to defend against all types of attacks. {{site.data.keyword.Bluemix_notm}} has two ways to provide web application firewalling at the Internet edge. One that is typically used in a Content Delivery Network (CDN) and which is named {{site.data.keyword.cis_short_notm}} (CIS). The other WAF option is using NexGen firewalls that can be placed on the “edge” or in front Transit VPCs. You can find information on your NexGen firewalls WAF capabilities in their respective product information.
+A WAF helps protect web applications by performing edge filtering and monitoring HTTP traffic between a web application and the Internet. A WAF is an OSI protocol Layer-7 defense in the OSI model, and it is not designed to defend against all types of attacks. {{site.data.keyword.Bluemix_notm}} has two ways to provide web application firewalling at the Internet edge. One that is typically used in a Content Delivery Network (CDN) and which is named {{site.data.keyword.cis_short_notm}}. The other WAF option is using NexGen firewalls that can be placed on the “edge” or in front Transit VPCs. You can find information on your NexGen firewalls WAF capabilities in their respective product information.
 
 ### Options
 {: #WAF-options}
@@ -364,7 +364,7 @@ A WAF helps protect web applications by performing edge filtering and monitoring
 ### Solutioning Guidance:
  {: #WAF-best-guidance}
 
- - [Best practices for CIS setup](/docs/cis?topic=cis-best-practices-for-cis-setup),
+ - [Best practices for {{site.data.keyword.cis_short_notm}} setup}}](/docs/cis?topic=cis-best-practices-for-cis-setup),
  - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm}}.](/cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c2VjdXJpdHk%3D), and
  - [Deploying Fortigate firewall on IBM VPC Cloud.](/docs.fortinet.com/document/fortigate-public-cloud/7.4.0/ibm-cloud-administration-guide/944419/deploying-fortigate-vm-a-p-ha-on-ibm-vpc-cloud-byol)
 
@@ -379,14 +379,14 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Options:
  {: #ddos-options}
 
- - **{{site.data.keyword.cis_short_notm}}  (CIS)** - Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner,
+ - **{{site.data.keyword.cis_short_notm}}** - Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner,
  - **NexGen Firewall** - Perhaps more applicable where an edge firewall is already being used and users are not dispersed, and cost is factor, and
  - **No DDoS** - Not required in private only networks.
 
 ### Best Practices:
  {: #ddos-best-practice}
 
- - [Best practices for CIS setup](/docs/cis?topic=cis-best-practices-for-cis-setup),
+ - [Best practices for {{site.data.keyword.cis_short_notm}} setup}} setup](/docs/cis?topic=cis-best-practices-for-cis-setup),
  - Create a DDoS attack threat model that is a structured approach to identifying and analyzing potential risks to your online service or website from a DDoS attack,
  - Implement rate limiting by controlling the amount of traffic sent to a network or server, and
  - Ensure log monitoring and analysis of web traffic to look for anomalies such as unusual high traffic volume or server errors, etc.
@@ -395,7 +395,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 {: #ddos-guidance}
 
  - [FAQs for {{site.data.keyword.Bluemix_notm}} Internet Services](/docs/cis?topic=cis-faq)
- - [Managing your CIS deployment](/docs/cis?topic=cis-manage-your-cis-deployment)
+ - [Managing your {{site.data.keyword.cis_short_notm}} setup}} deployment](/docs/cis?topic=cis-manage-your-cis-deployment)
 
 ## Infrastructure and Endpoint Security Domain
 {: #IES}
@@ -449,7 +449,7 @@ Segregation techniques were discussed in the previous section and in some way, t
  - [Access Control Lists](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.) Controls ingress and egress IP addresses, ports and protocol in subnets,
  - [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups) - Controls ingress and egress IP addresses, ports and protocols on virtual server instances network interfaces. This can be considered host firewalling,
  - **NexGen Firewalls** - {{site.data.keyword.Bluemix_notm}} has two firewalls within its catalog, Juniper and Fortinet, that can be deployed on VSIs at the edge, and these can fully control Level 3 & 4 traffic, but these are capable of much more filtering like controlling URLs, files, DNS queries and layer 7 web application firewalling. In addition to the firewalls in the {{site.data.keyword.Bluemix_notm}} catalog, customers can bring their own firewall and host it on a VSI,
- - **{{site.data.keyword.cis_full_notm}}** - CIS has a traditional layer 3/4 firewall, in addition to its WAF capability and other security features. This would be applicable in situation where the customer has dispersed users and where a content delivery network (CDN) solution may be used, and
+ - **{{site.data.keyword.cis_full_notm}}** - {{site.data.keyword.cis_short_notm}} setup has a traditional layer 3/4 firewall, in addition to its WAF capability and other security features. This would be applicable in situation where the customer has dispersed users and where a content delivery network (CDN) solution may be used, and
  - [Context Restrictions](/docs/account?topic=account-context-restrictions-whatis)                                            Firewalls in essence that front end services to control ingresses from certain allowed IP addresses. E.g., blocking accesses from Russia on a Saturday night.
 
 ### Options:
@@ -457,8 +457,8 @@ Segregation techniques were discussed in the previous section and in some way, t
 
  - **VPCs, Access Control Lists (ACLs), Security Groups** - No options – mandatory for all VPC environments. Please see: [exploring firewalls](/docs/security-groups?topic=security-groups-exploring-firewalls)
 
- - **NexGen Firewalls** - Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, etc. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm:}} (CIS) will be used.
- - **{{site.data.keyword.cis_full_notm}}** - [CIS link](https://docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
+ - **NexGen Firewalls** - Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, etc. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm:}} will be used.
+ - **{{site.data.keyword.cis_full_notm}}** - [{{site.data.keyword.cis_short_notm}} setup}} link](https://docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
 
 ### Best Practices
 {: #core-network-protection-best-practices}
@@ -471,7 +471,7 @@ Segregation techniques were discussed in the previous section and in some way, t
 ### Solutoning Guidance
 {: #core-network-protection-guidance}
 
- - [Monitoring CIS for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security),
+ - [Monitoring {{site.data.keyword.cis_short_notm}} setup}} for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security),
  - [Security Groups guidelines](/docs/security-groups?topic=security-groups-security-groups-guidelines),
  - [Creating a Network Access Control List (ACL)](/docs/vpc?topic=vpc-acl-create-ui&interface=ui),
  - [Getting started with FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started), and
@@ -579,8 +579,7 @@ Logging plays a key role in security in that captures events that may be anomalo
 | [VPC Flow Logs](/docs/vpc?topic=vpc-flow-logs)                                                                     | Provides logs of all ingress and egress traffic within a VPC.                                                     |
 | [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-getting-started)                                  | As noted above this rovides logs of all administrator actions and API activities within an IBM account.                              |
 | NexGen Firewalls                                                                                                                    | Provides logs on a variety of functions / actions that occur within the firewalls, e.g., rule hits, alarms, etc. Also note that most NexGen firewalls have their own portals where threats can be investigated|
-| [{{site.data.keyword.cis_full_notm}}
-LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                                | Captures {{site.data.keyword.cis_short_notm}} firewall events.                                                                 |
+| [{{site.data.keyword.cis_full_notm}} LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                                | Captures {{site.data.keyword.cis_short_notm}} firewall events.                                                                 |
 | [Cloud Workload Protection Event Forwarding](/docs/workload-protection?topic=workload-protection-event_forwarding) | Forwards various events from the Cloud Workload Protection solution.                                             |
 {: caption="Table 2: Available Logging"}
 
@@ -637,7 +636,7 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 ### Solutioning Guidance
 {: #detection-guidance}
 
-- [Using the CIS Security Events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
+- [Using the {{site.data.keyword.cis_short_notm}} setup}} Security Events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started).
 - [Getting started with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-getting-started).
 - Please refer to the selected firewall product documentation on threat detection and how to configure it.
