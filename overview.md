@@ -219,7 +219,7 @@ Also note that IBM Cybersecurity Services has a DLP solution known as Guardium: 
 
 The diagram below provides insight on how IAM works in the {{site.data.keyword.Bluemix_notm}}.
 
-![How IBM Cloud IAM Works](images/IAM.svg){: caption="Figure 3. Identity and Access Management" caption-side-"bottom"}
+![Illustrates the detailed framework for IAM](images/IAM.svg){: caption="Figure 3. Identity and access management" caption-side="bottom"}
 
 ### Options
 {: #IAM-Options}
