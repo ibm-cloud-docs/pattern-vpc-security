@@ -26,7 +26,7 @@ This paper provides an overview of {{site.data.keyword.cloud_notm}}’s security
 
 This document is geared towards cloud consultants, architects, engineers, etc. and it assumes that the reader has a level of cloud proficiency and general knowledge of security concepts.  This paper is not meant to be a cloud or security tutorial, nor is it meant to be technically comprehensive with the particular security solutions noted.
 
-Note that most of the links in this paper refer to information in [{{site.data.keyword.Bluemix_notm}} Docs](https://docs), which can provide deeper information on the various security services. Another reference source is the security section within the [{{site.data.keyword.Bluemix_notm}} Architecture Center.](https://www.ibm.com/cloud/architecture/search/)
+Note that most of the links in this paper refer to information in [{{site.data.keyword.Bluemix_notm}} Docs](/docs), which can provide deeper information on the various security services. Another reference source is the security section within the [{{site.data.keyword.Bluemix_notm}} Architecture Center.](https://www.ibm.com/cloud/architecture/search/)
 
 This paper primarily discusses security capabilities or solutions within {{site.data.keyword.Bluemix_notm}}. But other options, e.g., 3rd party solutions, may be discussed that could be applicable hybrid or multi-cloud situations.  Some of the options may also include those from IBM Cyber Security Services (CSS). These are first presented in the following IBM Cybersecurity Security Services (CSS) Capabilities.
 
@@ -102,7 +102,7 @@ Key management allows cloud customers the ability to create, store, manage and r
  - [Getting Started Hyper Protect Crypto Services](</docs/hs-crypto?topic=hs-crypto-get-started>), and
  - [Hyper Protect Crypto Services Introducation](</docs/hs-crypto?topic=hs-crypto-introduce-uko>)
 
-![A screenshot of a computer description automatically generated](images/keyprotect.svg){: caption="Figure 2. Key Management Capabilities" caption-side="bottom"}
+![A screenshot of a computer description automatically generated](images/keyprotectframework.svg){: caption="Figure 2. Key Management Capabilities" caption-side="bottom"}
 
 ### Options
 {: #key-management-options}
