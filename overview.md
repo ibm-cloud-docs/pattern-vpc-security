@@ -95,7 +95,7 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
 {: #key-management}
 
 Key management allows cloud customers the ability to create, store, manage and rotate keys with automation to support storage encryption.  {{site.data.keyword.Bluemix_notm}} has two native, integrated key management services, {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Services. Please see these links for more information:
- - [keymanagementservicelong_notm](</docs/key-protect?topic=key-protect-about>),
+ - [keymanagementservicelong_notm](/docs/key-protect?topic=key-protect-about),
  - [Getting Started Hyper Protect Crypto Services](</docs/hs-crypto?topic=hs-crypto-get-started>), and
  - [Hyper Protect Crypto Services Introducation](</docs/hs-crypto?topic=hs-crypto-introduce-uko>)
 
@@ -361,8 +361,8 @@ A WAF helps protect web applications by performing edge filtering and monitoring
 ### Solutioning Guidance:
  {: #WAF-best-guidance}
 
- - [Best practices for {{site.data.keyword.cis_short_notm}} setup}}](/docs/cis?topic=cis-best-practices-for-cis-setup),
- - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm}}.](/cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c2VjdXJpdHk%3D), and
+ - [Best practices for {{site.data.keyword.cis_short_notm setup}}](/docs/cis?topic=cis-best-practices-for-cis-setup),
+ - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm}}.](/docs/gateway-appliance?topic=gateway-appliance-order-byoa), and
  - [Deploying Fortigate firewall on IBM VPC Cloud.](/docs/fortigate-10g?topic=fortigate-10g-getting-started)
 
 ## Distributed Denial of Service (DDoS)
@@ -392,7 +392,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 {: #ddos-guidance}
 
  - [FAQs for {{site.data.keyword.Bluemix_notm}} Internet Services](/docs/cis?topic=cis-faq)
- - [Managing your {{site.data.keyword.cis_short_notm}} setup}} deployment](/docs/cis?topic=cis-manage-your-cis-deployment)
+ - [Managing your {{site.data.keyword.cis_short_notm}} setup deployment](/docs/cis?topic=cis-manage-your-cis-deployment)
 
 ## Infrastructure and Endpoint Security Domain
 {: #IES}
@@ -410,8 +410,8 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 {: #segmentation-methods}
 
  - **Virtual Private Cloud** - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, etc.  And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://www.ibm.com/cloud/vpc),
- - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/),
- - **Security Groups** - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/vpc?topic=vpc-using-acls)
+ - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances./docs/),
+ - **Security Groups** - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups)
  - **Transit Gateway** - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keyword.Bluemix_notm}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering, similar to basic standard firewalls.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering)
  - **NexGen Firewalls** - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
 
