@@ -19,7 +19,7 @@ keywords:
 ## Introduction
 {: #introduction}
 
-This paper provides an overview of {{site.data.keyword.cloud_notm}}’s security capabilities and then proceeds to discuss options, best practices and solutioning guidance associated with that capability.  But note this paper only discusses Virtual Private Cloud (VPC) Infrastructure as a Services (IaaS) security capabilities.  Security in other areas such as VMWare and OpenShift will be handled in different papers.
+This paper provides an overview of {{site.data.keyword.cloud_notm}}’s security capabilities and then proceeds to discuss options, best practices and solutioning guidance associated with those capabilities.  But note this paper only discusses Virtual Private Cloud (VPC) Infrastructure as a Services (IaaS) security capabilities.  Security in other areas such as VMWare and OpenShift will be handled in different papers.
 
 This document is geared towards cloud consultants, architects, engineers, etc. and it assumes that the reader has a level of cloud proficiency and general knowledge of security concepts.  This paper is not meant to be a cloud or security tutorial, nor is it meant to be technically comprehensive with the particular security solutions noted.
 
@@ -106,7 +106,7 @@ Key management allows cloud customers the ability to create, store, manage and r
 
  - **{{site.data.keyword.keymanagementservicelong_notm}}** - Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements,
 
- - **Hyper Protect Crypto Service** - {{site.data.keyword.hsplatform}} provides Key Management Services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service,
+ - **Hyper Protect Crypto Service** - {{site.data.keyword.hsplatform}} provides Key Management Services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service environment,
 
  - **{{site.data.keyword.Bluemix_notm}} Native {{site.data.keyword.hsplatform}} with Unified Key Orchestrator** - This particular variant of the {{site.data.keyword.hsplatform}} key management solution noted directly above add the ability to manage key across various clouds in addition to {{site.data.keyword.Bluemix_notm}}, and
 
@@ -136,7 +136,7 @@ Data-in-Transit encryption can occur in multiple areas within the {{site.data.ke
 
  - **Data-in-Transit encryption to {{site.data.keyword.Bluemix_notm}} storage** - No options. This is a default function,
  - **Application Level Data-in-Transition Encryption** - Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum and
- - **Application-level data-in-transit encryption termination** - TLS termination at a NexGen firewall TLS termination at an edge load balancer TLS termination with {{site.data.keyword.Bluemix_notm}}, {{site.data.keyword.cis_short_notm}}
+ - **Application-level data-in-transit encryption termination** - TLS termination at a NexGen firewall TLS termination at an edge load balancer TLS termination with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short_notm}}
 
 ### Best Practices
 {: #data-in-transit-encryption-best-practices}
@@ -150,7 +150,7 @@ Application-level data-in-transition encryption should always be applied in publ
  - [SSL offload with {{site.data.keyword.Bluemix_notm}} Load Balancer](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer),
  - [Managing origin certificates](/docs/cis?topic=cis-cis-origin-certificates),
  - [Setting Transport Layer Security (TLS) options](/docs/cis?topic=cis-cis-tls-options), and
- - [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui)  ({{site.data.keyword.secrets-manager_full_notm}} will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.)Also see the following immediate section relating to certificates.
+ - [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui)  ({{site.data.keyword.secrets-manager_full_notm}} will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.) Also see the following immediate section relating to certificates.
 
 ## Certificate Lifecycle Management
 {: #certificate-management}
@@ -160,7 +160,7 @@ Certificates can be used in several areas within {{site.data.keyword.Bluemix_not
 ### Options:
 {: #certificate-management-options}
 
- - **{{site.data.keyword.Bluemix_notm}} {{site.data.keyword.secrets-manager_full_notm}}** - Highly recommended when {{site.data.keyword.Bluemix_notm}} is primarily used.
+ - **{{site.data.keyword.secrets-manager_full_notm}}** - Highly recommended when {{site.data.keyword.Bluemix_notm}} is primarily used.
  - **No Certificate Management** - Perhaps applicable in private environments with Dev/QA workloads and or where there is a minimal number of certificates to managed.
  - **Customer-Owned or 3rd Party Certificate Management Solu6tion**
 
@@ -204,7 +204,7 @@ Also note that IBM Cybersecurity Services has a DLP solution known as Guardium: 
 
 | IAM Capability                                                                                                 | Function / Feature                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Resource Groups](/docs/account?topic=account-rgs&interface=ui)                               | A resource group is a way for you to organize your account resources in customizable groupings. Any account resource that is managed by using {{site.data.keyword.Bluemix_notm}}® Identity and Access Management (IAM) access control belongs to a resource group within your account. You assign resources to a resource group when you create them from the catalog. Language here is straight from {{site.data.keyword.Bluemix_notm}} docs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| [Resource Groups](/docs/account?topic=account-rgs&interface=ui)                               | A resource group is a way for you to organize your account resources in customizable groupings. Any account resource that is managed by using {{site.data.keyword.Bluemix_notm}}® Identity and Access Management (IAM) access control belongs to a resource group within your account. You assign resources to a resource group when you create them from the catalog.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | [Access Groups](/docs/account?topic=account-groups&interface=ui)                              | An access group can be created to organize a set of users, service IDs, and trusted profiles into a single entity that makes it easy for you to assign access. You can assign a single policy to the group instead of assigning the same access multiple times for an individual user or service ID.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [Service IDs](/docs/account?topic=account-serviceids&interface=ui)                            | A service ID identifies a service or application like how a user ID identifies a user. You can create a service ID and use it to enable an application outside of {{site.data.keyword.Bluemix_notm}} access to your {{site.data.keyword.Bluemix_notm}} services. You can assign specific access policies to the service ID that restrict permissions for using specific services, or even combine permissions for accessing different services.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Access Policies](/docs/account?topic=account-iamusermanpol)                                  | A policy grants a subject one or multiple roles to a set of resources so that specific actions can be taken within the context of the specified target resources.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -228,14 +228,14 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
 ### Best Practices
  {: #IAM-best-practices}
 
- - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup)
- - Always apply a least privilege approach for all cloud accesses.
- - Never use a root account for any administration.  Always apply context restrictions for IAM access.
+ - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup),
+ - Always apply a least privilege approach for all cloud accesses,
+ - Never use a root account for any administration.  Always apply context restrictions for IAM access,
  - Never apply IAM capabilities to a single user.
- - Use Trusted Profiles or access groups and assign policies to the access group.
- - Always use multi-factor authentication and a complex password and rotation policy.
- - Develop thorough documentation that dictates how IAM will be used and managed in your {{site.data.keyword.Bluemix_notm}} account(s).
- - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states.
+ - Use Trusted Profiles or access groups and assign policies to the access group,
+ - Always use multi-factor authentication and a complex password and rotation policy,
+ - Develop thorough documentation that dictates how IAM will be used and managed in your {{site.data.keyword.Bluemix_notm}} account(s),
+ - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states, and
  - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-about) to look for access anomalies.  Discussed in a following section.
 
 ### Solutioning Guidance
@@ -297,7 +297,7 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
 
  - [Managing IAM access for {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-iam&interface=ui),
  - [Using service endpoints to privately connect to {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui),
- - [Securing your data in {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui),
+ - [Securing your data in {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui), and
  - [Protecting {{site.data.keyword.secrets-manager_full_notm}} resources with context-based restrictions](/docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
  - {{site.data.keyword.secrets-manager_full_notm}} instances are provisioned per region to spread out workloads and limit the blast radius in case of a regional outage. {{site.data.keyword.secrets-manager_full_notm}} is a single-tenant service. CPU and memory limits are applied per {{site.data.keyword.secrets-manager_full_notm}} instance.  Those limits restrict the API request rates based on the usage pattern.  As a rule of thumb, it is recommended to keep the rate below 20 req/s.  Additionally, limit the number of unique clients that make requests to a single {{site.data.keyword.secrets-manager_full_notm}} instance, and
  - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems {{site.data.keyword.keymanagementservicelong_notm}} or Hyper Protect Crypto Services {{site.data.keyword.hsplatform}} to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
@@ -400,7 +400,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ## Core Network Protection / Network Segmentation Capability
 {: #core-network-protection}
 
-{{site.data.keyword.Bluemix_notm}} provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads.  Please see the methods below. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius”.  Please see the following links for more information on network segmentation:
+{{site.data.keyword.Bluemix_notm}} provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads.  Please see the methods below. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius."  Please see the following links for more information on network segmentation:
 
  - [Security in Your VPC](/docs/vpc?topic=vpc-security-in-your-vpc),
  - [About Networking](/docs/vpc?topic=vpc-about-networking-for-vpc), and
@@ -427,9 +427,9 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Best Practices:
 {: #segmentation-best-practices}
 
- - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation.
- - Separate production, dev, test, etc. from each other using VPC segmentation.
- - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed,
+ - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation,
+ - Separate production, dev, test, etc. from each other using VPC segmentation,
+ - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed, and
  - Conduct periodic reviews of all ACL and Security Group rules. Understand traffic flows between servers so as to understand what segmentation is needed.
 
 ### Solutioning Guidance:
@@ -456,7 +456,7 @@ Segregation techniques were discussed in the previous section and in some way, t
 
  - **NexGen Firewalls** - Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, etc. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm}} will be used.
 
- - **{{site.data.keyword.cis_full_notm}}** - [{{site.data.keyword.cis_short_notm}} setup}} link](/docs-draft/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
+ - **{{site.data.keyword.cis_full_notm}}** - [{{site.data.keyword.cis_short_notm}} setup link](/docs-draft/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
 
 ### Best Practices
 {: #core-network-protection-best-practices}
@@ -634,7 +634,7 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 ### Solutioning Guidance
 {: #detection-guidance}
 
-- [Using the {{site.data.keyword.cis_short_notm}} setup}} Security Events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
+- [Using the {{site.data.keyword.cis_short_notm}} setup Security Events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started).
 - [Getting started with {{site.data.keyword.compliance_long}}].
 - Please refer to the selected firewall product documentation on threat detection and how to configure it.
@@ -650,14 +650,14 @@ Security responses functions typically fall into two categories: those that are 
 ### Options
 {: #response-options}
 
- - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria.
+ - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria, and
  - **{{site.data.keyword.cis_short_notm}}** - Customers have the options of getting and selecting different notifications based upon security events.
 
 ### Best Practices
 {: #response-best-practices}
 
-- Procedures and processes to handle all the security notifications and alerts in a unified manner.
-- Personnel established and trained to respond to security events.
+- Procedures and processes to handle all the security notifications and alerts in a unified manner,
+- Personnel established and trained to respond to security events, and
 - Having an established incident response plan.
 
 ### Solutioning Guidance
@@ -734,7 +734,7 @@ Vulnerability testing and management can be quite broad but generally it involve
 ### Solutioning Guidance
 {: #config-best-practices}
 
-[Assigning Access to Security and Compliance Center] and other drop downs in "how to - setting up the service" section.
+[SCC guidance] (/docs/security-compliance?topic=security-compliance-assign-roles) and other drop downs in "how to - setting up the service" section.
 
 ## Audit and Regulatory and Compliance Monitoring
 {: #auditing-risk-regulatory}
@@ -753,9 +753,7 @@ Note that regulated workloads have specific compliance framework adherence requi
 ### Best Practices
 {: #auditing-best-practices}
 
-- **Best practices for working with {{site.data.keyword.compliance_long}}** - [Best practices for working with {{site.data.keyword.compliance_long}}]
-
-- **Understanding your responsibilities when using {{site.data.keyword.compliance_long}}** - [Understanding your responsibilities when using {{site.data.keyword.compliance_long}}]
+- **Best practices for working with {{site.data.keyword.compliance_long}}** - [Best practices for working with SCC] (/docs/security-compliance?topic=security-compliance-best-practices)
 
 ### Solutioning Guidance
 {: #auditing-best-guidance}
