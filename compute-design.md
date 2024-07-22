@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Compute design 
+# Application Security Domain 
 {: #compute-design}
 
 ## Application Security Domain
