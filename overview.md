@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-22"
 
 subcollection: pattern-vpc-security
 
@@ -58,7 +58,7 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
  - **QRadar Security Event & Information Management (SIEM), Network Detection and Response (NDR)**(https://www.ibm.com/docs/en/qsip/7.5?)topic=qradar-network-detection-responseVarious 3rd party
  - **Endpoint Protection / Detection & Response (EPP/EDR) solutions** [Qradar / ReaqTa](https://www.ibm.com/products/qradar-edr){: external} endpoint detection and response  unified endpoint management
  - **Unified Endpoint Management** - [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management){: external}
- - **Data Security** - [Guardium](https://www.ibm.com/guardium){: external} data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=overview){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
+ - **Data Security** - [Guardium](https://www.ibm.com/guardium){: external} data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](/docs/en/cloud-paks/cp-data/4.8.x?topic=overview){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
  - **Privilege Access Management** - **Verify** security access manager [Verify}](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds)
  - **Container Security** - 3rd Parties – Palo Alto Prisma Cloud & Illumio
 
@@ -361,7 +361,7 @@ A WAF helps protect web applications by performing edge filtering and monitoring
 ### Solutioning Guidance:
  {: #WAF-best-guidance}
 
- - [Best practices for {{site.data.keyword.cis_short_notm setup}}](/docs/cis?topic=cis-best-practices-for-cis-setup),
+ - [Best practices for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-best-practices-for-cis-setup),
  - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm}}.](/docs/gateway-appliance?topic=gateway-appliance-order-byoa), and
  - [Deploying Fortigate firewall on IBM VPC Cloud.](/docs/fortigate-10g?topic=fortigate-10g-getting-started)
 
@@ -410,7 +410,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 {: #segmentation-methods}
 
  - **Virtual Private Cloud** - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, etc.  And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://www.ibm.com/cloud/vpc),
- - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances./docs/),
+ - **Access Control Lists (ACLs)** - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls#:~:text=You%20can%20use%20an%20access,to%20and%20from%20the%20instances.),
  - **Security Groups** - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups)
  - **Transit Gateway** - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keyword.Bluemix_notm}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but Transit Gateways can provide a form of network segmentation known as Pretext Filtering, similar to basic standard firewalls.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering)
  - **NexGen Firewalls** - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
@@ -621,7 +621,7 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 
  - **NexGen Firewalls** - This detection option can be deployed in public access situations at the edge.  This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm}} in certain situations.
  - **{{site.data.keyword.cis_full_notm}}** -  This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
- - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long:}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
+ - **Cloud Workload Protection** - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
 
 ### Best Practices
 {: #detection-best-practices}
