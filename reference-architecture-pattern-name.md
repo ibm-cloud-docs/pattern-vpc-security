@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-23"
 
-subcollection: <repo-name>
+subcollection: pattern-vpc-security
 
 keywords:
 
@@ -127,7 +127,9 @@ The following represents a baseline set of requirements which we believe are app
 | | Cloud infrastructure for the proposed IAAS solution must be SAP Certified |
 | | IBM Cloud IaaS will be deployed to support SAP and surrounding non-SAP workloads |
 | | Customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider Cloud deployment solution that would facilitate a future RISE transformation|
-{: caption="Table 1. Pattern requirements" caption-side="bottom"}  
+{: caption="Table 1. Pattern requirements" caption-side="bottom"}  <!-- each table MUST have a caption attribute>
+
+## Components 
 {: #components}
 
 
