@@ -24,7 +24,6 @@ toc:
             topics:
               - application-scurity-domain.md
               - data-security-domain.md
-              - devops-architecture.md
               - governance-risk-and-compliance-domain.md
               - identity-and-access-domain.md
               - infrastructure-and-endpoint-security-domain.md
