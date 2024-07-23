@@ -77,7 +77,7 @@ Segregation techniques were discussed in the previous section and in some way, t
 
  - **NexGen Firewalls** - Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, etc. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm}} will be used.
 
- - **{{site.data.keyword.cis_full_notm}}** - [{{site.data.keyword.cis_short_notm}} setup link](/docs-draft/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
+ - **{{site.data.keyword.cis_full_notm}}** - [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, etc.
 
 ### Best Practices
 {: #core-network-protection-best-practices}
@@ -85,7 +85,7 @@ Segregation techniques were discussed in the previous section and in some way, t
  - Knowing and documenting all traffic flows, and segment accordingly,
  - Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary,
  - Periodic firewall rules reviews, and
- - {{site.data.keyword.cis_full_notm}}[ best practices](/docs/cis?topic=cis-best-practices-for-cis-setup)
+ - {{site.data.keyword.cis_full_notm}}[best practices](/docs/cis?topic=cis-best-practices-for-cis-setup)
 
 ### Solutoning Guidance
 {: #core-network-protection-guidance}
