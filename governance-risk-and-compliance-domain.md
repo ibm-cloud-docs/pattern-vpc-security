@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Governance, Risk and Compliance Domain
+# Governance, Risk and Compliance
 {: #governance-domain}
 
 ## Governance, Risk and Compliance Domain

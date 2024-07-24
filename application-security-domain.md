@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-24"
 
 subcollection: pattern-vpc-security
 
@@ -12,10 +12,10 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Application Security Domain 
+# Application Security 
 {: #compute-design}
 
-## Application Security Domain
+## Application Security
 {: #app-security}
 
 ### Web Application Firewalling (WAF)

@@ -13,7 +13,7 @@ toc:
     label: Security in VPC Environments
   entries:
   - navgroup:
-      id: overview
+      id: learn
       topics:
         - overview.md
         - data-security-domain.md

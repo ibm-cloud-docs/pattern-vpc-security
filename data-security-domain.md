@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-24"
 
 subcollection: pattern-vpc-security
 
@@ -12,10 +12,10 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Data Security Domain
+# Data Security
 {: #data-security-domain}
 
-## Data Security Domain
+## Data Security
 {: #data-security}
 
 ## Data-at-Rest Encryption

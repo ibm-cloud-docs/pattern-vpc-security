@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-24"
 
 subcollection: pattern-vpc-security
 
@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Threat Investigation and Response Domain
+# Threat Investigation and Response
 {: #migration-design}
 
 ## Threat Investigation and Response Domain

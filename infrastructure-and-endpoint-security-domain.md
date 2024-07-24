@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Infrastructure and Endpoint Security Domain
+# Infrastructure and Endpoint Security
 {: #IES-domain}
 
 ## Infrastructure and Endpoint Security Domain

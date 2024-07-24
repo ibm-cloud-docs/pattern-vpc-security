@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-24"
 
 subcollection: pattern-vpc-security
 
@@ -12,10 +12,10 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Identity and Access Management Domain
+# Identity and Access Management
 {: #IAM}
 
-## Identity and Access Security Domain
+## Identity and Access Security
 {: #identity-and-access}
 
 ## Access and Role Access Management (IAM)
