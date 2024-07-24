@@ -10,7 +10,7 @@ toc:
     href: /docs/pattern-vpc-security
     path: pattern-vpc-security
     description: Security in VPC Environments
-    label: Security in VPC Environments
+    label: Security in VPC IaaS Environments
   entries:
   - navgroup:
       id: learn
