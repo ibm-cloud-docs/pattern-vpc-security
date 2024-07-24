@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Infrastructure as a Service (IaaS) Security in VPC Environments
+# Introduction
 {: #IaaS-security-whitepaper}
 
 
