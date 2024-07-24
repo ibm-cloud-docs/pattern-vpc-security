@@ -19,9 +19,6 @@ toc:
   - navgroup:
       id: plan
       topics:
-        - topicgroup:
-            label: security domains
-            topics:
               - data-security-domain.md
               - identity-and-access-domain.md
               - application-security-domain.md
