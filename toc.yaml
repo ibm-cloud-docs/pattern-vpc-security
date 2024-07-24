@@ -16,14 +16,8 @@ toc:
       id: overview
       topics:
         - overview.md
-        - data-security-domain.md
-        - identity-and-access-domain.md
-        - application-security-domain.md
-        - infrastructure-and-endpoint-security-domain.md
-        - threat-investigation-and-response.md
-        - governance-risk-and-compliance-domain.md
   - navgroup:
-      id: architecture
+      id: plan
       topics:
         - topicgroup:
             label: security domains
@@ -32,5 +26,5 @@ toc:
               - identity-and-access-domain.md
               - application-security-domain.md
               - infrastructure-and-endpoint-security-domain.md
-              - threat-investigation-and-response.md
+              - threat-investigation-and-response-domain.md
               - governance-risk-and-compliance-domain.md
