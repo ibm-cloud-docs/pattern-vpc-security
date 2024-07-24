@@ -16,24 +16,17 @@ toc:
     label: Security in VPC Environments
   entries:
   - navgroup:
-      id: overview
-      topics:
-      - overview.md
-  - navgroup:
       id: learn
       topics:
-      - topicgroup:
-          label: Security Domains
-          topics:
-          - topic: data-security-domain.md
-            navtitle: Data Security
-          - topic: identity-and-access-domain.md
-            navtitle: Identity and Access Management
-          - topic: application-security-domain.md
-            navtitle: Application Security
-          - topic: infrastructure-and-endpoint-security-domain.md
-            navtitle: Infrastructure and Endpoint Security
-          - topic: threat-investigation-and-response-domain.md
-            navtitle: Threat Investigation and Response
-          - topic: governance-risk-and-compliance-domain.md
-            navtitle: Governance, Risk and Compliance
+      - topic: overview.md
+        navtitle: Introduction
+      - topic: data-security-domain.md
+        navtitle: Data Security
+      - topic: identity-and-access-domain.md
+        navtitle: Identity and Access Management
+      - topic: application-security-domain.md
+        navtitle: infrastructure-and-endpoint-security-domain.md
+      - topic: threat-investigation-and-response-domain.md
+        navtitle: Threat Investigation and Response
+      - topic: governance-risk-and-compliance-domain.md
+        navtitle: Governance, Risk and Compliance
