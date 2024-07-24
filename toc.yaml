@@ -18,17 +18,19 @@ toc:
   - navgroup:
       id: learn
       topics:
-        - topic: overview.md
-          navtitle: Introduction
-        - topic: data-security-domain.md
-          navtitle: Data Security
-        - topic: identity-and-access-domain.md
-          navtitle: Identity and Access Management
-        - topic: application-security-domain.md
-          navtitle: Application Security
-        - topic: infrastructure-and-endpoint-security-domain.md
-          navtitle: Infrastructure and Endpoint Security
-        - topic: threat-investigation-and-response-domain.md
-          navtitle: Threat Investigation and Response
-        - topic: governance-risk-and-compliance-domain.md
-          navtitle: Governance, Risk and Compliance
+      - topicgroup:
+          label: Introduction
+          topics:
+          - overview.md
+      - topicgroup:
+          label: Data Security
+          topics:
+          - data-security-domain.md
+      - topicgroup:
+          label: Identity and Access Management
+          topics:
+          - identity-and-access-domain.md
+      - topicgroup:
+          label: Application Security
+          topics:
+          - application-security-domain.md
