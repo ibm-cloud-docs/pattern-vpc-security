@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-24"
 
 subcollection: pattern-vpc-security
 
@@ -58,6 +58,6 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
  - **QRadar Security Event & Information Management (SIEM), Network Detection and Response (NDR)**(https://www.ibm.com/docs/en/qsip/7.5?)topic=qradar-network-detection-responseVarious 3rd party
  - **Endpoint Protection / Detection & Response (EPP/EDR) solutions** [Qradar / ReaqTa](https://www.ibm.com/products/qradar-edr){: external} endpoint detection and response  unified endpoint management
  - **Unified Endpoint Management** - [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management){: external}
- - **Data Security** - [Guardium](https://www.ibm.com/guardium){: external} data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](/docs/en/cloud-paks/cp-data/4.8.x?topic=overview){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
+ - **Data Security** - [Guardium](https://www.ibm.com/guardium){: external} data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](https://www.ibm.com/products/cloud-pak-for-data){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
  - **Privilege Access Management** - **Verify** security access manager [Verify}](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds)
  - **Container Security** - 3rd Parties – Palo Alto Prisma Cloud & Illumio
