@@ -15,12 +15,13 @@ toc:
       id: overview
       topics:
       - overview.md
+      - application-security-domain.md
   - navgroup:
       id: architecture
       topics:
       - data-security-domain.md
   - navgroup:
-      id: learn
+      id: plan
       topics:
       - data-security-domain.md
       - identity-and-access-domain.md
