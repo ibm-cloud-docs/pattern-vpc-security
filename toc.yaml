@@ -15,10 +15,6 @@ toc:
       id: overview
       topics:
       - topicgroup:
-          label: Introduction
-          topics:
-          - overview.md
-      - topicgroup:
           label: Data Security
           topics:
             - data-security-domain.md
