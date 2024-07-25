@@ -1,12 +1,8 @@
-#  Rename this file to `toc.yaml`
-#  Make sure you include all nav file coding requirements
-#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
----
 toc:
   properties:
     subcollection: pattern-vpc-security
     industry: Financial
-    # use-case: use-case-value
+    # use-case: use-case-vatestlue
     # compliance: compliance-value
     audience: solution
     content-type: deployment
@@ -16,21 +12,15 @@ toc:
     label: Security in VPC Environments
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
-      - topicgroup:
-          label: Introduction
-          topics:
-          - overview.md
-      - topicgroup:
-          label: Data Security
-          topics:
-          - data-security-domain.md
-      - topicgroup:
-          label: Identity and Access Management
-          topics:
-          - identity-and-access-domain.md
-      - topicgroup:
-          label: Application Security
-          topics:
-          - application-security-domain.md
+      - overview.md
+  -  navgroup:
+      id: help
+      topics:
+      - identity-and-access-domain.md
+  - navgroup:
+      id: architecture
+      topics:
+      - data-security-domain.md
+#
