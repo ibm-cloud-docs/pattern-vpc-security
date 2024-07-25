@@ -16,7 +16,7 @@ toc:
       topics:
       - overview.md
   - navgroup:
-      id: plan
+      id: reference
       topics:
       - data-security-domain.md
       - identity-and-access-domain.md
