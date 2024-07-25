@@ -12,9 +12,12 @@ toc:
     label: Security in VPC IaaS Environments
   entries:
   - navgroup:
-      id: plan
+      id: overview
       topics:
       - overview.md
+  - navgroup:
+      id: reference
+      topics:
       - data-security-domain.md
       - identity-and-access-domain.md
       - application-security-domain.md
