@@ -17,12 +17,9 @@ toc:
       - overview.md
       - application-security-domain.md
   - navgroup:
-      id: architecture
-      topics:
-      - data-security-domain.md
-  - navgroup:
       id: plan
       topics:
+      - overview.md
       - data-security-domain.md
       - identity-and-access-domain.md
       - application-security-domain.md
