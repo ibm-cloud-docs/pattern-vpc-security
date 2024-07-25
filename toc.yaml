@@ -2,7 +2,7 @@ toc:
   properties:
     subcollection: pattern-vpc-security
     industry: Financial
-    # use-case: use-case-vatestlue
+    # use-case: use-case-value
     # compliance: compliance-value
     audience: solution
     content-type: deployment
@@ -12,16 +12,15 @@ toc:
     label: Security in VPC Environments
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
       - overview.md
-      - data-security-domain.md
-      - identity-and-access-domain
-      - application-security-domain.md
-      - infrastructure-and-endpoint-security-domain.md
-      - threat-investigation-and-response-domain.md
-      - governance-risk-and-compliance-domain.md
   -  navgroup:
       id: help
       topics:
       - identity-and-access-domain.md
+  - navgroup:
+      id: architecture
+      topics:
+      - data-security-domain.md
+#
