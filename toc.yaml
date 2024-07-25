@@ -5,11 +5,11 @@ toc:
     # use-case: use-case-value
     # compliance: compliance-value
     audience: solution
-    content-type: deployment
+    content-type: white-paper
     href: /docs/pattern-vpc-security
     path: pattern-vpc-security
     description: Security in VPC Environments
-    label: Security in VPC Environments
+    label: Security in VPC IaaS Environments
   entries:
   - navgroup:
       id: plan
