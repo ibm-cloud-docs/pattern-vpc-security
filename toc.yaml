@@ -14,6 +14,7 @@ toc:
   - navgroup:
       id: overview
       topics:
+      - security-domains.md
       - topicgroup:
           label: Data Security
           topics:
