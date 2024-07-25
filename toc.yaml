@@ -14,7 +14,10 @@ toc:
   - navgroup:
       id: overview
       topics:
-      - overview.md
+      - topicgroup:
+          label: Introduction
+          topics:
+          - overview.md
       - topicgroup:
           label: Data Security
           topics:
