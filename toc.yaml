@@ -5,7 +5,7 @@ toc:
     # use-case: use-case-value
     # compliance: compliance-value
     audience: solution
-    content-type: white-paper
+    content-type: reference-architecture
     href: /docs/pattern-vpc-security
     path: pattern-vpc-security
     description: Security in VPC Environments
