@@ -16,10 +16,26 @@ toc:
       topics:
       - overview.md
       - topicgroup:
-          label: Security Domains
+          label: Data Security
           topics:
             - data-security-domain.md
+      - topicgroup:
+          label: Identity and Access Management
+          topics:
             - identity-and-access-domain.md
+      - topicgroup:
+          label: Aplication Security
+          topics:
             - application-security-domain.md
+      - topicgroup:
+          label: Infrastructure and Endpoint Security
+          topics:
             - infrastructure-and-endpoint-security-domain.md
+      - topicgroup:
+          label: Threat Investigation and Response
+          topics:
             - threat-investigation-and-respone-domain.md
+      - topicgroup:
+          label: Governance, Risk and Compliance
+          topics:
+            - governance-risk-and-compliance-domain.md
