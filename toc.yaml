@@ -12,11 +12,6 @@ toc:
     label: Security in VPC Environments
   entries:
   - navgroup:
-      id: overview
-      topics:
-      - overview.md
-      - application-security-domain.md
-  - navgroup:
       id: plan
       topics:
       - overview.md
