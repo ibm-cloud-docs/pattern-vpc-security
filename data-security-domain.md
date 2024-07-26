@@ -45,7 +45,7 @@ keywords:
 {: #key-management}
 
 Key management allows cloud customers the ability to create, store, manage and rotate keys with automation to support storage encryption.  {{site.data.keyword.Bluemix_notm}} has two native, integrated key management services, {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Services. Please see these links for more information:
- - [keymanagementservicelong_notm](/docs/key-protect?topic=key-protect-about),
+ - [keymanagementserviceshort](/docs/key-protect?topic=key-protect-about),
  - [Getting Started Hyper Protect Crypto Services](</docs/hs-crypto?topic=hs-crypto-get-started>), and
  - [Hyper Protect Crypto Services Introducation](</docs/hs-crypto?topic=hs-crypto-introduce-uko>)
 
