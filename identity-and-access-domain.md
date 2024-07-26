@@ -16,7 +16,7 @@ keywords:
 {: #identity-and-access}
 
 ## Access and Role Access Management
-{: #IAM}
+{: #aram}
 
 {{site.data.keyword.Bluemix_notm}} has a full featured native IAM that can control all aspects of admin user actions and services within an account.  It enables you to securely authenticate users for platform services and control access to resources consistently across {{site.data.keyword.Bluemix_notm}}.  Please see the following link for more information: [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess) and [How {{site.data.keyword.Bluemix_notm}} IAM works.](/docs/account?topic=account-iamoverview&interface=ui) The table below highlights some of the major IAM functions available.
 
