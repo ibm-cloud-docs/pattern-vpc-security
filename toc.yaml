@@ -15,9 +15,6 @@ toc:
       id: overview
       topics:
       - overview.md
-  - navgroup:
-      id: learn
-      topics:
       - topicgroup:
           label: Data Security
           topics:
