@@ -12,7 +12,7 @@ toc:
     label: Security in VPC IaaS Environments
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
       - overview.md
       - topicgroup:
