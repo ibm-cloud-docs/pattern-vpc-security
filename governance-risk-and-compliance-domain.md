@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-26"
 
 subcollection: pattern-vpc-security
 
@@ -14,9 +14,6 @@ keywords:
 
 # Governance, Risk and Compliance
 {: #governance-domain}
-
-## Governance, Risk and Compliance Domain
-{: #risk-and-compliance}
 
 ## Configuration Governance / Management
 {: #configuration-governance-compliance-monitoring}

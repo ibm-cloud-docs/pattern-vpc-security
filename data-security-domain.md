@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-26"
 
 subcollection: pattern-vpc-security
 
@@ -13,9 +13,6 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Data Security
-{: #data-security-domain}
-
-## Data Security
 {: #data-security}
 
 ## Data-at-Rest Encryption
@@ -133,7 +130,7 @@ Certificates can be used in several areas within {{site.data.keyword.Bluemix_not
  - [Ordering SSL/TLS public certificates](/docs/secrets-manager?topic=secrets-manager-public-certificates&interface=ui)
  - [Creating SSL/TLS private certificates](/docs/secrets-manager?topic=secrets-manager-private-certificates&interface=ui)
 
-### Data Lifecycle Management and Governance
+## Data Lifecycle Management and Governance
 {: #data-lifecycle-management}
 
 {{site.data.keyword.Bluemix_notm}} provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm.  One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/guardium){: external}, as noted in Section 4.

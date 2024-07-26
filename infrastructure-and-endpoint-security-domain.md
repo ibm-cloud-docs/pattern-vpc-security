@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-26"
 
 subcollection: pattern-vpc-security
 
@@ -14,9 +14,6 @@ keywords:
 
 # Infrastructure and Endpoint Security
 {: #IES-domain}
-
-## Infrastructure and Endpoint Security Domain
-{: #IES}
 
 ## Core Network Protection / Network Segmentation Capability
 {: #core-network-protection}

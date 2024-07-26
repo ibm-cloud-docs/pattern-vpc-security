@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-26"
 
 subcollection: pattern-vpc-security
 
@@ -12,13 +12,10 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Identity and Access Management
-{: #IAM}
-
 ## Identity and Access Security
 {: #identity-and-access}
 
-## Access and Role Access Management (IAM)
+## Access and Role Access Management
 {: #IAM}
 
 {{site.data.keyword.Bluemix_notm}} has a full featured native IAM that can control all aspects of admin user actions and services within an account.  It enables you to securely authenticate users for platform services and control access to resources consistently across {{site.data.keyword.Bluemix_notm}}.  Please see the following link for more information: [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess) and [How {{site.data.keyword.Bluemix_notm}} IAM works.](/docs/account?topic=account-iamoverview&interface=ui) The table below highlights some of the major IAM functions available.
@@ -124,9 +121,6 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
  - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems {{site.data.keyword.keymanagementservicelong_notm}} or Hyper Protect Crypto Services {{site.data.keyword.hsplatform}} to encrypt secrets. Guidance on how you should organize your secrets can be found here: [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui)
 
 Note that {{site.data.keyword.secrets-manager_full_notm}} is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management.  More details can be found here: [Security Design](/docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.
-
-## Privileged Identity and Access Management
-{: #PIM}
 
 ## Bastion Host and Privilege Identity and Access Management (PAM)
 {: #bastion-host}
