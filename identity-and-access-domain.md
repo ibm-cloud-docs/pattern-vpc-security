@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-## Identity and Access Security
+# Identity and Access Security
 {: #identity-and-access}
 
 ## Access and Role Access Management
@@ -34,35 +34,35 @@ keywords:
 
 The diagram below provides insight on how IAM works in the {{site.data.keyword.Bluemix_notm}}.
 
-![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Figure 3. Identity and access management" caption-side="bottom"}
+![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Figure 1. Identity and access management" caption-side="bottom"}
 
 ### Options
 {: #IAMOptions}
 
- - Multi-Factor Authentication (MFA) and complex passwords - always recommended,
- - Assigning individual-based accesses and policies - Never recommended – users should be placed into access groups or in trusted profiles with specific policie, and
+ - Multi-Factor Authentication (MFA) and complex passwords - always recommended
+ - Assigning individual-based accesses and policies - Never recommended – users should be placed into access groups or in trusted profiles with specific policie
  - Single Sign On (SSO) Federation - Applicable where customers already have a single sign on infrastructure or perhaps where customers want to use their established Active Directory or LDAP, etc.
 
 ### Best Practices
  {: #IAMbestpractices}
 
- - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup),
- - Always apply a least privilege approach for all cloud accesses,
- - Never use a root account for any administration.  Always apply context restrictions for IAM access,
- - Never apply IAM capabilities to a single user.
- - Use Trusted Profiles or access groups and assign policies to the access group,
- - Always use multi-factor authentication and a complex password and rotation policy,
- - Develop thorough documentation that dictates how IAM will be used and managed in your {{site.data.keyword.Bluemix_notm}} account(s),
- - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states, and
+ - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup)
+ - Always apply a least privilege approach for all cloud accesses
+ - Never use a root account for any administration.  Always apply context restrictions for IAM access
+ - Never apply IAM capabilities to a single user
+ - Use Trusted Profiles or access groups and assign policies to the access group
+ - Always use multi-factor authentication and a complex password and rotation policy
+ - Develop thorough documentation that dictates how IAM will be used and managed in your {{site.data.keyword.Bluemix_notm}} account(s)
+ - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time settings can drift or be inadvertently changes resulting in overly permissible states
  - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-about) to look for access anomalies.  Discussed in a following section.
 
 ### Solutioning Guidance
  {: #IAMguidance}
 
  - [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess),
- - [How {{site.data.keyword.Bluemix_notm}} IAM works](/docs/account?topic=account-iamoverview),
- - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in {{site.data.keyword.Bluemix_notm}} Docs for more insight on best IAM practices and solutioning guidance,
- - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup), and
+ - [How {{site.data.keyword.Bluemix_notm}} IAM works](/docs/account?topic=account-iamoverview)
+ - Customers are encouraged to read all the documentation in the Managing Your Account, Resources, Access section in {{site.data.keyword.Bluemix_notm}} Docs for more insight on best IAM practices and solutioning guidance
+ - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup)
  - Use trusted profiles to assign access to compute resources rather than embedding credentials in applications.
 
 ## IAM with Single Sign-On / Identity Provider Federation
@@ -79,8 +79,8 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
 ### Best Practices
 {: #SSO-best-practices}
 
- - Use {{site.data.keyword.Bluemix_notm}} Trusted Profiles in conjunction with any SSO solution,
- - Ensure multi-factor authentication with the SSO solution, and
+ - Use {{site.data.keyword.Bluemix_notm}} Trusted Profiles in conjunction with any SSO solution
+ - Ensure multi-factor authentication with the SSO solution
  - Enforce granular role and permission management.
 
 ### Solutioning Guidance
@@ -105,9 +105,9 @@ Cloud secrets management is a way to securely store and manage API keys, certifi
 ### Best Practices:
 {: #secrets-management-best-practices}
 
- - {{site.data.keyword.Bluemix_notm}} is focused on enterprise workloads and these workloads should always include secrets management,
- - Cloud native secrets management that provides full Lifecyle capabilities and full cloud integration,
- - Automated creation, rotation, revocation and expiration of static secrets, and
+ - {{site.data.keyword.Bluemix_notm}} is focused on enterprise workloads and these workloads should always include secrets management
+ - Cloud native secrets management that provides full Lifecyle capabilities and full cloud integration
+ - Automated creation, rotation, revocation and expiration of static secrets
  - Never transmit secrets via plaintext; all should transit using TLS encryption.
 
 ### Solutioning Guidance:
@@ -130,15 +130,15 @@ A bastion host is a server used to manage access to an internal or private netwo
 ### Options
 {: #bastion-host-options}
 
- - **Virtual Server Instance for Bastion Host** - There are no options for an underlying platform for a Bastion Host. Bastion Hosts must be created on a virtual server instances (VSI) within the confines of a Virtual Private Cloud (VPC),
- - **Bastion Host, No Privilege Access Management (PAM) Software** - Not recommended in that highly granular access, approval workflows and detailed logging may be needed,
+ - **Virtual Server Instance for Bastion Host** - There are no options for an underlying platform for a Bastion Host. Bastion Hosts must be created on a virtual server instances (VSI) within the confines of a Virtual Private Cloud (VPC)
+ - **Bastion Host, No Privilege Access Management (PAM) Software** - Not recommended in that highly granular access, approval workflows and detailed logging may be needed
  - **Bastion with PAM software** - Various 3rd party solutions are in the marketplace, and this is always recommended. Note that IBM Cyber Security Services (CSS) does have a PAM solution here known as **Verify**. More information on **Verify** can be found here: IBM CSS [Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds){: external}
 
 ### Best Practices
 {: #bastion-host-best-practices}
 
- - Bastion hosts should always be accompanied with PAM software.  A least privilege approach should always be applied to permissions on the Bastion Host and the PAM software,
- - Detailed logs should be enabled, and regular reviews of logs should be undertaken to look for anomalies, and
+ - Bastion hosts should always be accompanied with PAM software.  A least privilege approach should always be applied to permissions on the Bastion Host and the PAM software
+ - Detailed logs should be enabled, and regular reviews of logs should be undertaken to look for anomalies
  - Logs from the Bastion Host and the PAM software should be correlated with other logs to get inferences of threats. Typically, this correlation comes in the form of a Security Event and Information Management (SIEM) Platform.
 
 ### Solutioning Guidance

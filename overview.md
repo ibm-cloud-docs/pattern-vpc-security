@@ -32,11 +32,11 @@ It discusses security capabilities or solutions within {{site.data.keyword.Bluem
 
 There are many different security best practices for cloud deployments, but one that is most prominent and important today is the overarching approach of zero trust.  Zero trust has a number of key principles that should be considered in any security design. These principles include:
 
--   Never trust, always verify,
--   Enforce least privilege access,
--   Enable strong authentication, and periodic / recurring authentication as possible,
--   Assume breaches everywhere and protect and detect accordingly,
--   Segment functions and related network areas to create security perimeters to limit blast radiuses of attacks,
+-   Never trust, always verify
+-   Enforce least privilege access
+-   Enable strong authentication, and periodic / recurring authentication as possible
+-   Assume breaches everywhere and protect and detect accordingly
+-   Segment functions and related network areas to create security perimeters to limit blast radiuses of attacks
 -   Discover all possible resources, functions, components and data used in an environment and ensure total visibility – **you cannot secure what you cannot see**, and
 -   Use continuous security monitoring.
 

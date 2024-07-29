@@ -24,6 +24,8 @@ keywords:
 {: #config-governance}
 
 - **{{site.data.keyword.compliance_long}}** - Customers have the option of choosing the resources and configurations they want to scan for status and parameters
+- **Palo Alto Prisma Cloud** - This solution from IBM Cybersecurity Services provides configuration governance in multi-cloud situations
+- **Manual Configuration Management** - Customers could possible track configurations manually, say through spreadsheets and the like, but this method is tedious and prone to errors.  This could be a possibility with non-critical workloads in a private access situation
 - **Palo Alto Prisma Cloud** - This solution from IBM Cybersecurity Services provides configuration governance in multi-cloud situations.
 - **Manual Configuration Management** - Customers could possible track configurations manually, say through spreadsheets and the like, but this method is tedious and prone to errors.  This could be a possibility with non-critical workloads in a private access situation.
 - **No Configuration Governance** -   Never recommended even in private situations and or non-critical.  Vulnerabilities could be opened up where there is security configuration “drift” from personnel making inadvertent changes.  And customers would be unable to locate possible problems without significant inspection.
@@ -37,6 +39,7 @@ keywords:
 - Use automation such as {{site.data.keyword.compliance_long}} to automate security configurations and tracking thereof
 - Develop workflows and approval processes to control security configuration changes
 - Ensure change rights are strictly controlled through Identity and Access Management (IAM) permissions and any Privilege Access Management (PAM) granular permissions
+- [Best practices for working with {{site.data.keyword.compliance_long}}].
 - [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices)
 
 ### Solutioning Guidance
@@ -54,8 +57,8 @@ Note that regulated workloads have specific compliance framework adherence requi
 ### Options
 {: #auditing-options}
 
- - **{{site.data.keyword.compliance_long}}** - Customers can use this tool for compliance monitoring and audit reports.  This is highly reccommended due to its tight integration with {{site.data.keyword.Bluemix_notm}}.
- - **Palo Alto Prisma Cloud** - This option may be applicable if there is need for multi-cloud compliance monitoring.  Or the customer may already be using this platform.  Using this solution just for {{site.data.keyword.Bluemix_notm}} is not recommended due to possible costs and solution configuration complexities.
+ - **{{site.data.keyword.compliance_long}}** - Customers can use this tool for compliance monitoring and audit reports.  This is highly reccommended due to its tight integration with {{site.data.keyword.Bluemix_notm}}
+ - **Palo Alto Prisma Cloud** - This option may be applicable if there is need for multi-cloud compliance monitoring.  Or the customer may already be using this platform.  Using this solution just for {{site.data.keyword.Bluemix_notm}} is not recommended due to possible costs and solution configuration complexities
  - **No Compliance Monitoring** - Customers could possibly forgo compliance monitoring and auditing if the workloads are non-regulated and there are no audit reporting requirements.
 
 ### Best Practices
@@ -66,5 +69,7 @@ Note that regulated workloads have specific compliance framework adherence requi
 ### Solutioning Guidance
 {: #auditing-best-guidance}
 
+- [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision ) and related items on this page.
+- [Compliance best practices](/docs/security-compliance?topic=security-compliance-best-practices)
 - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision )
 - [compliance best practices](/docs/security-compliance?topic=security-compliance-best-practices)

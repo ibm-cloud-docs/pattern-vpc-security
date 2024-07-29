@@ -30,8 +30,8 @@ keywords:
 ### Best Practices
 {: #data-at-rest-encryption-best-practices}
 
- - Data encryption should always be used as can be expected,
- - Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration, and
+ - Data encryption should always be used as can be expected
+ - Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration
  - Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control.
 
 ### Solutioning Guidance
@@ -39,35 +39,39 @@ keywords:
 
  - [Securing Your Data in VPC](/docs/vpc?topic=vpc-mng-data&interface=ui)
  - [About data encryption for VPC](/docs/vpc?topic=vpc-vpc-encryption-about)
+ - [Encrypting Your Data](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).
  - [Encrypting Your Data](/docs/cloud-object-storage?topic=cloud-object-storage-encryption)
 
 ## Key Management / Lifecycle Management
 {: #key-management}
 
 Key management allows cloud customers the ability to create, store, manage and rotate keys with automation to support storage encryption.  {{site.data.keyword.Bluemix_notm}} has two native, integrated key management services, {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Services. Please see these links for more information:
+ - [keymanagementservicefull](/docs/key-protect?topic=key-protect-about)
+ - [Getting Started Hyper Protect Crypto Services](</docs/hs-crypto?topic=hs-crypto-get-started>)
+ - [Hyper Protect Crypto Services Introducation](</docs/hs-crypto?topic=hs-crypto-introduce-uko>)
  - [site.data.keyword.keymanagementserviceshort](/docs/key-protect?topic=key-protect-about)
  - [Getting Started Hyper Protect Crypto Services](/docs/hs-crypto?topic=hs-crypto-get-started)
  - [Hyper Protect Crypto Services Introducation](/docs/hs-crypto?topic=hs-crypto-introduce-uko)
 
-![A screenshot of a computer description automatically generated](images/keyprotectframework.svg){: caption="Figure 2. Key Management Capabilities" caption-side="bottom"}
+![A screenshot of a computer description automatically generated](images/keyprotectframework.svg){: caption="Figure 1. Key Management Capabilities" caption-side="bottom"}
 
 ### Options
 {: #key-management-options}
 
- - **{{site.data.keyword.keymanagementservicelong_notm}}** - Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements,
+ - **{{site.data.keyword.keymanagementservicelong_notm}}** - Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements
 
- - **Hyper Protect Crypto Service** - {{site.data.keyword.hsplatform}} provides Key Management Services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service environment,
+ - **Hyper Protect Crypto Service** - {{site.data.keyword.hsplatform}} provides Key Management Services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service environment
 
- - **{{site.data.keyword.Bluemix_notm}} Native {{site.data.keyword.hsplatform}} with Unified Key Orchestrator** - This particular variant of the {{site.data.keyword.hsplatform}} key management solution noted directly above add the ability to manage key across various clouds in addition to {{site.data.keyword.Bluemix_notm}}, and
+ - **{{site.data.keyword.Bluemix_notm}} Native {{site.data.keyword.hsplatform}} with Unified Key Orchestrator** - This particular variant of the {{site.data.keyword.hsplatform}} key management solution noted directly above add the ability to manage key across various clouds in addition to {{site.data.keyword.Bluemix_notm}}
 
  - **Customer or 3rd Party Key Management Solution** - May be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
 
 ### Best Practices
 {: #key-management-best-practices}
 
- - Cloud native key management offers the most secure, integrated and automated key lifecycle management.
- - User access to keys should be tightly controlled and monitored as can be expected.
- - Processes should be established on how keys should be used and managed. Proper rotation of keys should be established.
+ - Cloud native key management offers the most secure, integrated and automated key lifecycle management
+ - User access to keys should be tightly controlled and monitored as can be expected
+ - Processes should be established on how keys should be used and managed. Proper rotation of keys should be established
  - Regular inspection of activity logs surrounding key management should occur.
 
 ### Solutioning Guidance
@@ -84,8 +88,8 @@ Data-in-Transit encryption can occur in multiple areas within the {{site.data.ke
 ### Options
 {: #data-in-transit-encryption-options}
 
- - **Data-in-Transit encryption to {{site.data.keyword.Bluemix_notm}} storage** - No options. This is a default function,
- - **Application Level Data-in-Transition Encryption** - Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum and
+ - **Data-in-Transit encryption to {{site.data.keyword.Bluemix_notm}} storage** - No options. This is a default function
+ - **Application Level Data-in-Transition Encryption** - Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum
  - **Application-level data-in-transit encryption termination** - TLS termination at a NexGen firewall TLS termination at an edge load balancer TLS termination with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short_notm}}
 
 ### Best Practices
@@ -96,6 +100,7 @@ Application-level data-in-transition encryption should always be applied in publ
 ### Solutioning Guidance
 {: #data-in-transit-encryption-best-guidance}
 
+ - [Encryption in transit - Securing mount connections between file share and virtual server instance](/docs/vpc?topic=vpc-file-storage-vpc-eit)
  - [Encryption in transit - Securing mount connections between file share and virtual server instance](/docs/vpc?topic=vpc-file-storage-vpc-eit),
  - [SSL offload with {{site.data.keyword.Bluemix_notm}} Load Balancer](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer)
  - [Managing origin certificates](/docs/cis?topic=cis-cis-origin-certificates)
@@ -117,10 +122,10 @@ Certificates can be used in several areas within {{site.data.keyword.Bluemix_not
 ### Best Practices
 {: #certificate-management-best-practices}
 
- - Regular rotations of certificates.
- - Notification of expiring certificates.
- - Certificate storage in a hardware security module.
- - Maintain certificate inventory.
+ - Regular rotations of certificates
+ - Notification of expiring certificates
+ - Certificate storage in a hardware security module
+ - Maintain certificate inventory
  - Document certificate management procedures.
 
 ### Certificate Management Solutioning Guidance
