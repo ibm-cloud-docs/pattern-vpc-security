@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-07-29"
 
 subcollection: pattern-vpc-security
 
@@ -20,8 +20,8 @@ keywords:
 
 {{site.data.keyword.Bluemix_notm}} provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads.  Please see the methods below. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius."  Please see the following links for more information on network segmentation:
 
- - [Security in Your VPC](/docs/vpc?topic=vpc-security-in-your-vpc),
- - [About Networking](/docs/vpc?topic=vpc-about-networking-for-vpc), and
+ - [Security in Your VPC](/docs/vpc?topic=vpc-security-in-your-vpc)
+ - [About Networking](/docs/vpc?topic=vpc-about-networking-for-vpc)
  - [Security in your VPC](/docs/vpc?topic=vpc-security-in-your-vpc)
 
 ### Segmentation Methods:
@@ -36,19 +36,19 @@ keywords:
 ### Options:
 {: #segmentation-options}
 
- - **VPC** - There are no options to VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor,
- - **Access Control Lists** - There are no options for using ACLs in VPC environments,
+ - **VPC** - There are no alternatives for VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor,
+ - **Access Control Lists** - There are no alternatives for using ACLs in VPC environments,
  - **Security Groups** - There are no alternatives in a VPC environment,
  - **NexGen Firewall** - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) edge VPC.
- - **Transit Gateway** - There are no options for using Transit Gateway when you want to interconnect VPCs or connect to other environment, e.g., PowerVS.  But the use of pretext filtering is options in many situations.
+ - **Transit Gateway** - There are no alternatives for using Transit Gateway when you want to interconnect VPCs or connect to other environments, e.g., Power Virtual Server.  But the use of pretext filtering is an option in many situations.
 
 ### Best Practices:
 {: #segmentation-best-practices}
 
- - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation,
- - Separate production, dev, test, etc. from each other using VPC segmentation,
- - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed, and
- - Conduct periodic reviews of all ACL and Security Group rules. Understand traffic flows between servers so as to understand what segmentation is needed.
+ - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation
+ - Separate production, dev, test, etc. from each other using VPC segmentation
+ - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed
+ - Conduct periodic reviews of all ACL and Security Group rules. Understand traffic flows between workloads to understand what segmentation is needed.
 
 ### Solutioning Guidance:
 {: #segmentation-guidance}
@@ -59,7 +59,7 @@ keywords:
 ## Edge Protection / Firewalling Capability
 {: #core-network-protection-firewall}
 
-Segregation techniques were discussed in the previous section and in some way, these can be considered firewalling methods as well.  {{site.data.keyword.Bluemix_notm}} has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic.  Most notable are ACLs that are firewalls that are applied to created cloud subnets.  Security Group are firewalls that are applied virtual server instance (VSI) network interfaces.  Security Groups work at the Level 3/ Level 4 level controlling allowed IP addresses, ports, and protocols.
+Segregation techniques were discussed in the previous section and in some way, these can be considered firewalling methods as well.  {{site.data.keyword.Bluemix_notm}} has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic.  Most notable are ACLs that are firewalls that are applied to created cloud subnets.  Security Group are firewalls that are applied virtual server instance (VSI) network interfaces.  Security Groups work at Level 3 and Level 4 controlling allowed IP addresses, ports, and protocols.
 
  - [Access Control Lists](/docs/vpc?topic=vpc-using-acls) Controls ingress and egress IP addresses, ports and protocol in subnets,
  - [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups) - Controls ingress and egress IP addresses, ports and protocols on virtual server instances network interfaces. This can be considered host firewalling,
@@ -79,28 +79,28 @@ Segregation techniques were discussed in the previous section and in some way, t
 ### Best Practices
 {: #core-network-protection-best-practices}
 
- - Knowing and documenting all traffic flows, and segment accordingly,
- - Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary,
- - Periodic firewall rules reviews, and
+ - Knowing and documenting all traffic flows, and segment accordingly
+ - Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary
+ - Periodic firewall rules reviews
  - {{site.data.keyword.cis_full_notm}}[best practices](/docs/cis?topic=cis-best-practices-for-cis-setup)
 
 ### Solutoning Guidance
 {: #core-network-protection-guidance}
 
- - [Monitoring {{site.data.keyword.cis_short_notm}} setup}} for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security),
- - [Security Groups guidelines](/docs/security-groups?topic=security-groups-security-groups-guidelines),
- - [Creating a Network Access Control List (ACL)](/docs/vpc?topic=vpc-acl-create-ui&interface=ui),
- - [Getting started with FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started), and
+ - [Monitoring {{site.data.keyword.cis_short_notm}} setup}} for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security)
+ - [Security Groups guidelines](/docs/security-groups?topic=security-groups-security-groups-guidelines)
+ - [Creating a Network Access Control List (ACL)](/docs/vpc?topic=vpc-acl-create-ui&interface=ui)
+ - [Getting started with FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started)
  - [Getting started with {{site.data.keyword.Bluemix_notm}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started)
 
 ## Endpoint Detection / Endpoint Protection (EDR/EPP) Capability
 {: #EDR-EPP}
 
-EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, etc.  Now within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance Center solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection / Detection (EPP/EDR) security.  This provides a broad range of security capabilities to include:
+EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, etc.  Within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance Center solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection / Detection (EPP/EDR) security.  This provides a broad range of security capabilities to include:
 
--   A unified and centralized framework to manage the security and compliance of applications, workloads, and infrastructure,
--   Host and image scanning, auditing, and runtime vulnerability management capabilities,
--   Posture management for a distributed environment, and
+-   A unified and centralized framework to manage the security and compliance of applications, workloads, and infrastructure
+-   Host and image scanning, auditing, and runtime vulnerability management capabilities
+-   Posture management for a distributed environment
 -   Runtime detection and data enrichment
 
 Now within the context of this particular section, only runtime vulnerability and detection will be discussed. Cloud Workload Protection also has compliance components, and these are discussed in the Governance, Risk and Compliance section.
@@ -119,7 +119,7 @@ Also see this link which has broad information on endpoint security: [What is en
 ### Best Practices
 {: #endpoint-security-best-practices}
 
- - Cloud Workload Protection (CWP) is always recommended in public environments, and
+ - Cloud Workload Protection (CWP) is always recommended in public environments.
  - Any cloud workload protection should be accompanied with people and processes to use the service or tool to find threats and vulnerability wholistically. A “set and forget” approach should never be used.
 
 ### Solutioning Guidance
@@ -131,28 +131,24 @@ Also see this link which has broad information on endpoint security: [What is en
 ## Virtual Private Endpoints
 {: #VPE}
 
-{{site.data.keyword.Bluemix_notm}} has Virtual Private Endpoints that allow secure access to a variety of cloud services without traversing the Internet. Note that VPEs have firewalls in the form of access control lists and security groups previously discussed.  {{site.data.keyword.Bluemix_notm}}® Virtual Private Endpoints (VPE) for VPC enables you to connect to supported {{site.data.keyword.Bluemix_notm}} services from your VPC network by using the IP addresses of your choosing, allocated from a subnet within your VPC.  VPE is an evolution of the private connectivity to {{site.data.keyword.Bluemix_notm}} services. VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model).  The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.Bluemix_notm}}® service on the private backbone.  VPE for VPC gives you the experience of controlling all the private addressing within your cloud. Please see the following links for more information:
+{{site.data.keyword.Bluemix_notm}} has Virtual Private Endpoints (VPE) that allow secure access to a variety of cloud services without traversing the Internet. Note that VPEs have firewalls in the form of access control lists and security groups previously discussed.  {{site.data.keyword.Bluemix_notm}}® Virtual Private Endpoints (VPE) for VPC enables you to connect to supported {{site.data.keyword.Bluemix_notm}} services from your VPC network by using the IP addresses of your choosing, allocated from a subnet within your VPC.  VPE is an evolution of the private connectivity to {{site.data.keyword.Bluemix_notm}} services. VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model).  The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.Bluemix_notm}}® service on the private backbone.  VPE for VPC gives you the experience of controlling all the private addressing within your cloud. Please see the following links for more information:
 
 ### Options
 {: #VPE-options}
 
- - **VPE use** - always recommended due to its inherent security and private traffic transit, and
+ - **VPE use** - always recommended due to its inherent security and private traffic transit.
  - **Cloud Service Access Through the Internet** - Never recommended, but a possible transit if cloud service access is needed in some way across the Internet.
 
 ### Best Practices
 {: #VPE-best-practices}
 
- - Virtual Private Endpoints should always be used when there is a need to access cloud services as opposed to any access over the Internet,
- - VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE, and
+ - Virtual Private Endpoints (VPE) should always be used when there is a need to access cloud services as opposed to any access over the Internet.
+ - VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE.
  - Another is that VPE Security Groups can additionally be applied to control inbound application traffic.
 
 ### Solutioning Guidance
 {: #VPE-guidance}
 
- - [Privately connecting to {{site.data.keyword.Bluemix_notm}} services](/docs/overview?topic=overview-endpoints-support),
- - [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe), and
- - [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways&interface=ui).
-
-
-
-
+ - [Privately connecting to {{site.data.keyword.Bluemix_notm}} services](/docs/overview?topic=overview-endpoints-support)
+ - [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe)
+ - [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways&interface=ui)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-07-29"
 
 subcollection: pattern-vpc-security
 
@@ -18,7 +18,7 @@ keywords:
 ## Threat Investigation
 {: #other-logging-investigation}
 
-Many security solutions have their own specific threat detection capabilities, e.g., NexGen firewalls and so on.  But typically customers use a variety of logs and aggregate them and correlate them to provide a wholistic threat investigation picture.  The following discusses the possible logs that can be used for this purposes.
+Many security solutions have their own specific threat detection capabilities, e.g., NexGen firewalls.  Typically customers use a variety of logs and aggregate them and correlate them to provide a wholistic threat investigation picture.  The following discusses the possible logs that can be used for this purposes.
 
 ### {{site.data.keyword.cloudaccesstraillong}} – Identity and Access Management Logging
 {: #activity-tracker-IAM-logging}
@@ -28,21 +28,21 @@ Many security solutions have their own specific threat detection capabilities, e
 ### Options
 {: #activity-tracker-options}
 
-There are no other {{site.data.keyword.Bluemix_notm}} IAM logging options here – this is the default and built-in logging capability.
+There are no other {{site.data.keyword.Bluemix_notm}} IAM logging options, this is the default and built-in logging capability.
 
 ### Best Practices
 {: #activity-best-practices}
 
- - Use of {{site.data.keyword.cloudaccesstraillong}} auditing in regulated environment or compliance auditing is a must,
- - Forwarding of {{site.data.keyword.cloudaccesstraillong_notm}} logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM, and
+ - Use of {{site.data.keyword.cloudaccesstraillong}} auditing in regulated environment or compliance auditing is a must.
+ - Forwarding of {{site.data.keyword.cloudaccesstraillong_notm}} logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM.
  - Regular reviews of user and API activity logs to determine any possible anomalies.
 
 ### Solutioning Guidance
 {: #activity-guidance}
 
- - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-getting-started),
- - [About {{site.data.keyword.cloudaccesstraillong}} in {{site.data.keyword.Bluemix_notm}}](/docs/activity-tracker?topic=activity-tracker-about), and
- - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
+ - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-getting-started)
+ - [About {{site.data.keyword.cloudaccesstraillong}} in {{site.data.keyword.Bluemix_notm}}](/docs/activity-tracker?topic=activity-tracker-about)
+ - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision)
 
 ## Other Logging For Event Correlation
 {: #other-logging}
@@ -56,7 +56,7 @@ Logging plays a key role in security in that captures events that may be anomalo
 | NexGen Firewalls                                                                                                                    | Provides logs on a variety of functions / actions that occur within the firewalls, e.g., rule hits, alarms, etc. Also note that most NexGen firewalls have their own portals where threats can be investigated|
 | [{{site.data.keyword.cis_full_notm}} LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                                | Captures {{site.data.keyword.cis_short_notm}} firewall events.                                                                 |
 | [Cloud Workload Protection Event Forwarding](/docs/workload-protection?topic=workload-protection-event_forwarding) | Forwards various events from the Cloud Workload Protection solution.                                             |
-{: caption="Table 2: Available Logging"}
+{: caption="Table 1: Available Logging"}
 
 ### Options
 {: #logging-options}
@@ -68,17 +68,17 @@ Logging plays a key role in security in that captures events that may be anomalo
 ### Best Practices
 {: #otherlogging-best-practices}
 
- - Logging of IAM user and API actions should always be used, regardless of the security situation.  These can be used for troubleshooting purposes and mandatory in compliance situations,
- - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment,
+ - Logging of IAM user and API actions should always be used, regardless of the security situation.  These can be used for troubleshooting purposes and mandatory in compliance situations.
+ - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment.
  - Use of VPC flow logs, Cloud Internet Services logs and Cloud Workload Protection logs is dependent upon the customer's use of a Security Information and Event Management (SIEM) platform and how many log feeds are sufficient and how much security inspection granularity.
 
 ### Solutioning Guidance
 {: #other-logging-guidance}
 
- - [Creating a flow log collector](/docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui),
- - [Provisioning an instance](/docs/workload-protection?topic=workload-protection-provision) (Workload Protection),
- - ({{site.data.keyword.cis_short_notm}}) [Cloud Internet Services provisioning an instance](/docs/workload-protection?),
- - [Creating a flow log collector](/docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui), and
+ - [Creating a flow log collector](/docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui)
+ - [Provisioning an instance](/docs/workload-protection?topic=workload-protection-provision) (Workload Protection)
+ - ({{site.data.keyword.cis_short_notm}}) [Cloud Internet Services provisioning an instance](/docs/workload-protection?)
+ - [Creating a flow log collector](/docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui)
  - {{site.data.keyword.cloudaccesstraillong_notm}} [Using the Logpush service](/docs/cis?topic=cis-logpush&interface=ui)
 
 ## Threat Detection
@@ -91,7 +91,7 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 | NexGen Firewalls (see respective firewall documentation)                                                                                                                                                                                      | Anomalous traffic, blocked traffic, firewall rule hits, anomalous files, URLs, DNS queries, etc. |
 | [{{site.data.keyword.cis_short_notm}} (Cloud Internet Services)](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis)                                                                                                                               | Layer 7/ WAF detections                                                                          |
 | Cloud Workload Protection   [About Workload Protection](/docs/workload-protection?topic=workload-protection-about) and [Key Features](/docs/workload-protection?topic=workload-protection-key-features) | Runtime threat detections and vulnerability discovery around virtual server instances.           |
-{: caption="Table 1: Threat Detection - Available Methods"}
+{: caption="Table 2: Threat Detection - Available Methods"}
 
 ### Options
 {: #detection-options}
@@ -111,9 +111,9 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 ### Solutioning Guidance
 {: #detection-guidance}
 
-- [Using the {{site.data.keyword.cis_short_notm}} setup Security Events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
-- [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started).
-- [Getting started with {{site.data.keyword.compliance_long}}].
+- [Using the {{site.data.keyword.cis_short_notm}} setup Security Events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability)
+- [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started)
+- [Getting started with {{site.data.keyword.compliance_long](/docs/security-compliance?topic=security-compliance-getting-started)
 - Please refer to the selected firewall product documentation on threat detection and how to configure it.
 
 ## Threat Response
@@ -127,15 +127,15 @@ Security responses functions typically fall into two categories: those that are 
 ### Options
 {: #response-options}
 
- - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria, and
+ - **NexGen Firewalls** -Customers have the option to get a variety response alerts and alarms based upon a variety of detection items and other firewall criteria.
  - **{{site.data.keyword.cis_short_notm}}** - Customers have the options of getting and selecting different notifications based upon security events.
 
 ### Best Practices
 {: #response-best-practices}
 
-- Procedures and processes to handle all the security notifications and alerts in a unified manner,
-- Personnel established and trained to respond to security events, and
-- Having an established incident response plan.
+- Procedures and processes to handle all the security notifications and alerts in a unified manner
+- Personnel established and trained to respond to security events
+- Having an established incident response plan
 
 ### Solutioning Guidance
 {: #response-best-guidance}
@@ -147,7 +147,7 @@ Security responses functions typically fall into two categories: those that are 
 ## Broader Incident Response
 {: #broader-incident-response}
 
-The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services.](https://www.ibm.com/services/incident-response).  And there are other broader incident response solutions in the marketplace.
+The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services](https://www.ibm.com/services/incident-response).  And there are other broader incident response solutions in the marketplace.
 
 ## Vulnerability Management
 {: #vulnerability-management}
@@ -178,8 +178,5 @@ Vulnerability testing and management can be quite broad but generally it involve
 ### Solutioning Guidance
  {: #vulnerability-management-guidance}
 
-- [Best practices for working with {{site.data.keyword.compliance_long}}]
+- [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices)
 - [Configuring {{site.data.keyword.Bluemix_notm}} Vulnerability Advisor scans](/docs/devsecops?topic=devsecops-cd-devsecops-va-scans)
-
-
-

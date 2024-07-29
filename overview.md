@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-29"
 
 subcollection: pattern-vpc-security
 
@@ -19,13 +19,13 @@ keywords:
 ## Introduction
 {: #introduction}
 
-This paper provides an overview of {{site.data.keyword.cloud_notm}}’s security capabilities and then proceeds to discuss options, best practices and solutioning guidance associated with those capabilities.  But note this paper only discusses Virtual Private Cloud (VPC) Infrastructure as a Services (IaaS) security capabilities.  Security in other areas such as VMWare and OpenShift will be handled in different papers.
+This document provides an overview of {{site.data.keyword.cloud_notm}}’s security capabilities and then proceeds to discuss options, best practices and solutioning guidance associated with those capabilities.  The scope includes Virtual Private Cloud (VPC) Infrastructure as a Services (IaaS) security capabilities.  Security in other landing zones such as VMWare and OpenShift will be handled in future documents.
 
-This document is geared towards cloud consultants, architects, engineers, etc. and it assumes that the reader has a level of cloud proficiency and general knowledge of security concepts.  This paper is not meant to be a cloud or security tutorial, nor is it meant to be technically comprehensive with the particular security solutions noted.
+This document is geared towards cloud consultants, architects, engineers, etc. and it assumes that the reader has a level of cloud proficiency and general knowledge of security concepts.  This document is not meant to be a cloud or security tutorial, nor is it meant to be technically comprehensive with the particular security solutions noted.
 
-Note that most of the links in this paper refer to information in [{{site.data.keyword.Bluemix_notm}} Docs](/docs), which can provide deeper information on the various security services. Another reference source is the security section within the [{{site.data.keyword.Bluemix_notm}} Architecture Center.](https://mediacenter.ibm.com/channel/IBM+Cloud+Architecture+Center/182050661)
+Note that most of the links contained in this document refer to information in [{{site.data.keyword.Bluemix_notm}} Docs](/docs), which can provide deeper information on the various security services. Another reference source is the security section within the [{{site.data.keyword.Bluemix_notm}} Architecture Center.](https://mediacenter.ibm.com/channel/IBM+Cloud+Architecture+Center/182050661)
 
-This paper primarily discusses security capabilities or solutions within {{site.data.keyword.Bluemix_notm}}. But other options, e.g., 3rd party solutions, may be discussed that could be applicable hybrid or multi-cloud situations.  Some of the options may also include those from IBM Cyber Security Services (CSS). These are first presented in the following IBM Cybersecurity Security Services (CSS) Capabilities.
+It discusses security capabilities or solutions within {{site.data.keyword.Bluemix_notm}}. But other options, e.g., 3rd party solutions, may be discussed that could be applicable hybrid or multi-cloud situations.  Some of the options may also include those from IBM Cyber Security Services (CSS). These are presented in the following IBM Cybersecurity Security Services (CSS) Capabilities.
 
 ## General Security Best Practices and Solutioning Guidance
 {: #general-security-best-practices}
@@ -59,5 +59,5 @@ IBM Cybersecurity Services is a specific business unit within IBM that focuses s
  - **Endpoint Protection / Detection & Response (EPP/EDR) solutions** [Qradar / ReaqTa](https://www.ibm.com/products/qradar-edr){: external} endpoint detection and response  unified endpoint management
  - **Unified Endpoint Management** - [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management){: external}
  - **Data Security** - [Guardium](https://www.ibm.com/guardium){: external} data security suite, e.g., data classification, data loss prevention, etc. [CloudPak for Data](https://www.ibm.com/products/cloud-pak-for-data){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
- - **Privilege Access Management** - **Verify** security access manager [Verify}](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds)
+ - **Privilege Access Management** - [Verify security access manager](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds)
  - **Container Security** - 3rd Parties – Palo Alto Prisma Cloud & Illumio

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-07-29"
 
 subcollection: pattern-vpc-security
 
@@ -23,22 +23,22 @@ A WAF helps protect web applications by performing edge filtering and monitoring
 ### Options
 {: #WAF-options}
 
-- **{{site.data.keyword.cis_full_notm}}** - Using Cloud Internet Service WAFs may be more applicable in situations where you need a broad range of capabilities that are commonly found in Content Delivery Networks such as global load balancing, DNS features, URL control, etc.
+- **{{site.data.keyword.cis_full_notm}}** - Using Cloud Internet Service (CIS) WAFs may be more applicable in situations where you need a broad range of capabilities that are commonly found in Content Delivery Networks such as global load balancing, DNS features, URL control, etc.
 - **NexGen Firewall** - Applicable where a NexGen firewall is already at the Internet edge and there are no additional needs that can be found in content delivery networks. NexGen firewalls are typically deployed in “edge” or transit VPCs to provide more advanced firewall functions like Intrusion Detection / Intrusion Protect (IDS/IPS) among other capabilities.
 - **No WAF** - Customer may elect to forgo the use of a WAF in private environments where there may be a private connection to on-prem infrastructure. But note that a customer could have their own WAF in a Demilitarized Zone (DMZ) on-prem.
 
 ### Best Practices
 {: #WAF-best-practices}
 
- - WAF should always be used in public access environments. There are many options and configurations with WAF that relate to HTTP/HTTPS, domains, detection policies, etc. Customers should thoroughly review these items and adapt to their own specific security needs and associated security policies,
+ - WAF should always be used in public access environments. There are many options and configurations with WAF that relate to HTTP/HTTPS, domains, detection policies, etc. Customers should thoroughly review these items and adapt to their own specific security needs and associated security policies
  - As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies, and
  - WAF logs should generally be correlated with other logs, perhaps through a Security Event and Information Management (SIEM) platform, if available.
 
 ### Solutioning Guidance:
  {: #WAF-best-guidance}
 
- - [Best practices for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-best-practices-for-cis-setup),
- - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm}}.](/docs/gateway-appliance?topic=gateway-appliance-order-byoa), and
+ - [Best practices for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-best-practices-for-cis-setup)
+ - [Bring Your Own (BYO) firewalls in {{site.data.keyword.Bluemix_notm}}.](/docs/gateway-appliance?topic=gateway-appliance-order-byoa)
  - [Deploying Fortigate firewall on IBM VPC Cloud.](/docs/fortigate-10g?topic=fortigate-10g-getting-started)
 
 ## Distributed Denial of Service (DDoS)
@@ -52,16 +52,16 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Options:
  {: #ddos-options}
 
- - **{{site.data.keyword.cis_short_notm}}** - Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner,
- - **NexGen Firewall** - Perhaps more applicable where an edge firewall is already being used and users are not dispersed, and cost is factor, and
+ - **{{site.data.keyword.cis_short_notm}}** - Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner.
+ - **NexGen Firewall** - Perhaps more applicable where an edge firewall is already being used and users are not dispersed, and cost is factor.
  - **No DDoS** - Not required in private only networks.
 
 ### Best Practices:
  {: #ddos-best-practice}
 
- - [Best practices for {{site.data.keyword.cis_short_notm}} setup}} setup](/docs/cis?topic=cis-best-practices-for-cis-setup),
- - Create a DDoS attack threat model that is a structured approach to identifying and analyzing potential risks to your online service or website from a DDoS attack,
- - Implement rate limiting by controlling the amount of traffic sent to a network or server, and
+ - [Best practices for {site.data.keyword.cis_short_notm} setup](/docs/cis?topic=cis-best-practices-for-cis-setup)
+ - Create a DDoS attack threat model that is a structured approach to identifying and analyzing potential risks to your online service or website from a DDoS attack
+ - Implement rate limiting by controlling the amount of traffic sent to a network or server
  - Ensure log monitoring and analysis of web traffic to look for anomalies such as unusual high traffic volume or server errors, etc.
 
 ### Solutioning Guidance:
@@ -69,5 +69,3 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 
  - [FAQs for {{site.data.keyword.Bluemix_notm}} Internet Services](/docs/cis?topic=cis-faq)
  - [Managing your {{site.data.keyword.cis_short_notm}} setup deployment](/docs/cis?topic=cis-manage-your-cis-deployment)
-
-
