@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-07-29"
 
 subcollection: pattern-vpc-security
 
@@ -37,14 +37,14 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
 ![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Figure 3. Identity and access management" caption-side="bottom"}
 
 ### Options
-{: #IAM-Options}
+{: #IAMOptions}
 
  - Multi-Factor Authentication (MFA) and complex passwords - always recommended,
  - Assigning individual-based accesses and policies - Never recommended – users should be placed into access groups or in trusted profiles with specific policie, and
  - Single Sign On (SSO) Federation - Applicable where customers already have a single sign on infrastructure or perhaps where customers want to use their established Active Directory or LDAP, etc.
 
 ### Best Practices
- {: #IAM-best-practices}
+ {: #IAMbestpractices}
 
  - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup),
  - Always apply a least privilege approach for all cloud accesses,
@@ -57,7 +57,7 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
  - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-about) to look for access anomalies.  Discussed in a following section.
 
 ### Solutioning Guidance
- {: #IAM-guidance}
+ {: #IAMguidance}
 
  - [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess),
  - [How {{site.data.keyword.Bluemix_notm}} IAM works](/docs/account?topic=account-iamoverview),
@@ -66,7 +66,7 @@ The diagram below provides insight on how IAM works in the {{site.data.keyword.B
  - Use trusted profiles to assign access to compute resources rather than embedding credentials in applications.
 
 ## IAM with Single Sign-On / Identity Provider Federation
-{: #IAM-SSO}
+{: #IAMSSO}
 
 {{site.data.keyword.Bluemix_notm}} IAM allows federation so that you can integrate with your external identity provider (IdP) to securely authenticate external users to your {{site.data.keyword.Bluemix_notm}}® account. By using your IdP, you can provide a way for users in your company to use single sign-on (SSO).  Please see the following link for general information: [Single Sign On](/docs/appid?topic=appid-cd-sso)
 
@@ -147,7 +147,7 @@ A bastion host is a server used to manage access to an internal or private netwo
  - Securely access remote instances with a bastion host. [Access to bastion host](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server)
 
 ## Identity Governance
-{: #IAM-governance}
+{: #IAMgovernance}
 
  Identity governance is a policy or programmatic approach to identity management.  IBM Cloud IAM was previously discussed and all of the capabilities here support identity governance.  But surrounding or on top of these should governance processes and procedures and many of these could be manual processes through documentation or automation that would be out of scope for cloud, e.g., existing approval workflow systems, etc.
 
