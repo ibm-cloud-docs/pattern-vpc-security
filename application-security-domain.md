@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-05"
+lastupdated: "2024-08-06"
 
 subcollection: pattern-vpc-security
 
@@ -12,8 +12,8 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Application security
-{: #compute-design}
+# Application Security
+{: #Appsec}
 
 ## Web Application Firewalling (WAF)
 {: #WAF}
@@ -23,23 +23,23 @@ Web Application Firewalls (WAF) help protect web applications by performing edge
 ### Options
 {: #WAF-options}
 
-- {{site.data.keyword.cis_full_notm}}: Using Cloud Internet Service WAFs may be more applicable in situations where you need a broad range of capabilities that are commonly found in Content Delivery Networks such as global load balancing, DNS features, URL control.
+- {{site.data.keyword.cis_full_notm}}: Using Cloud Internet Service WAFs may be more applicable in situations where you need a broad range of capabilities that are commonly found in Content Delivery Networks such as global load balancing, DNS features, URL control and so on.
 - NexGen Firewall: Applicable where a NexGen firewall is already at the Internet edge and there are no additional needs that can be found in content delivery networks. NexGen firewalls are typically deployed in “edge” or transit VPCs to provide more advanced firewall functions like Intrusion Detection / Intrusion Protect (IDS/IPS) among other capabilities
 - {{site.data.keyword.cis_full_notm}}: Using Cloud Internet Service (CIS) WAFs may be more applicable in situations where you need a broad range of capabilities that are commonly found in Content Delivery Networks such as global load balancing, DNS features, URL control.
 - NexGen Firewall: Applicable where a NexGen firewall is already at the Internet edge and there are no additional needs that can be found in content delivery networks. NexGen firewalls are typically deployed in “edge” or transit VPCs to provide more advanced firewall functions like Intrusion Detection / Intrusion Protect (IDS/IPS) among other capabilities.
 - No WAF: Customer might elect to forgo the use of a WAF in private environments where there might be a private connection to on-premises infrastructure. A customer might have their own WAF in a Demilitarized Zone (DMZ) on-premises.
 
-### Best practices
-{: #WAF-best-practices}
+### Best Practices
+{: #WAF-best-Practices}
 
-Review the following best practices for Web Application Firewalls: 
+Review the following best practices for Web Application Firewalls:
 
  - WAF should always be used in public access environments. There are many options and configurations with WAF that relate to HTTP/HTTPS, domains, and detection policies. Customers should thoroughly review these items and adapt to their own specific security needs and associated security policies.
- - As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies.
- - As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies, and
+ - As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies
+ - As with other security protection and detections capabilities, logs should be stored and inspected regularly for signs of anomalies
  - WAF logs should generally be correlated with other logs, perhaps through a Security Event and Information Management (SIEM) platform, if available.
 
-### Solutioning guidance:
+### Solutioning Guidance:
  {: #WAF-best-guidance}
 
  - [Best practices for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-best-practices-for-cis-setup)
@@ -50,7 +50,7 @@ Review the following best practices for Web Application Firewalls:
 ## Distributed Denial of Service (DDoS)
 {: #DDoS}
 
-A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. These attacks can occur at the application layer and the network layer. {{site.data.keyword.Bluemix_notm}} has two ways of providing DDoS protection for designs that have public internet access. One is using {{site.data.keyword.cis_short_notm}}, and the other is using NexGen firewalls, that can be deployed on Virtual Server Instances at the Internet edge. Review the following links for more information: 
+A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. These attacks can occur at the application layer and the network layer. {{site.data.keyword.Bluemix_notm}} has two ways of providing DDoS protection for designs that have public internet access. One is using {{site.data.keyword.cis_short_notm}}, and the other is using NexGen firewalls, that can be deployed on Virtual Server Instances at the Internet edge. Review the following links for more information:
 - [Dealing with Distributed Denial of Service attacks](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts),
 - [About {{site.data.keyword.Bluemix_notm}} Internet Services](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis), and
 - Information on NexGen firewalls DDoS capabilities can be found in their respective product documentation.
@@ -58,11 +58,11 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Options:
  {: #ddos-options}
 
- - {{site.data.keyword.cis_short_notm}}: Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner.
- - NexGen Firewall: More applicable where an edge firewall is already being used to and users are not dispersed, and cost is a factor.
- - {{site.data.keyword.cis_short_notm}}: Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner.
- - NexGen Firewall: More applicable where an edge firewall is already being used to and users are not dispersed, and cost is a factor.
- - No DDoS: Not required in private only networks.
+- {{site.data.keyword.cis_short_notm}}: Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner.
+- NexGen Firewall: More applicable where an edge firewall is already being used to and users are not dispersed, and cost is a factor.
+- {{site.data.keyword.cis_short_notm}}: Applicable in public internet access environments, particularly in production environments and where dispersed users are accessing apps in a content delivery manner.
+- NexGen Firewall: More applicable where an edge firewall is already being used to and users are not dispersed, and cost is a factor.
+- No DDoS: Not required in private only networks.
 
 ### Best Practices:
  {: #ddos-best-practice}
