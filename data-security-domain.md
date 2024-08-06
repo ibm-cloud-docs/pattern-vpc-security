@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Data Security
+# Data security
 {: #data-security}
 
 ## Data-at-rest encryption
@@ -23,9 +23,9 @@ keywords:
 ### Options
 {: #data-at-rest-encryption-options}
 
- - {{site.data.keyword.Bluemix_notm}} default encryption: This is automatic if another key management scheme isn't selected. IBM keys are used
+ - {{site.data.keyword.Bluemix_notm}} default encryption: This is automatic if another key management scheme isn't selected. {{site.data.keyword.IBM_notm}} keys are used
  - {{site.data.keyword.Bluemix_notm}} encryption with customer keys: The customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs: {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}}
- - External encryption solution: A customer might be using their own data encryption solution on-premises and want to extend this to the cloud. Or, a customer might want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as **Guardium**.
+ - External encryption solution: A customer might be using their own data encryption solution on-premises and want to extend this to the cloud. Or, a customer might want centralized data control across multiple clouds. {{site.data.keyword.IBM_notm}} Cyber Security Services (CSS) has an applicable solution known as [Guardium](https://www.ibm.com/guardium){: external}.
 
 ### Best practices
 {: #data-at-rest-encryption-best-practices}
@@ -46,32 +46,30 @@ keywords:
 {: #key-management}
 
 Key management allows cloud customers the ability to create, store, manage and rotate keys with automation to support storage encryption.  {{site.data.keyword.Bluemix_notm}} has two native, integrated key management services, {{site.data.keyword.keymanagementservicelong_notm}} and Hyper Protect Crypto Services. Please see these links for more information:
- - [keymanagementservicefull](/docs/key-protect?topic=key-protect-about)
- - [Getting Started Hyper Protect Crypto Services](/docs/hs-crypto?topic=hs-crypto-get-started)
- - [Hyper Protect Crypto Services Introducation](/docs/hs-crypto?topic=hs-crypto-introduce-uko)
- - [site.data.keyword.keymanagementserviceshort](/docs/key-protect?topic=key-protect-about)
- - [Getting Started Hyper Protect Crypto Services](/docs/hs-crypto?topic=hs-crypto-get-started)
- - [Hyper Protect Crypto Services Introducation](/docs/hs-crypto?topic=hs-crypto-introduce-uko)
+ - [{{site.data.keyword.keymanagementservicefull}}](/docs/key-protect?topic=key-protect-about)
+ - [Getting started with Hyper Protect Crypto Services](/docs/hs-crypto?topic=hs-crypto-get-started)
+ - [Introducing Unified Key Orchestrator](/docs/hs-crypto?topic=hs-crypto-introduce-uko)
+
 
 ![A screenshot of a computer description automatically generated](images/keyprotectframework.svg){: caption="Figure 1. Key Management Capabilities" caption-side="bottom"}
 
 ### Options
 {: #key-management-options}
 
- - {{site.data.keyword.keymanagementservicelong_notm}} - Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements
+ - {{site.data.keyword.keymanagementservicelong_notm}}: Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements
 
- - Hyper Protect Crypto Service (HPCS) - {{site.data.keyword.hsplatform}} provides key management services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service environment
+ - Hyper Protect Crypto Service (HPCS): {{site.data.keyword.hsplatform}} provides key management services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service environment
 
  - {{site.data.keyword.Bluemix_notm}} native {{site.data.keyword.hsplatform}} with Unified Key Orchestrator - This particular variant of the {{site.data.keyword.hsplatform}} key management solution noted directly above add the ability to manage key across various clouds in addition to {{site.data.keyword.Bluemix_notm}}
 
- - Customer or 3rd party key management solution - May be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
+ - Customer or 3rd party key management solution: This might be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
 
 ### Best practices
 {: #key-management-best-practices}
 
- - Cloud native key management offers the most secure, integrated and automated key lifecycle management
- - User access to keys should be tightly controlled and monitored as can be expected
- - Processes should be established on how keys should be used and managed. Proper rotation of keys should be established
+ - Cloud native key management offers the most secure, integrated and automated key lifecycle management.
+ - User access to keys should be tightly controlled and monitored as can be expected.
+ - Processes should be established on how keys should be used and managed. Proper rotation of keys should be established.
  - Regular inspection of activity logs surrounding key management should occur.
 
 ### Solutioning guidance
@@ -83,19 +81,19 @@ Key management allows cloud customers the ability to create, store, manage and r
 ## Data-in-transit encryption
 {: #Data-in-Transit-Encryption}
 
-Data-in-transit encryption can occur in multiple areas within the {{site.data.keyword.Bluemix_notm}}. There can be external applications using HTTPS/SSL that would terminate to servers within a VPC or load balancers and NexGen firewalls in front of the servers in VPCs.  There is also default data-in-transit encryption when there are accesses/traffic transits to Object, Block and File Storage and cloud services.
+Data-in-transit encryption can occur in multiple areas within the {{site.data.keyword.Bluemix_notm}}. There can be external applications using HTTPS/SSL that would terminate to servers within a VPC or load balancers and NexGen firewalls in front of the servers in VPCs.  There is also default data-in-transit encryption when there are accesses and traffic transits to Object, Block and File Storage and cloud services.
 
 ### Options
 {: #data-in-transit-encryption-options}
 
- - **Data-in-Transit encryption to {{site.data.keyword.Bluemix_notm}} storage** - No options. This is a default function
- - **Application Level Data-in-Transition Encryption** - Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum
- - **Application-level data-in-transit encryption termination** - TLS termination at a NexGen firewall TLS termination at an edge load balancer TLS termination with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short_notm}}
+ - Data-in-transit encryption to {{site.data.keyword.Bluemix_notm}} storage: No options. This is a default function.
+ - Application level data-in-transition encryption: Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum.
+ - Application-level data-in-transit encryption termination: TLS termination at a NexGen firewall TLS termination at an edge load balancer TLS termination with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short_notm}}.
 
 ### Best practices
 {: #data-in-transit-encryption-best-practices}
 
-Application-level data-in-transition encryption should always be applied in public access situations.  Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer.  When the traffic is decrypted at the edge, it can be inspected for threats, and so on.  Application-level encryption termination should not occur on servers that are in the interior of a network.
+Application-level data-in-transition encryption should always be applied in public access situations. Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer.  When the traffic is decrypted at the edge, it can be inspected for threats, and so on. Application-level encryption termination should not occur on servers that are in the interior of a network.
 
 ### Solutioning guidance
 {: #data-in-transit-encryption-best-guidance}
@@ -115,9 +113,9 @@ Certificates can be used in several areas within {{site.data.keyword.Bluemix_not
 ### Options:
 {: #certificate-management-options}
 
- - {{site.data.keyword.secrets-manager_full_notm}} - Highly recommended when {{site.data.keyword.Bluemix_notm}} is primarily used
- - No Certificate Management - Perhaps applicable in private environments with Dev/QA workloads and or where there is a minimal number of certificates to managed
- - Customer-Owned or 3rd Party Certificate Management Solutions.
+ - {{site.data.keyword.secrets-manager_full_notm}}: This is highly recommended when {{site.data.keyword.Bluemix_notm}} is primarily used.
+ - No Certificate Management: This can be applicable in private environments with Dev/QA workloads where there is a minimal number of certificates to managed.
+ - Customer-owned or 3rd Party Certificate Management Solutions.
 
 ### Best practices
 {: #certificate-management-best-practices}
@@ -145,4 +143,4 @@ Certificates can be used in several areas within {{site.data.keyword.Bluemix_not
 
 {{site.data.keyword.Bluemix_notm}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on.  And there is {{site.data.keyword.cloudaccesstraillong_notm}} which logs all user and API access to data.  But there are no specific ways to specifically monitor and control data loss and data integrity.   This is typically the realm of 3rd party data control solutions.  Please see the following for more information on this security function:
 
-What Is Data Loss Prevention (DLP) - [DLP](https://www.ibm.com/topics/data-loss-prevention){: external}
+For more information, see [What Is Data Loss Prevention (DLP)](https://www.ibm.com/topics/data-loss-prevention){: external}.
