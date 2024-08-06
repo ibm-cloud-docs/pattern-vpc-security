@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-08-06"
 
 subcollection: pattern-vpc-security
 
@@ -15,7 +15,7 @@ keywords:
 # Data Security
 {: #data-security}
 
-## Data-at-Rest Encryption
+## Data-at-rest encryption
 {: #data-at-rest-encryption}
 
 {{site.data.keyword.Bluemix_notm}} provides native, integrated data-at-rest encryption for VPC volumes and snapshots and file storage/VPC shares automatically.  {{site.data.keyword.Bluemix_notm}} also provides data-at-rest encryption for its object storage by default. All the encryption used adheres to the AES-256 standard. Customers can use IBM-managed encryption (default) or customer-managed keys.
@@ -23,11 +23,11 @@ keywords:
 ### Options
 {: #data-at-rest-encryption-options}
 
- - **{{site.data.keyword.Bluemix_notm}} Default Encryption** - Automatic if no key management scheme is selected. IBM keys will be used,
- - **{{site.data.keyword.Bluemix_notm}} Encryption with Customer Keys** - Customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs – {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}} and
- - **External Encryption Solution** - Customer may be using their own data encryption solution on-prem and want to extend this to the cloud. Or a customer may want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as **Guardium**.
+ - {{site.data.keyword.Bluemix_notm}} default encryption: This is automatic if another key management scheme isn't selected. IBM keys are used. 
+ - {{site.data.keyword.Bluemix_notm}} encryption with customer keys: The customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs: {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}}
+ - External encryption solution: A customer might be using their own data encryption solution on-premises and want to extend this to the cloud. Or, a customer might want centralized data control across multiple clouds. IBM Cyber Security Services (CSS) has an applicable solution known as Guardium.
 
-### Best Practices
+### Best practices
 {: #data-at-rest-encryption-best-practices}
 
  - Data encryption should always be used as can be expected
