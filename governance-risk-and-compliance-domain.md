@@ -20,7 +20,7 @@ Governance, Risk, and Compliance (GRC) is a structured way to align information 
 ## Configuration governance and management
 {: #configuration-governance-compliance-monitoring}
 
-{{site.data.keyword.Bluemix_notm}}’s configuration governance is handled through its {{site.data.keyword.compliance_long}} platform, which has been discussed in previous sections.
+Cloud security configuration and management is a set of processes, procedures, and native tools and automation to control and eliminate misconfigurations, which today can be a huge source of cloud security vulnerabilities. {{site.data.keyword.Bluemix_notm}}’s specific configuration governance is handled through its {{site.data.keyword.compliance_long}} platform. In {{site.data.keyword.compliance_long}}, all security configurations such as Access Control Lists (ACLs), Multi-Factor Authentication (MFA) and many others can be configured according to certain compliance frameworks and other prescribed custom settings a customer may want. {{site.data.keyword.compliance_long}} can continually check operating configurations and do a comparison between parameters that are currently "set" versus those that are prescribed or dictated.
 
 ### Options
 {: #config-governance}
@@ -46,7 +46,7 @@ Governance, Risk, and Compliance (GRC) is a structured way to align information 
 ### Solutioning guidance
 {: #config-best-practices}
 
-[SCC guidance](/docs/security-compliance?topic=security-compliance-assign-roles) and other drop downs in "how to - setting up the service" section.
+Some solutioning guidance for {{site.data.keyword.compliance_long}} can be found here: [SCC guidance](/docs/security-compliance?topic=security-compliance-assign-roles) and other drop downs in "how to - setting up the service" section.
 
 ## Audit and regulatory and compliance monitoring
 {: #auditing-risk-regulatory}

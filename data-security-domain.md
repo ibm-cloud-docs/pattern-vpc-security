@@ -54,7 +54,7 @@ Key management allows cloud customers the ability to create, store, manage and r
  - [Getting started with Hyper Protect Crypto Services](/docs/hs-crypto?topic=hs-crypto-get-started)
  - [Introducing Unified Key Orchestrator](/docs/hs-crypto?topic=hs-crypto-introduce-uko)
 
-![A screenshot of a computer description automatically generated](images/keyprotectframework.svg){: caption="Figure 1. Key Management Capabilities" caption-side="bottom"}
+![Diagram of key management capabilities](images/keyprotectframework.svg){: caption="Figure 1. Key Management Capabilities" caption-side="bottom"}
 
 ### Options
 {: #key-management-options}

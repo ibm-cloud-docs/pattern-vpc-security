@@ -60,7 +60,7 @@ Logging plays a key role in security in that captures events that may be anomalo
 | NexGen firewalls                                                                                                                    | Provides logs on a variety of functions or actions that occur within the firewalls, e.g., rule hits, alarms, and so on. Also note that most NexGen firewalls have their own portals where threats can be investigated|
 | [{{site.data.keyword.cis_full_notm}} LogPush Service](/docs/cis?topic=cis-logpush&interface=ui)                                | Captures {{site.data.keyword.cis_short_notm}} firewall events.                                                                 |
 | [Cloud workload protection Event Forwarding](/docs/workload-protection?topic=workload-protection-event_forwarding) | Forwards various events from the cloud workload protection solution.                                             |
-{: caption="Table 1 : Other logging sources" caption-side="bottom"}
+ {: caption="Table 1 : Other logging sources" caption-side="bottom"}
 
 ### Options
 {: #logging-options}
