@@ -19,7 +19,7 @@ Cloud security is a set of security measures that protect cloud-based data, appl
 
 This document provides an overview of {{site.data.keyword.cloud_notm}}’s security capabilities, options, best practices and solutioning guidance associated with those capabilities. The scope includes Virtual Private Cloud (VPC) Infrastructure as a Services (IaaS) security capabilities. Security in other landing zones such as VMWare and OpenShift will be handled in future documents.
 
-{{site.data.keyword.Bluemix_notm}} has a broad range of security capabilities, but other options like 3rd party solutions might be discussed that can be applicable to hybrid or multi-cloud situations. Some of the options might also include those from IBM cybersecurity Services. These are presented in the IBM cybersecurity Security Services Capabilities section.
+{{site.data.keyword.Bluemix_notm}} has a broad range of security capabilities, but other options like 3rd party solutions might be discussed that can be applicable to hybrid or multi-cloud situations. Some of the options might also include those from IBM Cybersecurity Services. These are presented in the IBM Cybersecurity Services Capabilities section.
 
 Overview information on [general cloud security concepts](https://www.ibm.com/topics/cloud-security#:~:text=These%20principles%20are%20built%20on,security%20posture%20management%20(CSPM)){: external} is available. Another reference source is the security section within the [{{site.data.keyword.Bluemix_notm}} Architecture Center](https://mediacenter.ibm.com/channel/IBM+Cloud+Architecture+Center/182050661).
 

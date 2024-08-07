@@ -85,7 +85,7 @@ Logging plays a key role in security in that captures events that may be anomalo
  - [Provisioning an instance](/docs/workload-protection?topic=workload-protection-provision) (Workload Protection)
  - ({{site.data.keyword.cis_short_notm}}) [Cloud Internet Services provisioning an instance](/docs/workload-protection?)
  - [Creating a flow log collector](/docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui)
- - {{site.data.keyword.cloudaccesstraillong_notm}} [Using the Log push service](/docs/cis?topic=cis-logpush&interface=ui).
+ - {{site.data.keyword.cloudaccesstraillong_notm}} [Using the Logpush service](/docs/cis?topic=cis-logpush&interface=ui).
 
 ## Threat detection
 {: #threat-detection}
