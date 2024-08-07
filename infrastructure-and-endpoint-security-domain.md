@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-07"
 
 subcollection: pattern-vpc-security
 
@@ -15,7 +15,7 @@ keywords:
 # Infrastructure and Endpoint Security
 {: #IES-domain}
 
-## Core network Protection / network segmentation capability
+## Core network Protection and network segmentation capability
 {: #core-network-protection}
 
 {{site.data.keyword.Bluemix_notm}} provides several standard network isolation capabilities to help customer segregate and secure traffic and compute workloads.  Please see the methods below. These isolation techniques ensure that any attacks are contained in a network area and to limit the “blast radius."  Please see the following links for more information on network segmentation:
@@ -65,7 +65,7 @@ keywords:
  - [Getting started with Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started)
  - [Adding and deleting pretext filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
 
-## Edge protection / firewalling capability
+## Edge protection and firewalling capability
 {: #core-network-protection-firewall}
 
 Segregation techniques were discussed in the previous section and in some way, these can be considered firewalling methods as well.  {{site.data.keyword.Bluemix_notm}} has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic.  Most notable are ACLs that are firewalls that are applied to created cloud subnets.  Security Group are firewalls that are applied virtual server instance (VSI) network interfaces.  Security Groups work at Level 3 and Level 4 controlling allowed IP addresses, ports, and protocols.
@@ -109,10 +109,10 @@ Segregation techniques were discussed in the previous section and in some way, t
  - [Getting started with FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started)
  - [Getting started with {{site.data.keyword.Bluemix_notm}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started).
 
-## Endpoint Detection / Endpoint Protection (EDR/EPP) capability
+## Endpoint Detection and Endpoint Protection (EDR/EPP) capability
 {: #EDR-EPP}
 
-EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, and so on.  Within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance Center (SCC) solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection / Detection (EPP/EDR) security.  This provides a broad range of security capabilities to include:
+EDR/EPP security is a detection and protect mechanism that works at the operating system and application levels. This can loosely thought of anti-virus on a server, but today’s EDR/EPP solutions provide so much more like hardening, software patching, compliance monitoring, threat hunting, and so on.  Within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance Center (SCC) solution is a component known as Cloud Workload Protection. This could be likened to Endpoint Protection and Detection (EPP/EDR) security.  This provides a broad range of security capabilities to include:
 
 -   A unified and centralized framework to manage the security and compliance of applications, workloads, and infrastructure
 -   Host and image scanning, auditing, and runtime vulnerability management capabilities
@@ -130,7 +130,7 @@ Also see this link which has broad information on endpoint security: [What is en
 {: #endpoint-security-options}
 
  - {{site.data.keyword.Bluemix_notm}} Workload Protection** - Fully integrated into {{site.data.keyword.Bluemix_notm}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}}
- - 3rd Party Endpoint Protection and Detection (EPP/EDR) - Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services (CSS), has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax) IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions
+ - 3rd Party Endpoint Protection and Detection (EPP/EDR) - Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services, has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax) IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions
  - No workload protection endpoint security- This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments, and perhaps where cost is a factor.
 
 ### Best practices
