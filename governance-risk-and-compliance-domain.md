@@ -35,18 +35,18 @@ Cloud security configuration and management is a set of processes, procedures, a
 ### Best practices
 {: #config-best-practices-risk}
 
-- Establish a configuration management policy and develop and design security configurations well before any deployment.
-- Understand the compliance framework applicable to your environment that might possibly drive configurations.
-- Understand how needed compliance frameworks are translated into security configurations.
-- Use automation such as {{site.data.keyword.compliance_long}} to automate security configurations and tracking.
-- Develop workflows and approval processes to control security configuration changes.
+- Establish a configuration management policy and develop and design security configurations well before any deployment
+- Understand the compliance framework applicable to your environment that might possibly drive configurations
+- Understand how needed compliance frameworks are translated into security configurations
+- Use automation such as {{site.data.keyword.compliance_long}} to automate security configurations and tracking
+- Develop workflows and approval processes to control security configuration changes
 - Ensure that change rights are strictly controlled through Identity and Access Management (IAM) permissions and any Privilege Access Management (PAM) granular permissions
 - Review the [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices).
 
 ### Solutioning guidance
 {: #config-best-practices}
 
-Some solutioning guidance for {{site.data.keyword.compliance_long}} can be found here: [SCC guidance](/docs/security-compliance?topic=security-compliance-assign-roles) and other drop downs in "how to - setting up the service" section.
+Solutioning guidance for {{site.data.keyword.compliance_long}} can be found here: [SCC guidance](/docs/security-compliance?topic=security-compliance-assign-roles) and other drop downs in "how to - setting up the service" section.
 
 ## Audit and regulatory and compliance monitoring
 {: #auditing-risk-regulatory}
@@ -54,7 +54,6 @@ Some solutioning guidance for {{site.data.keyword.compliance_long}} can be found
 In some respects auditing and regulatory aspects and conmpliance monitoring are all related. {{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccesstraillong_notm}}, both of which were discussed earlier. {{site.data.keyword.compliance_long}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, for example NIST 800-53, HIPPA, and so on. {{site.data.keyword.cloudaccesstrailshort}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed. Auditors can use both of these audit functions. See the following if there is a need to understand {{site.data.keyword.Bluemix_notm}}'s underlying infrastructure compliance monitoring (typically referred to "below the line monitoring):  [compliance monitoring](/docs/overview?topic=overview-compliance).
 
 Regulated workloads have specific compliance framework adherence requirements and "regulatory" aspects are subsumed to a certain degree in compliance monitoring and auditing.
-{: note}
 
 ### Options
 {: #auditing-options}

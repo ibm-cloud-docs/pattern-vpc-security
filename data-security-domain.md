@@ -54,6 +54,8 @@ Key management allows cloud customers the ability to create, store, manage and r
  - [Getting started with Hyper Protect Crypto Services](/docs/hs-crypto?topic=hs-crypto-get-started)
  - [Introducing Unified Key Orchestrator](/docs/hs-crypto?topic=hs-crypto-introduce-uko)
 
+ The following diagram is a depiction of the two types of key management capabilities in IBM Cloud.
+
 ![Diagram of key management capabilities](images/keyprotectframework.svg){: caption="Figure 1. Key Management Capabilities" caption-side="bottom"}
 
 ### Options
@@ -150,6 +152,4 @@ The following options are available for certificate management:
 ## Data Loss Prevention (DLP) and data access, integrity and monitoring
 {: #DLP}
 
-{{site.data.keyword.Bluemix_notm}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on. And there is {{site.data.keyword.cloudaccesstraillong_notm}} which logs all user and API access to data. But there are no specific ways to specifically monitor and control data loss and data integrity. This is typically the realm of 3rd party data control solutions.For more information on this security function see:
-
-For more information, see [What Is Data Loss Prevention (DLP)](https://www.ibm.com/topics/data-loss-prevention){: external}.
+{{site.data.keyword.Bluemix_notm}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on. And there is {{site.data.keyword.cloudaccesstraillong_notm}} which logs all user and API access to data. But there are no specific ways to specifically monitor and control data loss and data integrity. This is typically the realm of 3rd party data control solutions. For more information on data loss prevention, see [What Is Data Loss Prevention (DLP)](https://www.ibm.com/topics/data-loss-prevention){: external}.

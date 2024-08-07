@@ -37,7 +37,7 @@ The following highlights some of the major IAM functions available.
 
 The following diagram provides insight on how IAM works in the {{site.data.keyword.Bluemix_notm}}.
 
-![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Figure 1. Identity and access management" caption-side="bottom"}
+![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Figure 1. Identity and access management depiction" caption-side="bottom"}
 
 ### Options
 {: #IAMOptions}

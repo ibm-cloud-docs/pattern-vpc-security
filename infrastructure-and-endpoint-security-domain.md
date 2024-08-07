@@ -38,7 +38,7 @@ keywords:
 
  - Virtual Private Cloud (VPC) - There are no options to VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor
  - Access Control Lists (ACLs) - There are no options for using ACLs in VPC environments
- - Security Groups** - There are no alternatives in a VPC environment
+ - Security Groups - There are no alternatives in a VPC environment
  - NexGen firewall - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) edge VPC
  - Transit gateway - There are no options for using Transit Gateway when you want to interconnect VPCs or connect to other environment, e.g., PowerVS.  But the use of pretext filtering is options in many situations
  - VPC - There are no alternatives for VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor
@@ -129,7 +129,7 @@ Also see this link which has broad information on endpoint security: [What is en
 ### Options
 {: #endpoint-security-options}
 
- - {{site.data.keyword.Bluemix_notm}} Workload Protection** - Fully integrated into {{site.data.keyword.Bluemix_notm}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}}
+ - {{site.data.keyword.Bluemix_notm}} Workload Protection - Fully integrated into {{site.data.keyword.Bluemix_notm}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}}
  - 3rd Party Endpoint Protection and Detection (EPP/EDR) - Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services, has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax) IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions
  - No workload protection endpoint security- This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments, and perhaps where cost is a factor.
 
