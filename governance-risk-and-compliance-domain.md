@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-08"
+lastupdated: "2024-08-12"
 
 subcollection: pattern-vpc-security
 
@@ -26,7 +26,7 @@ Cloud security configuration and management is a set of processes, procedures, a
 {: #config-governance}
 
 - {{site.data.keyword.compliance_long}}: Customers have the option of choosing the resources and configurations that they want to scan for status and parameters.
-- Palo Alto Prisma Cloud: This solution from IBM Cybersecurity Services provides configuration governance in multi-cloud situations.
+- Palo Alto Prisma Cloud: This solution from IBM Cybersecurity Services provides configuration governance in multi-cloud situations
 - Manual configuration management: Customers might possibly track configurations manually, say through spreadsheets and the like, but this method is tedious and prone to errors. This might be a possibility with noncritical workloads in a private access situation.
 - Palo Alto Prisma Cloud: This solution from IBM Cybersecurity Services provides configuration governance in multi-cloud situations.
 - Manual configuration management: Customers might possibly track configurations manually, say through spreadsheets and the like, but this method is tedious and prone to errors. This might be a possibility with noncritical workloads in a private access situation.
@@ -35,11 +35,11 @@ Cloud security configuration and management is a set of processes, procedures, a
 ### Best practices
 {: #config-best-practices-risk}
 
-- Establish a configuration management policy and develop and design security configurations well before any deployment.
-- Understand the compliance framework applicable to your environment that might possibly drive configurations.
-- Understand how the needed compliance frameworks are translated into security configurations.
-- Use automation such as {{site.data.keyword.compliance_long}} to automate security configurations and tracking.
-- Develop workflows and approval processes to control security configuration changes.
+- Establish a configuration management policy and develop and design security configurations well before any deployment
+- Understand the compliance framework applicable to your environment that might possibly drive configurations
+- Understand how needed compliance frameworks are translated into security configurations
+- Use automation such as {{site.data.keyword.compliance_long}} to automate security configurations and tracking
+- Develop workflows and approval processes to control security configuration changes
 - Ensure that change rights are strictly controlled through Identity and Access Management (IAM) permissions and any Privilege Access Management (PAM) granular permissions.
 - Review the [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices).
 
@@ -71,4 +71,4 @@ Review the best practices for working with {{site.data.keyword.compliance_long}}
 {: #auditing-best-guidance}
 
 - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision)
-- [Compliance best practices](/docs/security-compliance?topic=security-compliance-best-practices)
+- [Compliance best practices](/docs/security-compliance?topic=security-compliance-best-practices).

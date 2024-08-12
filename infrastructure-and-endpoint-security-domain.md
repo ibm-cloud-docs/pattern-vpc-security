@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-08"
+lastupdated: "2024-08-12"
 
 subcollection: pattern-vpc-security
 
@@ -15,7 +15,9 @@ keywords:
 # Infrastructure and endpoint security
 {: #IES-domain}
 
-## Core network protection and network segmentation capability
+Infastructure and endpoint security is the practice of securing endpoints such as servers and underlying infrastructure such as Virtual Prive Clouds (VPCs) and related networking.  The following paragraphs discuss {{site.data.keyword.Bluemix_notm}}'s security capabilities in these critical areas.
+
+## Core network Protection and network segmentation capability
 {: #core-network-protection}
 
 {{site.data.keyword.Bluemix_notm}} provides several standard network isolation capabilities to help customer separate and secure traffic and compute workloads. These isolation techniques ensure that any attacks are contained in a network area and to limit the blast radius. For more information, see the following links:
@@ -26,28 +28,37 @@ keywords:
 ### Segmentation methods
 {: #segmentation-methods}
 
- - Virtual Private Cloud: VPCs can separate various environments, for example, one VPC for production, one VPC for development and test, one for management, and so on.  There are use cases where there might be one general use VPC that is separate from another VPC in an account like if a customer has two different workload environments. For more information, see [Virtual Private Cloud](https://www.ibm.com/cloud/vpc).
- - Access Control Lists (ACLs): Separate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. For more information, see [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls)
- - Security groups: Segregates traffic in and out of virtual server network interfaces. This can be considered host firewalling. For more information, see [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups).
- - Transit gateway: {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS, and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network. Transit Gateway can be deployed for VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keywordBluemix_notm}} classic infrastructure VPCs to PowerVS environments. Transit gateways are not always thought as a specific security capability, but transit gateways can provide a form of network segmentation that is known as Pretext Filtering, similar to basic standard firewalls. For more information, see [Filtering routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
- - NexGen firewalls: Firewalls at the Internet can separate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
+ - Virtual Private Cloud - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, and so on.  And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://www.ibm.com/cloud/vpc)
+ - Access Control Lists (ACLs) - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls)
+ - Security groups - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups)
+ - Transit gateway - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keywordBluemix_notm}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but transit gateways can provide a form of network segmentation known as Pretext Filtering, similar to basic standard firewalls.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
+ - NexGen firewalls - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
 
 ### Options
 {: #segmentation-options}
 
- - Virtual Private Cloud (VPC): There are no options to VPC segmentation, but a customer might elect, for example, to use only one VPC and place all resources in that VPC. This might be used in noncritical environments where there is only one function, for example, a test environment and there is no public access and cost is a factor.
- - Access Control Lists (ACLs): There are no options for using ACLs in VPC environments.
- - Security Groups: There are no alternatives in a VPC environment
- - NexGen firewall: Customers can elect, based on a risk profile and the workload types, to place NexGen firewalls in a separate DMZ (DMZ) edge VPC.
- - Transit gateway: There are no options for using Transit Gateway when you want to interconnect VPCs or connect to other environment, for example, PowerVS. The use of pretext filtering is an option in many situations.
+ - Virtual Private Cloud (VPC) - There are no options to VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor.
+ - Access Control Lists (ACLs) - There are no options for using ACLs in VPC environments.
+ - Security Groups - There are no alternatives in a VPC environment.
+ - NexGen firewall - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) edge VPC.
+ - Transit gateway - There are no options for using Transit Gateway when you want to interconnect VPCs or connect to other environment, e.g., PowerVS.  But the use of pretext filtering is options in many situations.
+ - VPC - There are no alternatives for VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor
+ - Access Control Lists (ACLs) - There are no alternatives for using ACLs in VPC environments.
+ - Security groups - There are no alternatives in a VPC environment.
+ - NexGen firewall - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) edge VPC.
+ - Transit gateway - There are no alternatives for using Transit Gateway when you want to interconnect VPCs or connect to other environments, e.g., Power Virtual Server.  But the use of pretext filtering is an option in many situations.
 
 ### Best Practices:
 {: #segmentation-best-practices}
 
- - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a DMZ segmentation.
- - Separate environments such as production, development, and test from each other using VPC segmentation.
- - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols, and IP addresses as needed.
- - Conduct periodic reviews of all ACL and Security Group rules. Understand traffic flows between servers to understand what segmentation is needed.
+ - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation
+ - Separate production, dev, test, and so on. from each other using VPC segmentation.
+ - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed
+ - Conduct periodic reviews of all ACL and Security Group rules. Customer should understand traffic flows between servers so as to understand what segmentation is needed.
+ - In public environments, always have an Internet edge VPC where a firewall can be placed and act as a Demilitarized Zone segmentation.
+ - Separate production, dev, test, and so on from each other using VPC segmentation.
+ - Always apply a “deny all” approach to ACLs and Security Groups and only open ports, protocols and IP addresses as needed.
+ - Conduct periodic reviews of all ACL and Security Group rules. Understand traffic flows between workloads to understand what segmentation is needed.
 
 ### Solutioning guidance:
 {: #segmentation-guidance}
@@ -60,26 +71,30 @@ keywords:
 
 Segmentation techniques can be considered firewalling methods. {{site.data.keyword.Bluemix_notm}} has native firewalling in several areas to control IP addresses, ports and protocols and associated ingress and egress traffic. Most notable are ACLs that are firewalls that are applied to created cloud subnets. Security Groups are firewalls that are applied to virtual server instance (VSI) network interfaces. Security Groups work at Level 3 and Level 4 controlling allowed IP addresses, ports, and protocols.
 
- - [Access Control Lists](/docs/vpc?topic=vpc-using-acls) controls ingress and egress IP addresses, ports and protocol in subnets
- - [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups): Controls ingress and egress IP addresses, ports, and protocols on virtual server instances network interfaces. This can be considered host firewalling.
- - NexGen firewalls: {{site.data.keyword.Bluemix_notm}} has two firewalls within its catalog, Juniper and Fortinet that can be deployed on VSIs at the edge, and these can fully control Level 3 & 4 traffic, but these are capable of much more filtering like controlling URLs, files, DNS queries and layer 7 web application firewalling. In addition to the firewalls in the {{site.data.keyword.Bluemix_notm}} catalog, customers can bring their own firewall and host it on a VSI.
- - {{site.data.keyword.cis_full_notm}}: {{site.data.keyword.cis_short_notm}} setup has a traditional layer 3/4 firewall, in addition to its WAF capability and other security features. This would be applicable in situation where the customer has dispersed users and where a content delivery network (CDN) solution might be used.
- - [Context Restrictions](/docs/account?topic=account-context-restrictions-whatis): Firewalls in essence that front-end services to control ingresses from certain allowed IP addresses. An example of this is blocking access from Russia on a Saturday night.
+ - [Access Control Lists](/docs/vpc?topic=vpc-using-acls) controls ingress and egress IP addresses, ports and protocol in subnets.
+ - [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups) - Controls ingress and egress IP addresses, ports and protocols on virtual server instances network interfaces. This can be considered host firewalling.
+ - NexGen firewalls - {{site.data.keyword.Bluemix_notm}} has two firewalls within its catalog, Juniper and Fortinet, that can be deployed on VSIs at the edge, and these can fully control Level 3 & 4 traffic, but these are capable of much more filtering like controlling URLs, files, DNS queries and layer 7 web application firewalling. In addition to the firewalls in the {{site.data.keyword.Bluemix_notm}} catalog, customers can bring their own firewall and host it on a VSI.
+ - {{site.data.keyword.cis_full_notm}} - {{site.data.keyword.cis_short_notm}} setup has a traditional layer 3/4 firewall, in addition to its WAF capability and other security features. This would be applicable in situation where the customer has dispersed users and where a content delivery network (CDN) solution may be used.
+ - [Context Restrictions](/docs/account?topic=account-context-restrictions-whatis) - firewalls in essence that front end services to control ingresses from certain allowed IP addresses. E.g., blocking accesses from Russia on a Saturday night.
 
 ### Options
 {: #firewalling-options}
 
- - VPCs, Access Control Lists (ACLs), security groups: There are no mandatory options for all VPC environments. For more information, see [exploring firewalls](/docs/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
- - NexGen Firewalls: Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, for example, SD-WAN, file inspections, and so on. Optional in private connections to on-premises, but is still recommended. Optional when {{site.data.keyword.cis_short_notm}} will be used.
- - {{site.data.keyword.cis_full_notm}}: Required where there are other needs such as content delivery networking (CDN), for example, edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, and so on. For more information, see [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-getting-started).
+ - VPCs, Access Control Lists (ACLs), security groups - No options – mandatory for all VPC environments. Please see: [exploring firewalls](/docs/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
+ - NexGen Firewalls - Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, and so on. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm}} will be used.
+ - {{site.data.keyword.cis_full_notm}} - [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, and so on.
 
 ### Best practices
 {: #core-network-protection-best-practices}
 
- - Knowing and documenting all traffic flows, and segment accordingly.
- - Firewalls should be first setup with a “deny all” configurations and IPs. Port and protocols are only opened when necessary.
+ - Knowing and documenting all traffic flows, and segment accordingly
+ - Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary.
  - Periodic firewall rules reviews
- - Review the {{site.data.keyword.cis_full_notm}} [best practices](/docs/cis?topic=cis-best-practices-for-cis-setup).
+ - {{site.data.keyword.cis_full_notm}} [best practices](/docs/cis?topic=cis-best-practices-for-cis-setup)
+ - Knowing and documenting all traffic flows, and segment accordingly
+ - Firewalls should be first setup with a “deny all” configurations and IPs, port and protocols are only opened when necessary.
+ - Periodic firewall rules reviews
+ - {{site.data.keyword.cis_full_notm}}[best practices](/docs/cis?topic=cis-best-practices-for-cis-setup).
 
 ### Solutioning guidance
 {: #core-network-protection-guidance}
@@ -110,14 +125,14 @@ Within the context of this particular section, only runtime vulnerability and de
 
 For more information, see [Key features of {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-key-features). This capability can also fall into a security mechanism that is known as vulnerability management.
 
-In addition, see [What is endpoint security](https://www.ibm.com/topics/endpoint-security) and [What is endpoint detection and response.](https://www.ibm.com/topics/edr). 
+In addition, see [What is endpoint security](https://www.ibm.com/topics/endpoint-security) and [What is endpoint detection and response.](https://www.ibm.com/topics/edr).
 
 ### Options
 {: #endpoint-security-options}
 
- - {{site.data.keyword.Bluemix_notm}} Workload Protection: Fully integrated into {{site.data.keyword.Bluemix_notm}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}}.
- - 3rd Party endpoint protection and detection: Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that might be applicable if a customer is using an endpoint security solution on-premises or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services, has a endpoint detection and endpoint protection solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax){: external}. IBM Cybersecurity Services also sells, consults on, implements, and manages various 3rd-party endpoint detection and endpoint protection market solutions.
- - No workload protection or endpoint security: This option depends upon the customer risk profile and what type of workloads are being used. This might be applicable in a private environment with no Internet access or low risk situations with dev and test environments, and perhaps where cost is a factor.
+ - {{site.data.keyword.Bluemix_notm}} Workload Protection - Fully integrated into {{site.data.keyword.Bluemix_notm}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}}
+ - 3rd Party Endpoint Protection and Detection (EPP/EDR) - Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services, has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax). IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
+ - No workload protection endpoint security- This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments, and perhaps where cost is a factor.
 
 ### Best practices
 {: #endpoint-security-best-practices}
@@ -145,9 +160,11 @@ In addition, see [What is endpoint security](https://www.ibm.com/topics/endpoint
 ### Best practices
 {: #VPE-best-practices}
 
- - Virtual Private Endpoints (VPEs) should always be used when there is a need to access cloud services as opposed to any access over the Internet
- - VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE
- - Additionally, vPE security groups can be applied to control inbound application traffic.
+ - Virtual Private Endpoints (VPEs) should always be used when there is a need to access cloud services as opposed to any access over the Internet.
+ - VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE.
+ - Virtual Private Endpoints (VPE) should always be used when there is a need to access cloud services as opposed to any access over the Internet.
+ - VPEs have security features that should be considered during the implementation process. One is that VPEs have Access Control Lists (ACLs) that can control all traffic in and out of the VPE.
+ - Another is that VPE security groups can additionally be applied to control inbound application traffic.
 
 ### Solutioning guidance
 {: #VPE-guidance}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-07"
+lastupdated: "2024-08-12"
 
 subcollection: pattern-vpc-security
 
@@ -33,9 +33,9 @@ There are many different security best practices for cloud deployments, but one 
 - Never trust, always verify
 - Enforce least privilege access
 - Enable strong authentication, and periodic and recurring authentication as possible
-- Assume breaches everywhere and protect and detect accordingly
-- Segment functions and related network areas to create security perimeters to limit blast radiuses of attacks
-- Discover all possible resources, functions, components, and data that is used in an environment and ensure total visibility – you cannot secure what you cannot see
+- Assume breaches everywhere and protect and detect accordingly.
+- Segment functions and related network areas to create security perimeters to limit blast radiuses of attacks.
+- Discover all possible resources, functions, components, and data that is used in an environment and ensure total visibility – you cannot secure what you cannot see.
 - Use continuous security monitoring
 
 This paper shows how various {{site.data.keyword.Bluemix_notm}} security elements can be deployed following a zero trust approach. For more information, see the [National Institute of Standards and Technology paper](https://csrc.nist.gov/pubs/sp/800/207/final){: external}. Additional sources on zero trust principles and applications are available.

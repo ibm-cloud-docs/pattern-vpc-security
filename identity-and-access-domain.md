@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-07"
+lastupdated: "2024-08-12"
 
 subcollection: pattern-vpc-security
 
@@ -42,7 +42,7 @@ The following diagram provides insight on how IAM works in the {{site.data.keywo
 ### Options
 {: #IAMOptions}
 
- - Multi-Factor Authentication (MFA) and complex passwords: Using MFA and complex passwords are always recommended
+ - Multi-Factor Authentication (MFA) and complex passwords: Using MFA and complex passwords are always recommended.
  - Assigning individual-based accesses and policies: This option is not recommended. Users should be placed into access groups or in trusted profiles with specific policies.
  - Single Sign On (SSO) Federation: Applicable where customers already have a single sign-on infrastructure or where customers want to use their established Active Directory or LDAP, and so on.
 
@@ -55,7 +55,7 @@ The following diagram provides insight on how IAM works in the {{site.data.keywo
  - Never apply IAM capabilities to a single user.
  - Use trusted profiles or access groups and assign policies to the access group.
  - Always use multi-factor authentication and a complex password and rotation policy.
- - Develop thorough documentation that dictates how IAM is used in your {{site.data.keyword.Bluemix_notm}} accounts.
+ - Develop thorough documentation that dictates how IAM is used in your {{site.data.keyword.Bluemix_notm}} accounts
  - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time, settings can drift or be inadvertently changes resulting in overly permissible states.
  - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-about) to look for access anomalies.
 
@@ -64,7 +64,7 @@ The following diagram provides insight on how IAM works in the {{site.data.keywo
 
 Customers are encouraged to review the documentation in the [Managing Your Account, Resources, Access](/docs/account) documentation for more insight on best IAM practices and solutioning guidance.
 
-- [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess),
+- [Access management in {{site.data.keyword.Bluemix_notm}}](/docs/account?topic=account-cloudaccess)
 - [How {{site.data.keyword.Bluemix_notm}} IAM works](/docs/account?topic=account-iamoverview)
 - [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup)
 - Use trusted profiles to assign access to compute resources rather than embedding credentials in applications.
@@ -83,8 +83,8 @@ Customers are encouraged to review the documentation in the [Managing Your Accou
 ### Best practices
 {: #SSO-best-practices}
 
- - Use {{site.data.keyword.Bluemix_notm}} Trusted Profiles along with any SSO solution.
- - Ensure multi-factor authentication with the SSO solution.
+ - Use {{site.data.keyword.Bluemix_notm}} Trusted Profiles along with any SSO solution
+ - Ensure multi-factor authentication with the SSO solution
  - Enforce granular role and permission management.
 
 ### Solutioning guidance
@@ -92,12 +92,12 @@ Customers are encouraged to review the documentation in the [Managing Your Accou
 
  - [Which is the right federation option for you?](/docs/account?topic=account-federation-option-for-you)
  - {{site.data.keyword.Bluemix_notm}} SAML Federation Guide [Enabling authentication from an external identity provider.](/docs/account?topic=account-idp-integration)
- - [Managing access for federated users by using trusted profiles](/docs/account?topic=account-trustedprofile-fedusers-tutorial&interface=ui)
+ - [Managing access for federated users by using trusted profiles](/docs/account?topic=account-trustedprofile-fedusers-tutorial&interface=ui).
 
 ## Secrets management
 {: #secrets-management}
 
-Secrets management is a way to securely store and manage API keys, certificates, user ID and password credentials, and other sensitive information with automation and integration. {{site.data.keyword.Bluemix_notm}}’s service is known as {{site.data.keyword.secrets-manager_full_notm}} and it has several key security features such as secrets lifecycle management, logging, default encryption, IAM integration, versioning . For more information, see [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started).
+Secrets management is a way to securely store and manage API keys, certificates, user ID and password credentials, and other sensitive information with automation and integration. {{site.data.keyword.Bluemix_notm}}’s service is known as {{site.data.keyword.secrets-manager_full_notm}} and it has several key security features such as secrets lifecycle management, logging, default encryption, IAM integration, versioning. For more information, see [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started).
 
 ### Options:
 {: #secrets-management-options}
@@ -110,8 +110,8 @@ Secrets management is a way to securely store and manage API keys, certificates,
 {: #secrets-management-best-practices}
 
  - {{site.data.keyword.Bluemix_notm}} is focused on enterprise workloads and these workloads should always include secrets management.
- - Cloud native secrets management that provides full lifestyle capabilities and full cloud integration.
- - Automated creation, rotation, revocation, and expiration of static secrets.
+ - Cloud native secrets management that provides full lifestyle capabilities and full cloud integration
+ - Automated creation, rotation, revocation, and expiration of static secrets
  - Never transmit secrets via plain text. All should transit that uses TLS encryption.
 
 ### Solutioning guidance:
@@ -122,7 +122,7 @@ Secrets management is a way to securely store and manage API keys, certificates,
  - [Securing your data in {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui)
  - [Protecting {{site.data.keyword.secrets-manager_full_notm}} resources with context-based restrictions](/docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
  - {{site.data.keyword.secrets-manager_full_notm}} instances are provisioned per region to spread out workloads and limit the blast radius if a regional outage occurs. {{site.data.keyword.secrets-manager_full_notm}} is a single-tenant service. CPU and memory limits are applied per {{site.data.keyword.secrets-manager_full_notm}} instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate lower than 20 req/s. Additionally, limit the number of unique clients that make requests to a single {{site.data.keyword.secrets-manager_full_notm}} instance.
- - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems {{site.data.keyword.keymanagementservicelong_notm}} or Hyper Protect Crypto Services {{site.data.keyword.hsplatform}} to encrypt secrets. For more information, see [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui).
+ - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems {{site.data.keyword keymanagementservicelong_notm}} or Hyper Protect Crypto Services {{site.data.keyword.hsplatform}} to encrypt secrets. For more information, see [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui).
 
 {{site.data.keyword.secrets-manager_full_notm}} is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management. For more information, see [Security Design](/docs/vpc-resiliency?topic=vpc-resiliency-security-design). Ensure high availability of secrets management platform. Provisions for high availability and encrypted backups should be used.
 
@@ -139,7 +139,7 @@ A bastion host is a server used to manage access to an internal or private netwo
  - Bastion with PAM software - Various 3rd party solutions are in the marketplace, and this is always recommended.
 
  IBM Cybersecurity Services does have a PAM solution that's known as Verify. For more information, see [IBM Cybersecurity Services Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds){: external}
- {: note}
+ {: note}.
 
 ### Best practices
 {: #bastion-host-best-practices}

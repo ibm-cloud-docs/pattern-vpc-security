@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-07"
+lastupdated: "2024-08-12"
 
 subcollection: pattern-vpc-security
 
@@ -72,10 +72,10 @@ Logging plays a key role in security in that captures events that may be anomalo
 ### Best practices
 {: #otherlogging-best-practices}
 
- - Logging of IAM user and API actions should always be used, regardless of the security situationThese can be used for troubleshooting purposes and mandatory in compliance situations
- - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment
- - Logging of IAM user and API actions should always be used, regardless of the security situation. These can be used for troubleshooting purposes and mandatory in compliance situations
- - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment
+ - Logging of IAM user and API actions should always be used, regardless of the security situationThese can be used for troubleshooting purposes and mandatory in compliance situations.
+ - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment.
+ - Logging of IAM user and API actions should always be used, regardless of the security situation. These can be used for troubleshooting purposes and mandatory in compliance situations.
+ - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment.
  - Use of VPC flow logs, Cloud Internet Services logs and Cloud Workload Protection logs is dependent upon the customer's use of a Security Information and Event Management (SIEM) platform and how many log feeds are sufficient and how much security inspection granularity.
 
 ### Solutioning guidance
@@ -102,8 +102,8 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 ### Options
 {: #detection-options}
 
- - NexGen Firewalls - This detection option can be deployed in public access situations at the edge. This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm}} in certain situations
- - {{site.data.keyword.cis_full_notm}} -  This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed
+ - NexGen Firewalls - This detection option can be deployed in public access situations at the edge. This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm}} in certain situations.
+ - {{site.data.keyword.cis_full_notm}} -  This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
  - Cloud Workload Protection - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
 
 ### Best practices
@@ -144,7 +144,7 @@ Security response functions typically fall into two categories: those that are a
 
 - Procedures and processes to handle all the security notifications and alerts in a unified manner
 - Personnel that are established and trained to respond to security events
-- Having an established incident response plan
+- Having an established incident response plan.
 
 ### Solutioning guidance
 {: #response-best-guidance}
