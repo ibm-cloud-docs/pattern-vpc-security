@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-12"
+lastupdated: "2024-08-15"
 
 subcollection: pattern-vpc-security
 
@@ -69,8 +69,8 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Best practices:
  {: #ddos-best-practice}
 
- - [Best practices for {{site.data.keyword.cis_short_notm}} setup}}](/docs/cis?topic=cis-best-practices-for-cis-setup)
- - [Best practices for {site.data.keyword.cis_short_notm} setup](/docs/cis?topic=cis-best-practices-for-cis-setup)
+ - [Best practices for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-best-practices-for-cis-setup)
+ - [Best practices for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-best-practices-for-cis-setup)
  - Create a DDoS attack threat model that is a structured approach to identifying and analyzing potential risks to your online service or website from a DDoS attack.
  - Implement rate limiting by controlling the amount of traffic that is sent to a network or server.
  - Ensure log monitoring and analysis of web traffic to look for anomalies such as unusual high traffic volume or server errors.

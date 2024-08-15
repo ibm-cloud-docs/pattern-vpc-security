@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-12"
+lastupdated: "2024-08-15"
 
 subcollection: pattern-vpc-security
 
@@ -50,9 +50,7 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
 ## IBM Cybersecurity Security Services capabilities: options in certain situations
 {: #CSS-capabilities}
 
-{{site.data.keyword.IBM_notm}} Cybersecurity Services is a specific business unit within {{site.data.keyword.IBM_notm}} that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The following table provides an overview of their solutions, and these can be considered additional options in {{site.data.keyword.Bluemix_notm}} that may be applicable in certain scenarios like hybrid or Multicloud situations.
-
-Their separate consulting and managed service are not covered in the table. As {{site.data.keyword.Bluemix_notm}} security domains are discussed in the following sections, options in the domains are presented and some of those might be IBM Cybersecurity Services solutions.
+{{site.data.keyword.IBM_notm}} Cybersecurity Services is a specific business unit within {{site.data.keyword.IBM_notm}} that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The list below provides an overview of their solutions, and these can be considered additional options in {{site.data.keyword.Bluemix_notm}} that may be applicable in certain scenarios like hybrid or Multicloud situations.
 
  - Infrastructure and endpoint security: Various 3rd Party Firewalls, for example, Palo Alto and Cisco
  - [QRadar Security Event and Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-response) {: external} Various 3rd parties
