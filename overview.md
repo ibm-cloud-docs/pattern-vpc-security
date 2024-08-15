@@ -52,9 +52,9 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
 
 {{site.data.keyword.IBM_notm}} Cybersecurity Services is a specific business unit within {{site.data.keyword.IBM_notm}} that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The list below provides an overview of their solutions, and these can be considered additional options in {{site.data.keyword.Bluemix_notm}} that may be applicable in certain scenarios like hybrid or Multicloud situations.
 
- - Infrastructure and endpoint security: Various 3rd Party Firewalls, for example, Palo Alto and Cisco
- - [QRadar Security Event and Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-response) {: external} Various 3rd parties
- - Endpoint Protection and Detection & Response (EPP/EDR) solutions [Qradar with ReaqTa](https://www.ibm.com/products/qradar-edr){: external} endpoint detection and response unified endpoint management
+ - Infrastructure and endpoint security: various 3rd Party Firewalls, for example, Palo Alto and Cisco and so on.
+ - [QRadar Security Event and Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-response)
+ - Endpoint Protection and Detection & Response (EPP/EDR) solutions [Qradar with ReaqTa](https://www.ibm.com/products/qradar-edr)
  - Unified Endpoint Management (UEM): [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management){: external}
  - Data security: [Guardium](https://www.ibm.com/guardium){: external} data security suite, for example, data classification, data loss prevention, and so on, [Cloud Pak for Data](https://www.ibm.com/products/cloud-pak-for-data){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
  - Privilege access management: [Verify Security Access Manager](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds)
