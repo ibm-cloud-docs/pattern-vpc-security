@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-15"
+lastupdated: "2024-08-20"
 
 subcollection: pattern-vpc-security
 
@@ -42,6 +42,7 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
 
 ## Security solutions framework
 {: #Security-Solutions-Framework}
+
 
 {{site.data.keyword.IBM_notm}} uses a broad standard framework in all its security endeavors. This includes design, consulting, and implementation described in the following sections for reference. Now some, but not all of these are necessarily applicable for {{site.data.keyword.Bluemix_notm}} in Virtual Private Cloud environments from a technical capability perspective.  Only the boxes highlighted in blue in the diagram will be discussed. Some of these capability categories can be broken down further and these are discussed in detail starting in the following sections.
 
