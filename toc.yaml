@@ -8,15 +8,15 @@ toc:
     content-type: white-paper
     href: /docs/pattern-vpc-security
     path: pattern-vpc-security
-    description: Security in VPC Environments
-    label: Security in VPC IaaS Environments
+    description: Security in VPC environments
+    label: Security in VPC IaaS environments
   entries:
   - navgroup:
       id: plan
       topics:
       - overview.md
       - topicgroup:
-          label: Security Domains
+          label: Security domains
           topics:
             - data-security-domain.md
             - identity-and-access-domain.md
