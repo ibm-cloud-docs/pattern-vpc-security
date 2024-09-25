@@ -2,8 +2,6 @@ toc:
   properties:
     subcollection: pattern-vpc-security
     industry: Financial
-    # use-case: use-case-value
-    # compliance: compliance-value
     audience: solution
     content-type: white-paper
     href: /docs/pattern-vpc-security
@@ -13,6 +11,7 @@ toc:
   entries:
   - navgroup:
       id: plan
+      id: overview
       topics:
       - overview.md
       - topicgroup:
