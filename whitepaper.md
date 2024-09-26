@@ -75,8 +75,7 @@ Data security is the process of protecting digital information throughout its li
 
 {{site.data.keyword.Bluemix_notm}} provides native, integrated data-at-rest encryption for VPC volumes and snapshots and file storage/VPC shares automatically. {{site.data.keyword.Bluemix_notm}} also provides data-at-rest encryption for its object storage by default. All the encryption used adheres to the AES-256 standard. Customers can use IBM-managed encryption (default) or customer-managed keys.
 
-##### Options
-{: #data-at-rest-encryption-options}
+
 
 The following options are available for data-at-rest encryption:
 
@@ -84,15 +83,17 @@ The following options are available for data-at-rest encryption:
  - {{site.data.keyword.Bluemix_notm}} encryption with customer keys: The customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs: {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}}.
  - External encryption solution: A customer might be using their own data encryption solution on-premises and want to extend this to the cloud. Or, a customer might want centralized data control across multiple clouds. {{site.data.keyword.IBM_notm}} IBM Cybersecurity Services has an applicable solution known as [Guardium](https://www.ibm.com/guardium){: external}.
 
-##### Best practices
-{: #data-at-rest-encryption-best-practices}
+
+
+See the following best practices:
 
  - Data encryption should always be used as can be expected.
  - Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration.
  - Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control.
 
-##### Solutioning guidance
-{: #data-at-rest-encryption-guidance}
+
+
+Refer to the following solutioning guidance:
 
  - [Securing Your Data in VPC](/docs/vpc?topic=vpc-mng-data&interface=ui)
  - [About data encryption for VPC](/docs/vpc?topic=vpc-vpc-encryption-about)
