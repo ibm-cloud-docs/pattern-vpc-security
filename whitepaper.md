@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-09-25"
+lastupdated: "2024-09-26"
 
 keywords:
 
@@ -55,17 +55,15 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
 {{site.data.keyword.IBM_notm}} Cybersecurity Services is a specific business unit within {{site.data.keyword.IBM_notm}} that focuses specifically on security. They have a broad range of security solutions and associated consulting and managed services. The list below provides an overview of their solutions, and these can be considered additional options in {{site.data.keyword.Bluemix_notm}} that may be applicable in certain scenarios like hybrid or Multicloud situations.
 
  - Infrastructure and endpoint security: various 3rd Party Firewalls, for example, Palo Alto and Cisco and so on.
- - [QRadar Security Event and Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-response)
- - Endpoint Protection and Detection & Response (EPP/EDR) solutions [Qradar with ReaqTa](https://www.ibm.com/products/qradar-edr)
+ - [QRadar Security Event and Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-response){: external}
+ - Endpoint Protection and Detection & Response (EPP/EDR) solutions [Qradar with ReaqTa](https://www.ibm.com/products/qradar-edr){: external}
  - Unified Endpoint Management (UEM): [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management){: external}
  - Data security: [Guardium](https://www.ibm.com/guardium){: external} data security suite, for example, data classification, data loss prevention, and so on, [Cloud Pak for Data](https://www.ibm.com/products/cloud-pak-for-data){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
- - Privilege access management: [Verify Security Access Manager](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds)
+ - Privilege access management: [Verify Security Access Manager](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds){: external}
  - Container security - 3rd parties: Palo Alto Prisma Cloud and Illumio.
 
 ## Security Domains
 {: #security-domains}
-
-
 
 ### Data security
 {: #data-security}
@@ -165,7 +163,7 @@ Application-level data-in-transition encryption should always be applied in publ
  - [SSL offload with {{site.data.keyword.Bluemix_notm}} Load Balancer](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer)
  - [Managing origin certificates](/docs/cis?topic=cis-cis-origin-certificates)
  - [Setting Transport Layer Security (TLS) options](/docs/cis?topic=cis-cis-tls-options)
- - [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui)  ({{site.data.keyword.secrets-manager_full_notm}} will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.) Also see the following immediate section relating to certificates.
+ - [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started&interface=ui) ({{site.data.keyword.secrets-manager_full_notm}} will be discussed further in the document, but it can store certificates that can be used in data-in-transit encryption.) Also see the following immediate section relating to certificates.
 
 #### Certificate lifecycle management
 {: #certificate-management}
@@ -267,7 +265,7 @@ Customers are encouraged to review the documentation in the [Managing Your Accou
 #### IAM with Single Sign-On (SSO) and Identity Provider (IdP) federation
 {: #IAMSSO}
 
-{{site.data.keyword.Bluemix_notm}} IAM allows federation so that you can integrate with your external identity provider (IdP) to securely authenticate external users to your {{site.data.keyword.Bluemix_notm}} account. By using your IdP, you can provide a way for users in your company to use single sign-on (SSO). For more information, see [Single Sign On](/docs/appid?topic=appid-cd-sso)
+{{site.data.keyword.Bluemix_notm}} IAM allows federation so that you can integrate with your external identity provider (IdP) to securely authenticate external users to your {{site.data.keyword.Bluemix_notm}} account. By using your IdP, you can provide a way for users in your company to use single sign-on (SSO). For more information, see [Single Sign On](/docs/appid?topic=appid-cd-sso).
 
 ##### Options
 {: #SSO-options}
@@ -424,7 +422,7 @@ A distributed denial of service (DDoS) attack is a malicious attempt to disrupt 
 ### Infrastructure and endpoint security
 {: #IES-domain}
 
-Infastructure and endpoint security is the practice of securing endpoints such as servers and underlying infrastructure such as Virtual Prive Clouds (VPCs) and related networking.  The following paragraphs discuss {{site.data.keyword.Bluemix_notm}}'s security capabilities in these critical areas.
+Infastructure and endpoint security is the practice of securing endpoints such as servers and underlying infrastructure such as Virtual Prive Clouds (VPCs) and related networking. The following paragraphs discuss {{site.data.keyword.Bluemix_notm}}'s security capabilities in these critical areas.
 
 #### Core network Protection and network segmentation capability
 {: #core-network-protection}
@@ -437,25 +435,25 @@ Infastructure and endpoint security is the practice of securing endpoints such a
 ##### Segmentation methods
 {: #segmentation-methods}
 
- - Virtual Private Cloud - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, and so on.  And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://www.ibm.com/cloud/vpc)
+ - Virtual Private Cloud - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, and so on. And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://www.ibm.com/cloud/vpc){: external}
  - Access Control Lists (ACLs) - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls)
  - Security groups - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups)
- - Transit gateway - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network.  Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keywordBluemix_notm}} classic infrastructure VPCs to PowerVS environments.  Now transit gateways are not always thought as a specific security capability, but transit gateways can provide a form of network segmentation known as Pretext Filtering, similar to basic standard firewalls.  More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
+ - Transit gateway - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network. Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keywordBluemix_notm}} classic infrastructure VPCs to PowerVS environments. Now transit gateways are not always thought as a specific security capability, but transit gateways can provide a form of network segmentation known as Pretext Filtering, similar to basic standard firewalls. More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
  - NexGen firewalls - Firewalls at the Internet can segregate public access from internal private compute beyond L3/L4 filtering. It can be considered a key “demilitarized” zone segmentation.
 
 ##### Options
 {: #segmentation-options}
 
- - Virtual Private Cloud (VPC) - There are no options to VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor.
+ - Virtual Private Cloud (VPC) - There are no options to VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC. This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor.
  - Access Control Lists (ACLs) - There are no options for using ACLs in VPC environments.
  - Security Groups - There are no alternatives in a VPC environment.
  - NexGen firewall - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) edge VPC.
- - Transit gateway - There are no options for using Transit Gateway when you want to interconnect VPCs or connect to other environment, e.g., PowerVS.  But the use of pretext filtering is options in many situations.
- - VPC - There are no alternatives for VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC.  This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor
+ - Transit gateway - There are no options for using Transit Gateway when you want to interconnect VPCs or connect to other environment, e.g., PowerVS. But the use of pretext filtering is options in many situations.
+ - VPC - There are no alternatives for VPC segmentation, but customer could elect, for example, to only use one VPC and place all resources in that VPC. This could be used in non-critical environments where there is only one function, e.g., test and there is no public access and cost is a factor
  - Access Control Lists (ACLs) - There are no alternatives for using ACLs in VPC environments.
  - Security groups - There are no alternatives in a VPC environment.
  - NexGen firewall - Customers can elect, based upon a risk profile and the workload types, to place NexGen firewalls in a separate Dimilaritized Zone (DMZ) edge VPC.
- - Transit gateway - There are no alternatives for using Transit Gateway when you want to interconnect VPCs or connect to other environments, e.g., Power Virtual Server.  But the use of pretext filtering is an option in many situations.
+ - Transit gateway - There are no alternatives for using Transit Gateway when you want to interconnect VPCs or connect to other environments, e.g., Power Virtual Server. But the use of pretext filtering is an option in many situations.
 
 ##### Best Practices:
 {: #segmentation-best-practices}
@@ -491,7 +489,7 @@ Segmentation techniques can be considered firewalling methods. {{site.data.keywo
 
  - VPCs, Access Control Lists (ACLs), security groups - No options – mandatory for all VPC environments. Please see: [exploring firewalls](/docs/fortigate-10g?topic=fortigate-10g-exploring-firewalls).
  - NexGen Firewalls - Required when there are public connections to the Internet and {{site.data.keyword.cis_full_notm}} will not be used. Required when there are public connections to the Internet and where advanced firewalls features are needed, e.g., SD-WAN, file inspections, and so on. Optional in private connections to on-prem, but still recommended. Optional when {{site.data.keyword.cis_short_notm}} will be used.
- - {{site.data.keyword.cis_full_notm}} - [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-getting-started).  Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, and so on.
+ - {{site.data.keyword.cis_full_notm}} - [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-getting-started). Required where there are other needs such as content delivery networking (CDN), e.g., edge content caching, URI controls, distributed TLS terminations, global load balancing, DDoS, and so on.
 
 ##### Best practices
 {: #core-network-protection-best-practices}
@@ -522,26 +520,26 @@ Segmentation techniques can be considered firewalling methods. {{site.data.keywo
 #### Endpoint detection and endpoint protection capability
 {: #EDR-EPP}
 
-Endpoint detection and endpoint protection security are a detection and protect mechanism that works at the operating system and application levels. This can loosely be thought of as anti-virus on a server, but today’s endpoint detection and endpoint protection security solutions provide so much more like hardening, software patching, compliance monitoring, and threat hunting.  Within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance Center (SCC) solution is a component known as IBM Cloud Workload Protection. This might be likened to endpoint detection and endpoint protection security. This provides a broad range of security capabilities to include:
+Endpoint detection and endpoint protection security are a detection and protect mechanism that works at the operating system and application levels. This can loosely be thought of as anti-virus on a server, but today’s endpoint detection and endpoint protection security solutions provide so much more like hardening, software patching, compliance monitoring, and threat hunting. Within {{site.data.keyword.Bluemix_notm}}’s Security and Compliance Center (SCC) solution is a component known as IBM Cloud Workload Protection. This might be likened to endpoint detection and endpoint protection security. This provides a broad range of security capabilities to include:
 
--   A unified and centralized framework to manage the security and compliance of applications, workloads, and infrastructure.
--   Host and image scanning, auditing, and runtime vulnerability management capabilities.
--   Posture management for a distributed environment.
--   Runtime detection and data enrichment.
+- A unified and centralized framework to manage the security and compliance of applications, workloads, and infrastructure.
+- Host and image scanning, auditing, and runtime vulnerability management capabilities.
+- Posture management for a distributed environment.
+- Runtime detection and data enrichment.
 
 
 Within the context of this particular section, only runtime vulnerability and detection are discussed. IBM Cloud Workload Protection also has compliance components, and these are discussed in the governance, risk, and compliance section.
 
 For more information, see [Key features of {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-key-features). This capability can also fall into a security mechanism that is known as vulnerability management.
 
-In addition, see [What is endpoint security](https://www.ibm.com/topics/endpoint-security) and [What is endpoint detection and response.](https://www.ibm.com/topics/edr).
+In addition, see [What is endpoint security](https://www.ibm.com/topics/endpoint-security){: external} and [What is endpoint detection and response.](https://www.ibm.com/topics/edr){: external}.
 
 ##### Options
 {: #endpoint-security-options}
 
  - {{site.data.keyword.Bluemix_notm}} Workload Protection - Fully integrated into {{site.data.keyword.Bluemix_notm}} with automation aspects and ties in with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}}
- - 3rd Party Endpoint Protection and Detection (EPP/EDR) - Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services, has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax). IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
- - No workload protection endpoint security- This option depends upon the customer risk profile and what type of workloads are being used.  This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments, and perhaps where cost is a factor.
+ - 3rd Party Endpoint Protection and Detection (EPP/EDR) - Stand-alone solutions without {{site.data.keyword.Bluemix_notm}} integration, but that may be applicable if a customer is using an endpoint security solution on-prem or in a multi-cloud situation. IBM Security, now known as Cybersecurity Services, has a EPP/EDR solution known as [Reaqtq](https://mediacenter.ibm.com/media/IBM+Security+ReaQta+Explained/1_l31z0vax){: external}. IBM Cybersecurity Services also sells, consults on, implements and manages various 3rd party EPP/EDR market solutions.
+ - No workload protection endpoint security- This option depends upon the customer risk profile and what type of workloads are being used. This could be applicable in a private environment with no Internet access or low risk situations with dev and test environments, and perhaps where cost is a factor.
 
 ##### Best practices
 {: #endpoint-security-best-practices}
@@ -558,7 +556,7 @@ In addition, see [What is endpoint security](https://www.ibm.com/topics/endpoint
 #### Virtual Private Endpoints (VPEs)
 {: #VPE}
 
-{{site.data.keyword.Bluemix_notm}} has Virtual Private Endpoints (VPE) that allow secure access to various cloud services without traversing the Internet. VPEs have firewalls in the form of access control lists and security groups previously discussed.  {{site.data.keyword.Bluemix_notm}} Virtual Private Endpoints (VPE) for VPC enables you to connect to supported {{site.data.keyword.Bluemix_notm}} services from your VPC network by using the IP addresses of your choosing, which is allocated from a subnet within your VPC. VPE is an evolution of the private connectivity to {{site.data.keyword.Bluemix_notm}} services. VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis depending on the service operation model. The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.Bluemix_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud.
+{{site.data.keyword.Bluemix_notm}} has Virtual Private Endpoints (VPE) that allow secure access to various cloud services without traversing the Internet. VPEs have firewalls in the form of access control lists and security groups previously discussed. {{site.data.keyword.Bluemix_notm}} Virtual Private Endpoints (VPE) for VPC enables you to connect to supported {{site.data.keyword.Bluemix_notm}} services from your VPC network by using the IP addresses of your choosing, which is allocated from a subnet within your VPC. VPE is an evolution of the private connectivity to {{site.data.keyword.Bluemix_notm}} services. VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis depending on the service operation model. The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.Bluemix_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud.
 
 ##### Options
 {: #VPE-options}
@@ -673,7 +671,7 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 {: #detection-options}
 
  - NexGen Firewalls - This detection option can be deployed in public access situations at the edge. This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm}} in certain situations.
- - {{site.data.keyword.cis_full_notm}} -  This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
+ - {{site.data.keyword.cis_full_notm}} - This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
  - Cloud Workload Protection - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
 
 ##### Best practices
@@ -726,7 +724,7 @@ Security response functions typically fall into two categories: those that are a
 #### Broader incident response
 {: #broader-incident-response}
 
-The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services](https://www.ibm.com/services/incident-response). And there are other broader incident response solutions in the marketplace.
+The above information discussed security response capabilities in {{site.data.keyword.Bluemix_notm}}. But there are numerous broader solutions in the marketplace that handle security incident responses on a much larger scale to handle all aspects of risk exposure, people, process and technology when there is an event. IBM Cyber Security Services has a replete service in this area known as [IBM X-Force Incident Response Services](https://www.ibm.com/services/incident-response){: external}. And there are other broader incident response solutions in the marketplace.
 
 #### Vulnerability management
 {: #vulnerability-management}
@@ -738,7 +736,7 @@ Vulnerability testing and management can be broad but generally it involves tool
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | {{site.data.keyword.compliance_long}}                                                                                                                                                 | Ability to scan resources for misconfigured settings per compliance requirements.                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui)               |Ability to scan container images. This vulnerability checking is really applicable where containers may be deployed on top of a Virtual Private Cloud (VPC) Virtual Service Instances (VSIs).                                                                                                                                                                                                                                                                            |
-| Software and network vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](/docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in {{site.data.keyword.Bluemix_notm}} on Virtual Server Instances (VSIs). IBM Cybersecurity Services can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management). IBM Cybresecurity Services also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management). |
+| Software and network vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](/docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in {{site.data.keyword.Bluemix_notm}} on Virtual Server Instances (VSIs). IBM Cybersecurity Services can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management){: external}. IBM Cybresecurity Services also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management){: external}. |
 {: caption="Table 3: Vulnerability management - methods" caption-side="bottom" }
 
 ##### Options
@@ -799,7 +797,7 @@ Review the following solution guidance for {{site.data.keyword.compliance_long}}
 #### Audit and regulatory and compliance monitoring
 {: #auditing-risk-regulatory}
 
-In some respects auditing and regulatory aspects and conmpliance monitoring are all related. {{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccesstraillong_notm}}, both of which were discussed earlier. {{site.data.keyword.compliance_long}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, for example NIST 800-53, HIPPA, and so on. {{site.data.keyword.cloudaccesstrailshort}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed. Auditors can use both of these audit functions. See the following if there is a need to understand {{site.data.keyword.Bluemix_notm}}'s underlying infrastructure compliance monitoring (typically referred to "below the line monitoring):  [compliance monitoring](/docs/overview?topic=overview-compliance).
+In some respects auditing and regulatory aspects and conmpliance monitoring are all related. {{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccesstraillong_notm}}, both of which were discussed earlier. {{site.data.keyword.compliance_long}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, for example NIST 800-53, HIPPA, and so on. {{site.data.keyword.cloudaccesstrailshort}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed. Auditors can use both of these audit functions. See the following if there is a need to understand {{site.data.keyword.Bluemix_notm}}'s underlying infrastructure compliance monitoring (typically referred to "below the line monitoring): [compliance monitoring](/docs/overview?topic=overview-compliance).
 
 Regulated workloads have specific compliance framework adherence requirements and regulatory aspects are subsumed to a certain degree in compliance monitoring and auditing.
 
