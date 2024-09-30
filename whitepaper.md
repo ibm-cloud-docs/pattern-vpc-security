@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-09-26"
+lastupdated: "2024-09-30"
 
 keywords:
 
@@ -13,7 +13,7 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Security in VPC IaaS Environments
-{: #pattern-vpc-security}
+{: #white-paper}
 
 Cloud security is a set of security measures that protect cloud-based data, applications, and infrastructure. It's a type of cybersecurity that involves both cloud providers and their clients. Cloud security protects against internal and external threats to business security and ensures that legal requirements are met.
 {: shortdesc}
