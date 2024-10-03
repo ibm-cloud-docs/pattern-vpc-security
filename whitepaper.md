@@ -76,7 +76,7 @@ The following concepts are discussed:
  - [Data-in-transit encryption](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#Data-in-Transit-Encryption)
  - [Certificate lifecycle management](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#certificate-management)
  - [Data lifecycle management and governance](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#data-lifecycle-management)
- - [Data Loss Prevention (DLP) and data access, integrity and monitoring](docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#DLP)
+ - [Data Loss Prevention (DLP) and data access, integrity and monitoring](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#DLP)
 
 #### Data-at-rest encryption
 {: #data-at-rest-encryption}
