@@ -89,13 +89,13 @@ The following **options** are available for data-at-rest encryption:
  - {{site.data.keyword.Bluemix_notm}} encryption with customer keys: The customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs: {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}}.
  - External encryption solution: A customer might be using their own data encryption solution on-premises and want to extend this to the cloud. Or, a customer might want centralized data control across multiple clouds. {{site.data.keyword.IBM_notm}} IBM Cybersecurity Services has an applicable solution known as [Guardium](https://www.ibm.com/guardium){: external}.
 
-The following are **best practices:** for data-at-rest encryption:
+The following are **best practices** for data-at-rest encryption:
 
  - Data encryption should always be used as can be expected.
  - Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration.
  - Encrypting data with customer managed keys is recommended to meet regulatory compliance for additional security and customer control.
 
-The following is **solutioning guidance** for data-at-rest encrytion:
+The following is **solutioning guidance** for data-at-rest encryption:
 
  - [Securing Your Data in VPC](/docs/vpc?topic=vpc-mng-data&interface=ui)
  - [About data encryption for VPC](/docs/vpc?topic=vpc-vpc-encryption-about)
@@ -129,7 +129,7 @@ The following are **best practices** for key management:
  - Processes should be established on how keys should be used and managed. Proper rotation of keys should be established.
  - Regular inspection of activity logs surrounding key management should occur.
 
-Information for **solution guidance** for key management:
+The following is **solution guidance** for key management:
  - [Provisioning {{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)
  - [Getting Started with {{site.data.keyword.Bluemix_notm}} Hyper Protect Crypto Service](/docs/hs-crypto?topic=hs-crypto-get-started).
 
@@ -144,11 +144,11 @@ The following **options** are available for data-in-transit encryption:
  - Application Level Data-in-Transition Encryption - Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum.
  - Application-level data-in-transit encryption termination - TLS termination at a NexGen firewall TLS termination at an edge load balancer TLS termination with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short_notm}}.
 
-**Best practices** for data-in-transit incude:
+The following are **Best practices** for data-in-transit encryption:
 
 Application-level data-in-transition encryption should always be applied in public access situations. Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer. When the traffic is decrypted at the edge, it can be inspected for threats, and so on. Application-level encryption termination should not occur on servers that are in the interior of a network.
 
-The following includes **solution guidance** for data-in-transit:
+The following includes **solution guidance** for data-in-transit encryption:
 
  - [Encryption in transit - Securing mount connections between file share and virtual server instance](/docs/vpc?topic=vpc-file-storage-vpc-eit)
  - [Encryption in transit - Securing mount connections between file share and virtual server instance](/docs/vpc?topic=vpc-file-storage-vpc-eit)
@@ -168,7 +168,7 @@ The following **options** are available for certificate management:
  - No Certificate Management - Perhaps applicable in private environments with Dev/QA workloads and or where there is a minimal number of certificates to managed.
  - Customer-Owned or 3rd Party Certificate Management Solutions.
 
-**Best Practices** for certificate management include:
+The following are **Best Practices** for certificate management:
 
  - Regular rotations of certificates
  - Notification of expiring certificates
@@ -197,6 +197,13 @@ The following is **solution guidance** for certificate management:
 
 Cloud Identity and Access Management (IAM) is a set of tools, policies, and practices that control user access to cloud resources like data, applications, and services. The following sections discusses {{site.data.keyword.Bluemix_notm}}'s capabilities in this domain.
 
+The following concepts are discussed:
+ - [Access and Role Access Management](/docs/pattern-vpc-security?topic=pattern-vpc-security-identity-and-access#aram)
+ - [IAM with Single Sign-On (SSO) and Identity Provider (IdP) federation](/docs/pattern-vpc-security?topic=pattern-vpc-security-identity-and-access#IAMSSO)
+ - [Secrets management](/docs/pattern-vpc-security?topic=pattern-vpc-security-identity-and-access#secrets-management)
+ - [Bastion host and Privilege Access Management (PAM)](/docs/pattern-vpc-security?topic=pattern-vpc-security-identity-and-access#bastion-host)
+ - [Identity governance](/docs/pattern-vpc-security?topic=pattern-vpc-security-identity-and-access#IAMgovernance)
+
 #### Access and Role Access Management
 {: #aram}
 
@@ -219,15 +226,13 @@ The following diagram provides insight on how IAM works in the {{site.data.keywo
 
 ![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Figure 1. Identity and access management depiction" caption-side="bottom"}
 
-##### Options
-{: #IAMOptions}
+Access and role access management **options** include:
 
  - Multi-Factor Authentication (MFA) and complex passwords: Using MFA and complex passwords are always recommended.
  - Assigning individual-based accesses and policies: This option is not recommended. Users should be placed into access groups or in trusted profiles with specific policies.
  - Single Sign On (SSO) Federation: Applicable where customers already have a single sign-on infrastructure or where customers want to use their established Active Directory or LDAP, and so on.
 
-##### Best practices
- {: #IAMbestpractices}
+Access and role access management **best practices** include:
 
  - Review [Best Practices for Organizing Resources and Assigning Access](/docs/account?topic=account-account_setup).
  - Always apply a least privilege approach for all cloud access.
@@ -239,8 +244,7 @@ The following diagram provides insight on how IAM works in the {{site.data.keywo
  - Conduct regular, periodic reviews of your account IAM settings in relation to your IAM documentation and policies. Over time, settings can drift or be inadvertently changes resulting in overly permissible states.
  - Conduct periodic reviews of IAM logs provided by [{{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-about) to look for access anomalies.
 
-##### Solutioning guidance
- {: #IAMguidance}
+Access and role access management **solution guidance** include:
 
 Customers are encouraged to review the documentation in the [Managing Your Account, Resources, Access](/docs/account) documentation for more insight on best IAM practices and solutioning guidance.
 
@@ -254,21 +258,18 @@ Customers are encouraged to review the documentation in the [Managing Your Accou
 
 {{site.data.keyword.Bluemix_notm}} IAM allows federation so that you can integrate with your external identity provider (IdP) to securely authenticate external users to your {{site.data.keyword.Bluemix_notm}} account. By using your IdP, you can provide a way for users in your company to use single sign-on (SSO). For more information, see [Single Sign On](/docs/appid?topic=appid-cd-sso).
 
-##### Options
-{: #SSO-options}
+The following **Options** are available for single sign-on.
 
  - SSO: Applicable where federation with other identity providers or external directories is required.
  - No SSO: Customers may forgo SSO if they have no federation with Identity Providers.
 
-##### Best practices
-{: #SSO-best-practices}
+The following are **best practices** for single sign-on.
 
  - Use {{site.data.keyword.Bluemix_notm}} Trusted Profiles along with any SSO solution
  - Ensure multi-factor authentication with the SSO solution
  - Enforce granular role and permission management.
 
-##### Solutioning guidance
-{: #SSO-guidance}
+The following is **solution guidance** for single sign-on.
 
  - [Which is the right federation option for you?](/docs/account?topic=account-federation-option-for-you)
  - {{site.data.keyword.Bluemix_notm}} SAML Federation Guide [Enabling authentication from an external identity provider.](/docs/account?topic=account-idp-integration)
@@ -279,23 +280,20 @@ Customers are encouraged to review the documentation in the [Managing Your Accou
 
 Secrets management is a way to securely store and manage API keys, certificates, user ID and password credentials, and other sensitive information with automation and integration. {{site.data.keyword.Bluemix_notm}}’s service is known as {{site.data.keyword.secrets-manager_full_notm}} and it has several key security features such as secrets lifecycle management, logging, default encryption, IAM integration, versioning. For more information, see [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started).
 
-##### Options:
-{: #secrets-management-options}
+The following **options** are available for secrets management:
 
-- {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.secrets-manager_full_notm}}: Automated and native secrets management solution that is fully integrated with IBM.
-- No secrets management: Never recommended again, but this might be applicable where you have a private environment that is used for noncritical dev and test and the like. Secrets here might possibly be embedded into applications here, if security requirements are low and cost is a factor.
-- 3rd party secrets management solution: This option might be applicable in multi-cloud situation but secrets management automation with {{site.data.keyword.Bluemix_notm}} is lost.
+ - {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.secrets-manager_full_notm}}: Automated and native secrets management solution that is fully integrated with IBM.
+ - No secrets management: Never recommended again, but this might be applicable where you have a private environment that is used for noncritical dev and test and the like. Secrets here might possibly be embedded into applications here, if security requirements are low and cost is a factor.
+ - 3rd party secrets management solution: This option might be applicable in multi-cloud situation but secrets management automation with {{site.data.keyword.Bluemix_notm}} is lost.
 
-##### Best practices:
-{: #secrets-management-best-practices}
+The following are **best practices:** for secrets management:
 
  - {{site.data.keyword.Bluemix_notm}} is focused on enterprise workloads and these workloads should always include secrets management.
  - Cloud native secrets management that provides full lifestyle capabilities and full cloud integration
  - Automated creation, rotation, revocation, and expiration of static secrets
  - Never transmit secrets via plain text. All should transit that uses TLS encryption.
 
-##### Solutioning guidance:
-{: #secrets-management-best-guidance}
+The following is **solutioning guidance** for secrets management:
 
  - [Managing IAM access for {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-iam&interface=ui)
  - [Using service endpoints to privately connect to {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-service-connection&interface=ui)
@@ -311,8 +309,7 @@ Secrets management is a way to securely store and manage API keys, certificates,
 
 A bastion host is a server used to manage access to an internal or private network from an external network - sometimes called a jump box or jump server. Because bastion hosts often sit in the Internet edge, they typically run a minimum number of services to reduce their attack surface. They are also commonly used to proxy and log communications, such as SSH sessions. Privilege Access Management (PAM) software can be loaded on top of the bastion host to provide more security functions, granular access control and logging beyond terminal SSH access.
 
-##### Options
-{: #bastion-host-options}
+Bastion host and PAM **options** include:
 
  - Virtual Server Instance (VSI) for bastion host: There are no options for an underlying platform for a Bastion Host. Bastion Hosts must be created on a virtual server instances (VSI) within the confines of a Virtual Private Cloud (VPC).
  - Bastion host, no PAM Software: Not recommended in that highly granular access, approval workflows and detailed logging may be needed.
@@ -321,15 +318,13 @@ A bastion host is a server used to manage access to an internal or private netwo
  IBM Cybersecurity Services does have a PAM solution that's known as Verify. For more information, see [IBM Cybersecurity Services Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds){: external}
  {: note}.
 
-##### Best practices
-{: #bastion-host-best-practices}
+Bastion host and PAM **best practices** include:
 
  - Bastion hosts should always be accompanied with PAM software. A least privilege approach should always be applied to permissions on the bastion host and the PAM software.
  - Detailed logs should be enabled, and regular reviews of logs should be undertaken to look for anomalies.
  - Logs from the bastion host and the PAM software should be correlated with other logs to get inferences of threats. Typically, this correlation comes in the form of a Security Event and Information Management (SIEM) Platform.
 
-##### Solutioning guidance
-{: #bastion-host-guidance}
+Bastion host and PAM **solution guidance** include:
 
  - Securely access remote instances with a bastion host. For more information, see [Access to bastion host](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 
