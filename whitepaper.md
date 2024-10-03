@@ -115,27 +115,21 @@ Key management allows cloud customers the ability to create, store, manage and r
 
 ![Diagram of key management capabilities](images/keyprotectframework.svg){: caption="Figure 1. Key Management Capabilities" caption-side="bottom"}
 
-##### Options
-{: #key-management-options}
-
-The following options are available for key management:
+The following **options** are available for key management:
 
  - {{site.data.keyword.keymanagementservicelong_notm}} - Applicable in situations where key storage security requirements are not highly critical and where a multi-tenant solution is sufficient. This capability is commonly referred to as Bring Your Own Key (BYOK) and it is certified to meet the Federal Information Processing Standard (FIPS)-140-2 level 3, hardware security module (HSM) requirements.
  - Hyper Protect Crypto Service (HPCS): {{site.data.keyword.hsplatform}} provides key management services with the highest level of security and control offered by any cloud provider in the industry. It uses a dedicated (single-tenant) FIPS 140-2 Level 4 certified Hardware Security Module and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. {{site.data.keyword.hsplatform}} is specifically recommended for financial service environment.
  - {{site.data.keyword.Bluemix_notm}} native {{site.data.keyword.hsplatform}} with Unified Key Orchestrator - This particular variant of the {{site.data.keyword.hsplatform}} key management solution noted directly above add the ability to manage key across various clouds in addition to {{site.data.keyword.Bluemix_notm}}.
  - Customer or 3rd party key management solution: This might be applicable when a customer is using an external or 3rd party solution in a hybrid or multi-cloud environment.
 
-##### Best practices
-{: #key-management-best-practices}
+The following are **best practices** for key management:
 
  - Cloud native key management offers the most secure, integrated and automated key lifecycle management.
  - User access to keys should be tightly controlled and monitored as can be expected.
  - Processes should be established on how keys should be used and managed. Proper rotation of keys should be established.
  - Regular inspection of activity logs surrounding key management should occur.
 
-##### Solutioning guidance
-{: #key-management-guidance}
-
+Information for **solution guidance** for key management:
  - [Provisioning {{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)
  - [Getting Started with {{site.data.keyword.Bluemix_notm}} Hyper Protect Crypto Service](/docs/hs-crypto?topic=hs-crypto-get-started).
 
@@ -144,22 +138,17 @@ The following options are available for key management:
 
 Data-in-transit encryption can occur in multiple areas within the {{site.data.keyword.Bluemix_notm}}. There can be external applications using HTTPS/SSL that would terminate to servers within a VPC or load balancers and NexGen firewalls in front of the servers in VPCs. There is also default data-in-transit encryption when there are accesses and traffic transits to Object, Block and File Storage and cloud services.
 
-##### Options
-{: #data-in-transit-encryption-options}
-
-The following options are possibilities for data-in-transit encryption:
+The following **options** are available for data-in-transit encryption:
 
  - Data-in-Transit encryption to {{site.data.keyword.Bluemix_notm}} storage - No options. This is a default function.
  - Application Level Data-in-Transition Encryption - Applicable mostly in public access situations but of course this can be applied in private access situations. Transit Level Security (TLS) 1.2 should be used at a minimum.
  - Application-level data-in-transit encryption termination - TLS termination at a NexGen firewall TLS termination at an edge load balancer TLS termination with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short_notm}}.
 
-##### Best practices
-{: #data-in-transit-encryption-best-practices}
+**Best practices** for data-in-transit incude:
 
 Application-level data-in-transition encryption should always be applied in public access situations. Application-level data-in-transit encryption should always be terminated at the edge at a firewall or a load balancer. When the traffic is decrypted at the edge, it can be inspected for threats, and so on. Application-level encryption termination should not occur on servers that are in the interior of a network.
 
-##### Solutioning guidance
-{: #data-in-transit-encryption-best-guidance}
+The following includes **solution guidance** for data-in-transit:
 
  - [Encryption in transit - Securing mount connections between file share and virtual server instance](/docs/vpc?topic=vpc-file-storage-vpc-eit)
  - [Encryption in transit - Securing mount connections between file share and virtual server instance](/docs/vpc?topic=vpc-file-storage-vpc-eit)
@@ -173,17 +162,13 @@ Application-level data-in-transition encryption should always be applied in publ
 
 Certificates can be used in several areas within {{site.data.keyword.Bluemix_notm}} to provide data-in-transit TLS encryption in such areas as load balancers, API gateways, and so on. {{site.data.keyword.Bluemix_notm}} has certificate management capabilities which allow customers to provision, manage, and deploy public and private SSL/TLS certificates for use with {{site.data.keyword.Bluemix_notm}} services and applications. For more information see: [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started)
 
-##### Options:
-{: #certificate-management-options}
-
-The following options are available for certificate management:
+The following **options** are available for certificate management:
 
  - {{site.data.keyword.secrets-manager_full_notm}} - Highly recommended when {{site.data.keyword.Bluemix_notm}} is primarily used
  - No Certificate Management - Perhaps applicable in private environments with Dev/QA workloads and or where there is a minimal number of certificates to managed.
  - Customer-Owned or 3rd Party Certificate Management Solutions.
 
-##### Best practices
-{: #certificate-management-best-practices}
+**Best Practices** for certificate management include:
 
  - Regular rotations of certificates
  - Notification of expiring certificates
@@ -191,8 +176,7 @@ The following options are available for certificate management:
  - Maintain certificate inventory
  - Document certificate management procedures.
 
-##### Certificate management solutioning guidance
-{: #certificate-management-guidance}
+The following is **solution guidance** for certificate management:
 
  - [Importing SSL/TLS certificates](/docs/secrets-manager?topic=secrets-manager-certificates&interface=ui)
  - [Ordering SSL/TLS public certificates](/docs/secrets-manager?topic=secrets-manager-public-certificates&interface=ui)
