@@ -77,7 +77,7 @@ Data security is the process of protecting digital information throughout its li
 
 
 
-The following options are available for data-at-rest encryption:
+The following **options** are available for data-at-rest encryption:
 
  - {{site.data.keyword.Bluemix_notm}} default encryption: This is automatic if another key management scheme isn't selected. IBM keys are used.
  - {{site.data.keyword.Bluemix_notm}} encryption with customer keys: The customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs: {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}}.
@@ -85,7 +85,7 @@ The following options are available for data-at-rest encryption:
 
 
 
-**Data encryption best practices:**
+     **Data encryption best practices:**
 
  - Data encryption should always be used as can be expected.
  - Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration.
@@ -93,7 +93,7 @@ The following options are available for data-at-rest encryption:
 
 
 
-**Solutioning guidance:**
+     **Solutioning guidance:**
 
  - [Securing Your Data in VPC](/docs/vpc?topic=vpc-mng-data&interface=ui)
  - [About data encryption for VPC](/docs/vpc?topic=vpc-vpc-encryption-about)
