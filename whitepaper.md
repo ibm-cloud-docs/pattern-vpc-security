@@ -70,6 +70,14 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
 
 Data security is the process of protecting digital information throughout its life cycle from unauthorized access, corruption, theft, or destruction. The following sections discusses {{site.data.keyword.Bluemix_notm}}'s capabilities in this domain.
 
+The following concepts are discussed:
+ - [Data-at-rest encryption](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#data-at-rest-encryption)
+ - [Key management and lifecycle management](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#key-management)
+ - [Data-in-transit encryption](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#Data-in-Transit-Encryption)
+ - [Certificate lifecycle management](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#certificate-management)
+ - [Data lifecycle management and governance](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#data-lifecycle-management)
+ - [Data Loss Prevention (DLP) and data access, integrity and monitoring](docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#DLP)
+
 #### Data-at-rest encryption
 {: #data-at-rest-encryption}
 
