@@ -85,7 +85,7 @@ The following **options** are available for data-at-rest encryption:
 
 
 
-     **Data encryption best practices:**
+ **Data encryption best practices:**
 
  - Data encryption should always be used as can be expected.
  - Cloud native encryption with a designated cloud native KMS provides the best lifecycle automation and orchestration.
@@ -93,7 +93,7 @@ The following **options** are available for data-at-rest encryption:
 
 
 
-     **Solutioning guidance:**
+**Solutioning guidance:**
 
  - [Securing Your Data in VPC](/docs/vpc?topic=vpc-mng-data&interface=ui)
  - [About data encryption for VPC](/docs/vpc?topic=vpc-vpc-encryption-about)
