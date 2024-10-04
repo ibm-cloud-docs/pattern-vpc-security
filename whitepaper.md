@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-10-03"
+lastupdated: "2024-10-04"
 
 keywords:
 
@@ -554,32 +554,33 @@ The following is **solutioning guidance** for virtual private endpoints:
 ### Threat investigation and response
 {: #migration-design}
 
-Threat investigation and response is a cybersecurity process that involves identifying, analyzing, and responding to security threats. The following sections discusses {{site.data.keyword.Bluemix_notm}}'s capabilities in this domain.
+Threat investigation and response is a cybersecurity process that involves identifying, analyzing, and responding to security threats.
+Many security solutions have their own specific threat detection capabilities, for example NexGen firewalls. Typically customers use a variety of logs and aggregate them and correlate them to provide a wholistic threat investigation picture. The following sections discusses {{site.data.keyword.Bluemix_notm}}'s capabilities in this domain.
 
-#### Threat investigation
-{: #other-logging-investigation}
+The following concepts are discussed:
+ - [IBM Cloud® Activity Tracker: Identity and Access Management (IAM) logging](/docs/pattern-vpc-security?topic=pattern-vpc-security-migration-design#activity-tracker-IAM-logging)
+ - [Logging event correlation](/docs/pattern-vpc-security?topic=pattern-vpc-security-migration-design#other-logging)
+ - [Threat detection](/docs/pattern-vpc-security?topic=pattern-vpc-security-migration-design#threat-detection)
+ - [Threat response](/docs/pattern-vpc-security?topic=pattern-vpc-security-migration-design#response)
+ - [Broader incident response](/docs/pattern-vpc-security?topic=pattern-vpc-security-migration-design#broader-incident-response)
+ - [Vulnerability management](/docs/pattern-vpc-security?topic=pattern-vpc-security-migration-design#vulnerability-management)
 
-Many security solutions have their own specific threat detection capabilities, for example NexGen firewalls. Typically customers use a variety of logs and aggregate them and correlate them to provide a wholistic threat investigation picture. The following discusses the possible logs that can be used for this purposes.
-
-##### {{site.data.keyword.cloudaccesstraillong}}: Identity and Access Management (IAM) logging
+#### {{site.data.keyword.cloudaccesstraillong}}: Identity and Access Management (IAM) logging
 {: #activity-tracker-IAM-logging}
 
 {{site.data.keyword.Bluemix_notm}}’s {{site.data.keyword.cloudaccesstraillong}} logs and records all administrator and API actions within an {{site.data.keyword.Bluemix_notm}} account. This service can be used to investigate abnormal activities, for troubleshooting or forensics purposes and used for compliance audits. This service provides such features as alerting, log storage encryption, compliance with the Cloud Auditing Data Federation (CADF) standard among others. Logs from this service can also be forwarded externally to a Security Information Even Management (SIEM) for event correlation for threat detection. More information on {{site.data.keyword.cloudaccesstraillong_notm}} can be found at the following link: [Learning about {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccesstraillong}} architecture and workload isolation](/docs/activity-tracker?topic=activity-tracker-compute-isolation)
 
-##### Options
-{: #activity-tracker-options}
+IAM logging **options** include:
 
 There are no other {{site.data.keyword.Bluemix_notm}} IAM logging options, this is the default and built-in logging capability.
 
-##### Best practices
-{: #activity-best-practices}
+IAM logging **best practices** include:
 
  - The use of {{site.data.keyword.cloudaccesstraillong}} auditing in a regulated environment or compliance auditing.
  - The forwarding of {{site.data.keyword.cloudaccesstraillong_notm}} logs to a Security Event and Information Management (SIEM) platform, if a customer is using a SIEM.
  - Regular reviews of user and API activity log to determine any possible anomalies.
 
-##### Solutioning guidance
-{: #activity-guidance}
+IAM logging **solution guidance** include:
 
  - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cloudaccesstraillong}}](/docs/activity-tracker?topic=activity-tracker-getting-started)
  - [About {{site.data.keyword.cloudaccesstraillong}} in {{site.data.keyword.Bluemix_notm}}](/docs/activity-tracker?topic=activity-tracker-about)
@@ -587,7 +588,7 @@ There are no other {{site.data.keyword.Bluemix_notm}} IAM logging options, this 
  - [About {{site.data.keyword.cloudaccesstraillong}} in {{site.data.keyword.Bluemix_notm}}](/docs/activity-tracker?topic=activity-tracker-about)
  - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
 
-#### Other logging for event correlation
+#### Logging event correlation
 {: #other-logging}
 
 Logging plays a key role in security in that captures events that may be anomalous and when are correlated and analyzed, can detect a threat and other problems. Logging can also play a role in compliance auditing. Several {{site.data.keyword.Bluemix_notm}} services create logs as noted in the below table:
@@ -601,15 +602,13 @@ Logging plays a key role in security in that captures events that may be anomalo
 | [Cloud workload protection Event Forwarding](/docs/workload-protection?topic=workload-protection-event_forwarding) | Forwards various events from the cloud workload protection solution.                                             |
  {: caption="Table 1 : Other logging sources" caption-side="bottom"}
 
-##### Options
-{: #logging-options}
+Logging event correlation **options** include:
 
  - VPC flow logs: There are no options if traffic capture in and out of a VPC is needed for security and troubleshooting purposes.
  - {{site.data.keyword.cloudaccesstraillong}}: There are no options if logs are needed from IAM user and API actions for auditing, compliance, or security reasons.
  - NexGen firewalls: Customers can elect to capture and forward all kinds of logs.
 
-##### Best practices
-{: #otherlogging-best-practices}
+Logging event correlation **best practices** include:
 
  - Logging of IAM user and API actions should always be used, regardless of the security situationThese can be used for troubleshooting purposes and mandatory in compliance situations.
  - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment.
@@ -617,8 +616,7 @@ Logging plays a key role in security in that captures events that may be anomalo
  - Firewall logs should always be used for detection purposes, if deployed at the edge in a public access environment.
  - Use of VPC flow logs, Cloud Internet Services logs and Cloud Workload Protection logs is dependent upon the customer's use of a Security Information and Event Management (SIEM) platform and how many log feeds are sufficient and how much security inspection granularity.
 
-##### Solutioning guidance
-{: #other-logging-guidance}
+Logging event correlation **solutioning guidance** include:
 
  - [Creating a flow log collector](/docs/vpc?topic=vpc-ordering-flow-log-collector&interface=ui)
  - [Provisioning an instance](/docs/workload-protection?topic=workload-protection-provision) (Workload Protection)
@@ -638,23 +636,20 @@ Threat detection in {{site.data.keyword.Bluemix_notm}} can occur in various plac
 | Cloud workload protection   [About Workload Protection](/docs/workload-protection?topic=workload-protection-about) and [Key Features](/docs/workload-protection?topic=workload-protection-key-features) | Runtime threat detections and vulnerability discovery around virtual server instances.           |
 {: caption="Table 2: Threat detection - available methods" caption-side="bottom"}
 
-##### Options
-{: #detection-options}
+The following **options** are available for threat detection:
 
  - NexGen Firewalls - This detection option can be deployed in public access situations at the edge. This option can also be deployed in private access situations where customers want an additional level of threat detection to whatever security maybe on-prem. Finally, this option can be deployed in conjunction with {{site.data.keyword.cis_short_notm}} in certain situations.
  - {{site.data.keyword.cis_full_notm}} - This detection option can be deployed in public access situations at the edge. But this option in public environments is typically used where broader Content Delivery Networking (CDN) capabilities are needed. Customers would not necessarily deploy this in private situations and where content delivery network capabilities are not needed.
  - Cloud Workload Protection - This detection option can be deployed where customers are using or will use {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} This option may be needed where a customer just needs endpoint security, and particularly in public access environments.
 
-##### Best practices
-{: #detection-best-practices}
+The following are **best practices:** for threat detection:
 
 - Threat detection capabilities should always be deployed in public situations.
 - Deployment in private situations is dependent upon a customer risk profile.
 - Threat detections capability should be accompanied with trained personnel and appropriate processes.
 - Threat detections need to be correlated in some way, perhaps through a Security Event and Information Management (SIEM) platform, to triangulate attacks and get a holistic view of threats.
 
-##### Solutioning guidance
-{: #detection-guidance}
+The following is **solutioning guidance** for threat detection:
 
 - [Using the {{site.data.keyword.cis_short_notm}} setup Security Events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 - [Getting started with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started)
@@ -672,21 +667,18 @@ Security response functions typically fall into two categories: those that are a
 - NexGen Firewalls - Response: Blocking traffic, files, URLs, DNS queries, and so on. This includes various types of response alerts and alarms.
 - [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis) - Response: Blocking various HTTP/HTTS traffic and domains and notifications based on events.
 
-##### Options
-{: #response-options}
+Threat response **options** include:
 
  - NexGen Firewalls: Customers have the option to get a variety of response alerts and alarms based on various detection items and other firewall criteria.
  - {{site.data.keyword.cis_short_notm}}: Customers have the options of getting and selecting different notifications based on security events.
 
-##### Best practices
-{: #response-best-practices}
+Threat response **best practices** include:
 
 - Procedures and processes to handle all the security notifications and alerts in a unified manner
 - Personnel that are established and trained to respond to security events
 - Having an established incident response plan.
 
-##### Solutioning guidance
-{: #response-best-guidance}
+Threat response **solutioning guidance** include:
 
 - [Configuring alert policies](/docs/cis?topic=cis-configuring-policies&interface=ui)
  (Cloud Internet Service)
@@ -710,21 +702,18 @@ Vulnerability testing and management can be broad but generally it involves tool
 | Software and network vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](/docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in {{site.data.keyword.Bluemix_notm}} on Virtual Server Instances (VSIs). IBM Cybersecurity Services can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management){: external}. IBM Cybresecurity Services also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management){: external}. |
 {: caption="Table 3: Vulnerability management - methods" caption-side="bottom" }
 
-##### Options
-{: #vulnerability-management-options}
+The following **options** are available for vulnerability management:
 
  - {{site.data.keyword.compliance_long}}: Customers have the option of choosing the resources and configurations that they want to scan for vulnerabilities.
  - Vulnerability Advisor: Customers can choose what images to scan and what exemptions are available when a threat detection occurs.
  - 3rd Party: Customers have the option of selecting and that uses various vulnerability testing solutions and each of these have a myriad of configuration options.
 
-##### Best practices
-{: #vulnerability-management-best-practices}
+The following are **best practices:** for vulnerability management:
 
  - Customers should establish a vulnerability testing policy and plan and conduct regular vulnerability testing per the plan and policy.
  - Processes, procedures, and approval workflows for vulnerability remediations and similar should be established.
 
-##### Solutioning guidance
- {: #vulnerability-management-guidance}
+The following is **solutioning guidance** for vulnerability management:
 
 - [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices)
 - [Configuring {{site.data.keyword.Bluemix_notm}} Vulnerability Advisor scans](/docs/devsecops?topic=devsecops-cd-devsecops-va-scans)
@@ -734,13 +723,16 @@ Vulnerability testing and management can be broad but generally it involves tool
 
 Governance, Risk, and Compliance (GRC) is a structured way to align information technology (IT) with business goals while managing risks and meeting all industry and government regulations. The following sections discusses {{site.data.keyword.Bluemix_notm}}'s capabilities in this domain.
 
+The following concepts are discussed:
+ - [Configuration governance and management](/docs/pattern-vpc-security?topic=pattern-vpc-security-governance-domain#configuration-governance-compliance-monitoring)
+ - [Audit and regulatory and compliance monitoring](/docs/pattern-vpc-security?topic=pattern-vpc-security-governance-domain#auditing-risk-regulatory)
+
 #### Configuration governance and management
 {: #configuration-governance-compliance-monitoring}
 
 Cloud security configuration and management is a set of processes, procedures, and native tools and automation to control and eliminate misconfigurations, which today can be a huge source of cloud security vulnerabilities. {{site.data.keyword.Bluemix_notm}}’s specific configuration governance is handled through its {{site.data.keyword.compliance_long}} platform. In {{site.data.keyword.compliance_long}}, all security configurations such as Access Control Lists (ACLs), Multi-Factor Authentication (MFA) and many others can be configured according to certain compliance frameworks and other prescribed custom settings a customer may want. {{site.data.keyword.compliance_long}} can continually check operating configurations and do a comparison between parameters that are currently "set" versus those that are prescribed or dictated.
 
-##### Options
-{: #config-governance}
+Configuration governance and management **options** include:
 
 - {{site.data.keyword.compliance_long}}: Customers have the option of choosing the resources and configurations that they want to scan for status and parameters.
 - Palo Alto Prisma Cloud: This solution from IBM Cybersecurity Services provides configuration governance in multi-cloud situations
@@ -749,8 +741,7 @@ Cloud security configuration and management is a set of processes, procedures, a
 - Manual configuration management: Customers might possibly track configurations manually, say through spreadsheets and the like, but this method is tedious and prone to errors. This might be a possibility with noncritical workloads in a private access situation.
 - No configuration governance: This option is not recommended even in private or noncritical situations. Vulnerabilities might be opened up where there is security configuration “drift” from personnel making inadvertent changes and customers would be unable to locate possible problems without significant inspection.
 
-##### Best practices
-{: #config-best-practices-risk}
+Configuration governance and management **best practices** include:
 
 - Establish a configuration management policy and develop and design security configurations well before any deployment
 - Understand the compliance framework applicable to your environment that might possibly drive configurations
@@ -760,8 +751,7 @@ Cloud security configuration and management is a set of processes, procedures, a
 - Ensure that change rights are strictly controlled through Identity and Access Management (IAM) permissions and any Privilege Access Management (PAM) granular permissions.
 - Review the [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices).
 
-##### Solutioning guidance
-{: #config-best-practices}
+Configuration governance and management **solutioning guidance** include:
 
 Review the following solution guidance for {{site.data.keyword.compliance_long}}: [SCC guidance](/docs/security-compliance?topic=security-compliance-assign-roles).
 
@@ -772,20 +762,17 @@ In some respects auditing and regulatory aspects and conmpliance monitoring are 
 
 Regulated workloads have specific compliance framework adherence requirements and regulatory aspects are subsumed to a certain degree in compliance monitoring and auditing.
 
-##### Options
-{: #auditing-options}
+The following **options** are available for audit, regulatory, and compliance monitoring:
 
  - {{site.data.keyword.compliance_long}}: Customers can use this tool for compliance monitoring and audit reports. This is highly reccommended due to its tight integration with {{site.data.keyword.Bluemix_notm}}.
  - Palo Alto Prisma Cloud: This option might be applicable if there is need for multi-cloud compliance monitoring. Or, the customer might already be using this platform. Using this solution just for {{site.data.keyword.Bluemix_notm}} is not recommended due to possible costs and solution configuration complexities.
  - No compliance monitoring: Customers can possibly forgo compliance monitoring and auditing if the workloads are non-regulated and there are no audit reporting requirements.
 
-##### Best practices
-{: #auditing-best-practices}
+The following are **best practices:** for audit, regulatory, and compliance monitoring:
 
 Review the best practices for working with {{site.data.keyword.compliance_long}}: [Best practices for working with SCC](/docs/security-compliance?topic=security-compliance-best-practices)
 
-##### Solutioning guidance
-{: #auditing-best-guidance}
+The following is **solutioning guidance** for audit, regulatory, and compliance monitoring:
 
 - [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision)
 - [Compliance best practices](/docs/security-compliance?topic=security-compliance-best-practices).
