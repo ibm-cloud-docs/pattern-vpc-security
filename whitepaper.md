@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -47,7 +47,7 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
 
 {{site.data.keyword.IBM_notm}} uses a broad standard framework in all its security endeavors. This includes design, consulting, and implementation described in the following sections for reference. Now some, but not all of these are necessarily applicable for {{site.data.keyword.Bluemix_notm}} in Virtual Private Cloud environments from a technical capability perspective. Only the boxes highlighted in blue in the diagram will be discussed. Some of these capability categories can be broken down further and these are discussed in detail starting in the following sections.
 
-![illustrates the security framework for IaaS Security white paper](images/securityframework.svg){: caption="Figure 1. IBM Security Framework" caption-side-"bottom"}
+![illustrates the security framework for IaaS Security white paper](images/securityframework.svg){: caption="IBM Security Framework" caption-side-"bottom"}
 
 ### IBM Cybersecurity Security Services capabilities: options in certain situations
 {: #CSS-capabilities}
@@ -113,7 +113,7 @@ Key management allows cloud customers the ability to create, store, manage and r
 
  The following diagram is a depiction of the two types of key management capabilities in IBM Cloud.
 
-![Diagram of key management capabilities](images/keyprotectframework.svg){: caption="Figure 1. Key Management Capabilities" caption-side="bottom"}
+![Diagram of key management capabilities](images/keyprotectframework.svg){: caption="Key Management Capabilities" caption-side="bottom"}
 
 The following **options** are available for key management:
 
@@ -224,7 +224,7 @@ The following highlights some of the major IAM functions available.
 
 The following diagram provides insight on how IAM works in the {{site.data.keyword.Bluemix_notm}}.
 
-![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Figure 1. Identity and access management depiction" caption-side="bottom"}
+![Illustrates the detailed framework for IAM](images/IAMframework.svg){: caption="Identity and access management depiction" caption-side="bottom"}
 
 Access and role access management **options** include:
 
