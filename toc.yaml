@@ -1,26 +1,29 @@
 toc:
   properties:
     subcollection: pattern-vpc-security
+    authors:
+    - name: Doug Eppard
+      title: Technical Solution Architect - IBM Cloud Complex Solutions
+      image: images/doug-eppard.png
+      url: https://www.linkedin.com/in/doug-eppard-a6646910/
+    - name: Vickie Hooper
+      title: Network Technical Specialist - IBM Cloud Complex Solutions
+      image: images/vickie-hooper.png
+      url: https://www.linkedin.com/in/vickie-hooper-20b687a/
+    - name: Martin Bowman
+      title: Technical Solution Architect
+      image: images/martin-bowman.png
+      url: https://www.linkedin.com/in/martindbowman/
     industry: Financial
-    # use-case: use-case-value
-    # compliance: compliance-value
     audience: solution
     content-type: white-paper
     href: /docs/pattern-vpc-security
     path: pattern-vpc-security
-    description: Security in VPC Environments
-    label: Security in VPC IaaS Environments
+    description: Security in VPC environments
+    label: Security in VPC IaaS environments
+    navigation: hidden
   entries:
   - navgroup:
-      id: plan
+      id: overview
       topics:
-      - overview.md
-      - topicgroup:
-          label: Security Domains
-          topics:
-            - data-security-domain.md
-            - identity-and-access-domain.md
-            - application-security-domain.md
-            - infrastructure-and-endpoint-security-domain.md
-            - threat-investigation-and-respone-domain.md
-            - governance-risk-and-compliance-domain.md
+      - whitepaper.md
