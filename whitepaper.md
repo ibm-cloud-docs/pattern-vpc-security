@@ -298,7 +298,7 @@ The following is **solutioning guidance** for secrets management:
  - [Securing your data in {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui)
  - [Protecting {{site.data.keyword.secrets-manager_full_notm}} resources with context-based restrictions](/docs/secrets-manager?topic=secrets-manager-access-control-cbr&interface=ui)
  - {{site.data.keyword.secrets-manager_full_notm}} instances are provisioned per region to spread out workloads and limit the blast radius if a regional outage occurs. {{site.data.keyword.secrets-manager_full_notm}} is a single-tenant service. CPU and memory limits are applied per {{site.data.keyword.secrets-manager_full_notm}} instance. Those limits restrict the API request rates based on the usage pattern. As a rule of thumb, it is recommended to keep the rate lower than 20 req/s. Additionally, limit the number of unique clients that make requests to a single {{site.data.keyword.secrets-manager_full_notm}} instance.
- - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems {{site.data.keyword keymanagementservicelong_notm}} or Hyper Protect Crypto Services {{site.data.keyword.hsplatform}} to encrypt secrets. For more information, see [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui).
+ - Another best practice is the use of one of {{site.data.keyword.Bluemix_notm}}’s key management systems {{site.data.keyword.keymanagementservicelong_notm}} or Hyper Protect Crypto Services {{site.data.keyword.hsplatform}} to encrypt secrets. For more information, see [Organizing Your Secrets.](/docs/secrets-manager?topic=secrets-manager-secret-groups&interface=ui).
 
 {{site.data.keyword.secrets-manager_full_notm}} is a high available platform which has built-in resiliency and backups in each region. Customers have specific responsibilities around secrets management.
 
@@ -314,7 +314,7 @@ Bastion host and PAM **options** include:
  - Bastion with PAM software - Various 3rd party solutions are in the marketplace, and this is always recommended.
 
  IBM Cybersecurity Services does have a PAM solution that's known as Verify. For more information, see [IBM Cybersecurity Services Verify](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpa48PUASWhrDD-SGr-h-wY_b1IyThYC4DzKpHucYM_JWNdkzpHcjoYaAkZ_EALw_wcB&gclsrc=aw.ds){: external}
- {: note}.
+ {: note}
 
 Bastion host and PAM **best practices** include:
 
