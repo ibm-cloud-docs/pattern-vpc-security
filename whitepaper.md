@@ -47,7 +47,7 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
 
 {{site.data.keyword.IBM_notm}} uses a broad standard framework in all its security endeavors. This includes design, consulting, and implementation described in the following sections for reference. Now some, but not all of these are necessarily applicable for {{site.data.keyword.Bluemix_notm}} in Virtual Private Cloud environments from a technical capability perspective. Only the boxes highlighted in blue in the diagram will be discussed. Some of these capability categories can be broken down further and these are discussed in detail starting in the following sections.
 
-![illustrates the security framework for IaaS Security white paper](images/securityframework.svg){: caption="IBM Security Framework" caption-side-"bottom"}
+![illustrates the security framework for IaaS Security white paper](images/framework.svg){: caption="IBM Security Framework" caption-side-"bottom"}
 
 ### IBM Cybersecurity Security Services capabilities: options in certain situations
 {: #CSS-capabilities}
