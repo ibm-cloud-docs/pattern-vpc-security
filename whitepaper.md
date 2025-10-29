@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2025-10-27"
+lastupdated: "2025-10-29"
 
 keywords:
 
@@ -22,7 +22,7 @@ This document provides an overview of {{site.data.keyword.cloud_notm}}’s secur
 
 {{site.data.keyword.Bluemix_notm}} has a broad range of security capabilities, but other options like 3rd party solutions might be discussed that can be applicable to hybrid or multi-cloud situations. Some of the options might also include those from IBM Cybersecurity Services. These are presented in the IBM Cybersecurity Services Capabilities section.
 
-Overview information on [general cloud security concepts](https://www.ibm.com/topics/cloud-security#:~:text=These%20principles%20are%20built%20on,security%20posture%20management%20(CSPM)){: external} is available. Another reference source is the security section within the [{{site.data.keyword.Bluemix_notm}} Architecture Center](https://mediacenter.ibm.com/channel/IBM+Cloud+Architecture+Center/182050661){: external}.
+Overview information on [general cloud security concepts](https://www.ibm.com/think/topics/cloud-security#:~:text=These%20principles%20are%20built%20on,security%20posture%20management%20(CSPM)){: external} is available. Another reference source is the security section within the [{{site.data.keyword.Bluemix_notm}} Architecture Center](https://mediacenter.ibm.com/channel/IBM+Cloud+Architecture+Center/182050661){: external}.
 
 This document is geared toward cloud consultants, architects, engineers, and it assumes that the reader has a level of cloud proficiency and general knowledge of security concepts. This white paper isn't meant to be a cloud or security tutorial or technically comprehensive with the particular security solutions mentioned.
 
@@ -58,7 +58,7 @@ This paper shows how various {{site.data.keyword.Bluemix_notm}} security element
  - [QRadar Security Event and Information Management (SIEM), Network Detection and Response (NDR)](https://www.ibm.com/docs/en/qsip/7.5?topic=qradar-network-detection-response){: external}
  - Endpoint Protection and Detection & Response (EPP/EDR) solutions [Qradar with ReaqTa](https://www.ibm.com/products/qradar-edr){: external}
  - Unified Endpoint Management (UEM): [MaaS360](https://www.ibm.com/products/maas360/unified-endpoint-management){: external}
- - Data security: [Guardium](https://www.ibm.com/guardium){: external} data security suite, for example, data classification, data loss prevention, and so on, [Cloud Pak for Data](https://www.ibm.com/products/cloud-pak-for-data){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/ibm-security-key-lifecycle-manager){: external}
+ - Data security: [Guardium](https://www.ibm.com/products/guardium){: external} data security suite, for example, data classification, data loss prevention, and so on, [Cloud Pak for Data](https://www.ibm.com/products/cloud-pak-for-data){: external} [Guardium key lifecycle manager](https://www.ibm.com/products/guardium-key-lifecycle-manager){: external}
  - Privilege access management: [Verify Security Access Manager](https://www.ibm.com/verify?utm_content=SRCWW&p1=Search&p4=43700074603995210&p5=e&p9=58700008209808680&gbraid=0AAAAAD-_QsSZDEGKcMolwjQsuv8eqwjLo&gclid=Cj0KCQjwv7O0BhDwARIsAC0sjWOaQuEP0I2kLEyJl9wJ5UCNnM7uk8aP8K7aGQsntGk-6rP4o2ixZJ8aAnBzEALw_wcB&gclsrc=aw.ds){: external}
  - Container security - 3rd parties: Palo Alto Prisma Cloud and Illumio.
 
@@ -87,7 +87,7 @@ The following **options** are available for data-at-rest encryption:
 
  - {{site.data.keyword.Bluemix_notm}} default encryption: This is automatic if another key management scheme isn't selected. IBM keys are used.
  - {{site.data.keyword.Bluemix_notm}} encryption with customer keys: The customer selects an {{site.data.keyword.Bluemix_notm}} native key management system (KMS). {{site.data.keyword.Bluemix_notm}} has two KMSs: {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hsplatform}}.
- - External encryption solution: A customer might be using their own data encryption solution on-premises and want to extend this to the cloud. Or, a customer might want centralized data control across multiple clouds. {{site.data.keyword.IBM_notm}} IBM Cybersecurity Services has an applicable solution known as [Guardium](https://www.ibm.com/guardium){: external}.
+ - External encryption solution: A customer might be using their own data encryption solution on-premises and want to extend this to the cloud. Or, a customer might want centralized data control across multiple clouds. {{site.data.keyword.IBM_notm}} IBM Cybersecurity Services has an applicable solution known as [Guardium](https://www.ibm.com/products/guardium){: external}.
 
 The following are **best practices** for data-at-rest encryption:
 
@@ -183,12 +183,12 @@ The following is **solution guidance** for certificate management:
 #### Data lifecycle management and governance
 {: #data-lifecycle-management}
 
-{{site.data.keyword.Bluemix_notm}} provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm. One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/guardium){: external}.
+{{site.data.keyword.Bluemix_notm}} provides a range of data security measures as discussed, but customers may want full data lifecycle management and security across data in hybrid or multi-cloud environments. These capabilities may include data discovery, data classification, data tagging, data integrity checks and loss prevention among others. There are several 3rd party solutions in the market in this full data lifecycle management realm. One such solution from IBM Cyber Security Services is known [Guardium](https://www.ibm.com/products/guardium){: external}.
 
 #### Data Loss Prevention (DLP) and data access, integrity and monitoring
 {: #DLP}
 
-{{site.data.keyword.Bluemix_notm}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on. And there is {{site.data.keyword.cloudaccesstraillong_notm}} which logs all user and API access to data. But there are no specific ways to specifically monitor and control data loss and data integrity. This is typically the realm of 3rd party data control solutions. For more information, see [What Is Data Loss Prevention (DLP)](https://www.ibm.com/topics/data-loss-prevention){: external}.
+{{site.data.keyword.Bluemix_notm}} has a number of ways to control data access such as identity and access management (IAM) and permissions on object storage and so on. And there is {{site.data.keyword.cloudaccesstraillong_notm}} which logs all user and API access to data. But there are no specific ways to specifically monitor and control data loss and data integrity. This is typically the realm of 3rd party data control solutions. For more information, see [What Is Data Loss Prevention (DLP)](https://www.ibm.com/think/topics/data-loss-prevention){: external}.
 
 ### Identity and Access Security
 {: #identity-and-access}
@@ -416,7 +416,7 @@ The following concepts are discussed:
 
 The following are **segmentation methods**:
 
- - Virtual Private Cloud - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, and so on. And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://www.ibm.com/cloud/vpc){: external}
+ - Virtual Private Cloud - VPCs Can segregate various environments, e.g., one VPC for production, one VPC for Dev/Test, one for management, and so on. And of course, there are use cases where there may be one general use VPC that is completely separate from another VPC in an account, i.e., a customer have two different workload environments. [Virtual Private Cloud](https://www.ibm.com/solutions/vpc){: external}
  - Access Control Lists (ACLs) - Segregate ingress and egress traffic within Virtual Private Cloud (VPC) subnets. [Access Control Lists (ACLs)](/docs/vpc?topic=vpc-using-acls)
  - Security groups - Segregates traffic in and out of virtual server network interfaces, This could be considered host firewalling. [Security Groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups)
  - Transit gateway - {{site.data.keyword.Bluemix_notm}}’s Transit Gateway can interconnect {{site.data.keyword.Bluemix_notm}} classic, IBM PowerVS and Virtual Private Cloud (VPC) infrastructures, keeping traffic securely within the {{site.data.keyword.Bluemix_notm}} network. Transit Gateway can be deployed for: VPCs in the same region (local routing) and VPCs in different regions (global routing) VPCs to your {{site.data.keyword.Bluemix_notm}} classic infrastructure VPCs to PowerVS environments. Now transit gateways are not always thought as a specific security capability, but transit gateways can provide a form of network segmentation known as Pretext Filtering, similar to basic standard firewalls. More information here can be found at: [Filtering Routes using Transit Gateway pretext filtering](/docs/dl?topic=dl-prefix-filtering).
@@ -485,12 +485,12 @@ Edge protection and firewall **solutioning guidance** include:
  - [Security groups guidelines](/docs/security-groups?topic=security-groups-security-groups-guidelines)
  - [Creating a Network Access Control List (ACL)](/docs/vpc?topic=vpc-acl-create-ui&interface=ui)
  - [Getting started with FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started)
- - [Getting started with {{site.data.keyword.Bluemix_notm}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started)
+ - [Getting started with {{site.data.keyword.Bluemix_notm}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started-vsrx)
  - [Monitoring {{site.data.keyword.cis_short_notm}} setup for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security)
  - [Security groups guidelines](/docs/security-groups?topic=security-groups-security-groups-guidelines)
  - [Creating a Network Access Control List (ACL)](/docs/vpc?topic=vpc-acl-create-ui&interface=ui)
  - [Getting started with FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started)
- - [Getting started with {{site.data.keyword.Bluemix_notm}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started).
+ - [Getting started with {{site.data.keyword.Bluemix_notm}} Juniper vSRX](/docs/vsrx?topic=vsrx-getting-started-vsrx).
 
 #### Endpoint detection and endpoint protection capability
 {: #EDR-EPP}
@@ -507,7 +507,7 @@ Within the context of this particular section, only runtime vulnerability and de
 
 For more information, see [Key features of {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.compliance_long}} Workload Protection](/docs/workload-protection?topic=workload-protection-key-features). This capability can also fall into a security mechanism that is known as vulnerability management.
 
-In addition, see [What is endpoint security](https://www.ibm.com/topics/endpoint-security){: external} and [What is endpoint detection and response.](https://www.ibm.com/topics/edr){: external}.
+In addition, see [What is endpoint security](https://www.ibm.com/think/topics/endpoint-security){: external} and [What is endpoint detection and response.](https://www.ibm.com/think/topics/edr){: external}.
 
 Endpoint detection and protection **options** include:
 
@@ -689,14 +689,14 @@ Vulnerability testing and management can be broad but generally it involves tool
 
 | Area or Solution                                                                                                                                                            | Vulnerability checking or testing                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| {{site.data.keyword.compliance_long}}                                                                                                                                                 | Ability to scan resources for misconfigured settings per compliance requirements.                                                                                                                                                                                                                                                                                                                                                                                         |
+| {{site.data.keyword.sysdigsecure_full_notm}}                                                                                                                                                | Ability to scan resources for misconfigured settings per compliance requirements.                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui)               |Ability to scan container images. This vulnerability checking is really applicable where containers may be deployed on top of a Virtual Private Cloud (VPC) Virtual Service Instances (VSIs).                                                                                                                                                                                                                                                                            |
 | Software and network vulnerability (the reader may want to refer to this link: [Scanning software for vulnerabilities](/docs/account?topic=account-scans)) | Various 3rd party market solutions are available, which can be deployed in {{site.data.keyword.Bluemix_notm}} on Virtual Server Instances (VSIs). IBM Cybersecurity Services can source a number of solutions here including its preferred partner [Tenable](https://www.tenable.com/products/vulnerability-management){: external}. IBM Cybresecurity Services also has vulnerability management services known as [X-Force Red vulnerability management service](https://www.ibm.com/services/vulnerability-management){: external}. |
 {: caption="Table 3: Vulnerability management - methods" caption-side="bottom" }
 
 The following **options** are available for vulnerability management:
 
- - {{site.data.keyword.compliance_long}}: Customers have the option of choosing the resources and configurations that they want to scan for vulnerabilities.
+ - {{site.data.keyword.sysdigsecure_full_notm}}: Customers have the option of choosing the resources and configurations that they want to scan for vulnerabilities.
  - Vulnerability Advisor: Customers can choose what images to scan and what exemptions are available when a threat detection occurs.
  - 3rd Party: Customers have the option of selecting and that uses various vulnerability testing solutions and each of these have a myriad of configuration options.
 
@@ -707,7 +707,7 @@ The following are **best practices:** for vulnerability management:
 
 The following is **solutioning guidance** for vulnerability management:
 
-- [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices)
+- [Best practices for working with {{site.data.keyword.sysdigsecure_full_notm}}](/docs/workload-protection?topic=workload-protection-cspm-best-practices)
 - [Configuring {{site.data.keyword.Bluemix_notm}} Vulnerability Advisor scans](/docs/devsecops?topic=devsecops-cd-devsecops-va-scans)
 
 ### Governance, risk, and compliance
@@ -716,13 +716,13 @@ The following is **solutioning guidance** for vulnerability management:
 Governance, Risk, and Compliance (GRC) is a structured way to align information technology (IT) with business goals while managing risks and meeting all industry and government regulations. The following sections discusses {{site.data.keyword.Bluemix_notm}}'s capabilities in this domain.
 
 The following concepts are discussed:
- - [Configuration governance and management](/docs/pattern-vpc-security?topic=pattern-vpc-security-governance-domain#configuration-governance-compliance-monitoring)
- - [Audit and regulatory and compliance monitoring](/docs/pattern-vpc-security?topic=pattern-vpc-security-governance-domain#auditing-risk-regulatory)
+ - [Configuration governance and management](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#configuration-governance-compliance-monitoring)
+ - [Audit and regulatory and compliance monitoring](/docs/pattern-vpc-security?topic=pattern-vpc-security-white-paper#auditing-risk-regulatory)
 
 #### Configuration governance and management
 {: #configuration-governance-compliance-monitoring}
 
-Cloud security configuration and management is a set of processes, procedures, and native tools and automation to control and eliminate misconfigurations, which today can be a huge source of cloud security vulnerabilities. {{site.data.keyword.Bluemix_notm}}’s specific configuration governance is handled through its {{site.data.keyword.compliance_long}} platform. In {{site.data.keyword.compliance_long}}, all security configurations such as Access Control Lists (ACLs), Multi-Factor Authentication (MFA) and many others can be configured according to certain compliance frameworks and other prescribed custom settings a customer may want. {{site.data.keyword.compliance_long}} can continually check operating configurations and do a comparison between parameters that are currently "set" versus those that are prescribed or dictated.
+Cloud security configuration and management is a set of processes, procedures, and native tools and automation to control and eliminate misconfigurations, which today can be a huge source of cloud security vulnerabilities. {{site.data.keyword.Bluemix_notm}}’s specific configuration governance is handled through its {{site.data.keyword.sysdigsecure_full_notm}} platform. In {{site.data.keyword.compliance_long}}, all security configurations such as Access Control Lists (ACLs), Multi-Factor Authentication (MFA) and many others can be configured according to certain compliance frameworks and other prescribed custom settings a customer may want. {{site.data.keyword.compliance_long}} can continually check operating configurations and do a comparison between parameters that are currently "set" versus those that are prescribed or dictated.
 
 Configuration governance and management **options** include:
 
@@ -738,10 +738,10 @@ Configuration governance and management **best practices** include:
 - Establish a configuration management policy and develop and design security configurations well before any deployment
 - Understand the compliance framework applicable to your environment that might possibly drive configurations
 - Understand how needed compliance frameworks are translated into security configurations
-- Use automation such as {{site.data.keyword.compliance_long}} to automate security configurations and tracking
+- Use automation such as {{site.data.keyword.sysdigsecure_full_notm}} to automate security configurations and tracking
 - Develop workflows and approval processes to control security configuration changes
 - Ensure that change rights are strictly controlled through Identity and Access Management (IAM) permissions and any Privilege Access Management (PAM) granular permissions.
-- Review the [Best practices for working with {{site.data.keyword.compliance_long}}](/docs/security-compliance?topic=security-compliance-best-practices).
+- Review the [Best practices for working with {{site.data.keyword.sysdigsecure_full_notm}}](/docs/workload-protection?topic=workload-protection-cspm-best-practices).
 
 Configuration governance and management **solutioning guidance** include:
 
@@ -750,7 +750,7 @@ Review the following solution guidance for {{site.data.keyword.compliance_long}}
 #### Audit and regulatory and compliance monitoring
 {: #auditing-risk-regulatory}
 
-In some respects auditing and regulatory aspects and conmpliance monitoring are all related. {{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.compliance_long}} and {{site.data.keyword.cloudaccesstraillong_notm}}, both of which were discussed earlier. {{site.data.keyword.compliance_long}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, for example NIST 800-53, HIPPA, and so on. {{site.data.keyword.cloudaccesstrailshort}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed. Auditors can use both of these audit functions. See the following if there is a need to understand {{site.data.keyword.Bluemix_notm}}'s underlying infrastructure compliance monitoring (typically referred to "below the line monitoring): [compliance monitoring](/docs/overview?topic=overview-compliance).
+In some respects auditing and regulatory aspects and conmpliance monitoring are all related. {{site.data.keyword.Bluemix_notm}} has two main capabilities to aid in auditing: {{site.data.keyword.sysdigsecure_full_notm}} and {{site.data.keyword.cloudaccesstraillong_notm}}, both of which were discussed earlier. {{site.data.keyword.sysdigsecure_full_notm}} provides a wide range of compliance audit reports as to the overall state of a customer compliance as compared to various security frameworks, for example NIST 800-53, HIPPA, and so on. {{site.data.keyword.cloudaccesstrailshort}} provides an auditing function in that it tracks all IAM and API activities, as previously discussed. Auditors can use both of these audit functions. See the following if there is a need to understand {{site.data.keyword.Bluemix_notm}}'s underlying infrastructure compliance monitoring (typically referred to "below the line monitoring): [compliance monitoring](/docs/overview?topic=overview-compliance).
 
 Regulated workloads have specific compliance framework adherence requirements and regulatory aspects are subsumed to a certain degree in compliance monitoring and auditing.
 
@@ -762,9 +762,9 @@ The following **options** are available for audit, regulatory, and compliance mo
 
 The following are **best practices:** for audit, regulatory, and compliance monitoring:
 
-Review the best practices for working with {{site.data.keyword.compliance_long}}: [Best practices for working with SCC](/docs/security-compliance?topic=security-compliance-best-practices)
+Review the best practices for working with {{site.data.keyword.sysdigsecure_full_notm}}: [Best practices for working with {{site.data.keyword.sysdigsecure_full_notm}}](/docs/workload-protection?topic=workload-protection-cspm-best-practices)
 
 The following is **solutioning guidance** for audit, regulatory, and compliance monitoring:
 
-- [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision)
-- [Compliance best practices](/docs/security-compliance?topic=security-compliance-best-practices).
+- [Provisioning an instance](/docs/workload-protection?topic=workload-protection-provision&interface=ui)
+- [Compliance best practices](/docs/workload-protection?topic=workload-protection-cspm-best-practices).
