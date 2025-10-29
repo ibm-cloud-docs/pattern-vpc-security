@@ -745,7 +745,7 @@ Configuration governance and management **best practices** include:
 
 Configuration governance and management **solutioning guidance** include:
 
-Review the following solution guidance for {{site.data.keyword.compliance_long}}: [SCC guidance](/docs/security-compliance?topic=security-compliance-assign-roles).
+Review the following solution guidance for {{site.data.keyword.sysdigsecure_full_notm}}: [Cloud Security Posture Management guidance](/docs/workload-protection?topic=workload-protection-about).
 
 #### Audit and regulatory and compliance monitoring
 {: #auditing-risk-regulatory}
